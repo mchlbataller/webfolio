@@ -1,5 +1,6 @@
 import "./assets/fonts.css";
 
+import ErrorWidth from "./pages/ErrorWidth";
 import Landing from "./pages/Landing";
 import { Navbar } from "./components";
 import React from "react";
@@ -16,12 +17,13 @@ const Body = styled.div`
 
 function App() {
 	return (
-		<>
+		<div>
 			<Navbar />
 			<Body>
 				<Landing />
+				<ErrorWidth />
 			</Body>
-		</>
+		</div>
 	);
 }
 

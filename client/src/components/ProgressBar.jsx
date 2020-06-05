@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ProgressBarBox = styled.div.attrs({
 	className: "mx-auto",
 })`
-	width: 313px;
+	width: 11/12;
 	height: 22px;
 
 	background: #efefef;

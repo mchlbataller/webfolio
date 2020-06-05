@@ -1,14 +1,16 @@
+import { Email, FBLogo, Linkedin, Phone, Twitter } from "../assets/icons";
 import { assessment, portal, projectDapo } from "../assets/images";
 
 import { ProgressBar } from "../components";
 import React from "react";
 import Typist from "react-typist";
+import facebook from "../assets/icons/facebook.png";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
 const TopGradient = styled.div`
 	position: absolute;
-	width: 375px;
+	width: 100%;
 	height: 209px;
 	left: 0px;
 	top: 0px;
@@ -60,7 +62,7 @@ const HardSkills = [
 
 const Landing = (props) => {
 	return (
-		<div>
+		<div className="block lg:hidden">
 			<TopGradient />
 
 			<img
@@ -203,6 +205,35 @@ const Landing = (props) => {
 								homepage and tracks the collected data.
 							</p>
 						</div>
+					</div>
+				</div>
+			</Card>
+
+			<Card>
+				<CardHeader>Let's talk!</CardHeader>
+				<div className="mx-auto w-full mt-10 pl-5 md:pl-10">
+					<div className="flex items-center">
+						<Email width="35px" />
+						<p className="ml-5">mchlbataller@gmail.com</p>
+					</div>
+
+					<div className="flex items-center mt-5">
+						<Phone />
+						<p className="ml-5">+639101840284</p>
+					</div>
+
+					<div className="flex items-center mt-5">
+						<img src={facebook} alt="facebook" width="35px" />
+						<p
+							className="ml-5 text-sm text-blue-600"
+							onClick={(e) =>
+								window.open(
+									"https://www.facebook.com/mchlbataller"
+								)
+							}
+						>
+							facebook.com/mchlbataller
+						</p>
 					</div>
 				</div>
 			</Card>
