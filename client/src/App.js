@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./assets/fonts.css";
+
+import { Navbar } from "./components";
+import React from "react";
+import styled from "styled-components";
+
+const Body = styled.div`
+	background: #f3f3f3;
+	min-height: 100vh;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Body>
+			<Navbar />
+		</Body>
+	);
 }
 
 export default App;
