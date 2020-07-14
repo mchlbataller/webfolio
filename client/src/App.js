@@ -9,7 +9,7 @@ import styled from "styled-components";
 const Body = styled.div`
 	background: #f3f3f3;
 	min-height: 100vh;
-	padding-top: 100px;
+	padding-top: 66px;
 	* {
 		font-family: "Raleway", sans-serif;
 	}

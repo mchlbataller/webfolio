@@ -1,3 +1,4 @@
+import { Card, CardHeader } from "../components";
 import { Email, FBLogo, Linkedin, Phone, Twitter } from "../assets/icons";
 import { assessment, portal, projectDapo } from "../assets/images";
 
@@ -7,35 +8,6 @@ import Typist from "react-typist";
 import facebook from "../assets/icons/facebook.png";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
-
-const TopGradient = styled.div`
-	position: absolute;
-	width: 100%;
-	height: 209px;
-	left: 0px;
-	top: 0px;
-	z-index: 0;
-	background: linear-gradient(
-		179.85deg,
-		#2998ff 6.42%,
-		rgba(255, 255, 255, 0) 99.77%
-	);
-`;
-
-const Card = styled.div.attrs({
-	className: "mx-auto",
-})`
-	width: 100%;
-	height: ${(props) => props.height || "500px"};
-	padding-left: 20px;
-	padding-right: 20px;
-
-	background: #fafafa;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	box-sizing: border-box;
-	border-radius: 20px;
-	margin-bottom: 2rem;
-`;
 
 const AboutContent = styled.div`
 	margin-top: 30px;
@@ -49,10 +21,6 @@ const AboutContent = styled.div`
 	}
 `;
 
-const CardHeader = styled.p.attrs({
-	className: "text-center font-semibold text-2xl mt-20",
-})``;
-
 const HardSkills = [
 	{ label: "JavaScript", rating: 7 },
 	{ label: "React", rating: 8 },
@@ -60,32 +28,80 @@ const HardSkills = [
 	{ label: "Adobe Photoshop CC", rating: 9 },
 ];
 
+const Section = styled.section`
+	width: 100%;
+	height: 581px;
+
+	background: #202a33;
+	border-radius: 0px 0px 18px 18px;
+`;
+
+const SubHeader = styled.section.attrs({
+	className: "text-xl mt-8 mb-24 leading-tight pl-8",
+})`
+	* {
+		font-family: Open Sans !important;
+		color: white;
+		font-weight: normal;
+	}
+`;
+
 const Landing = (props) => {
 	return (
 		<div className="block lg:hidden">
-			<TopGradient />
+			<Section>
+				<img
+					src={michael}
+					alt="Michael"
+					className="mx-auto pt-10 z-0 relative"
+				/>
 
-			<img
-				src={michael}
-				alt="Michael"
-				className="mx-auto pt-10 z-0 relative"
-			/>
+				<p
+					style={{ fontSize: "20pt" }}
+					className="mt-10 pl-8 text-white font-bold leading-tight"
+				>
+					Hi,
+					<br />I am{" "}
+					<span className="text-blue-300">Michael C. Bataller</span>
+				</p>
 
-			<p style={{ fontSize: "24px" }} className="mt-10 pl-5">
-				Hi,
-				<br />I am Michael C. Bataller
-			</p>
-
-			<div className="text-3xl font-semibold mt-12 mb-24 leading-tight pl-5">
-				<Typist>
-					<span> I am a hard-working </span>
-					<Typist.Backspace count={13} delay={1000} />
-					<span> nice </span>
-					<Typist.Backspace count={5} delay={1000} />
-					<span>passionate </span>
-				</Typist>
-				<p>developer</p>
-			</div>
+				<SubHeader>
+					<Typist>
+						<span> I am a hard-working </span>
+						<Typist.Backspace count={13} delay={1000} />
+						<span> nice </span>
+						<Typist.Backspace count={5} delay={1000} />
+						<span>passionate </span>
+						<Typist.Backspace count={11} delay={1000} />
+						<span>hard-working </span>
+						<Typist.Backspace count={13} delay={1000} />
+						<span> nice </span>
+						<Typist.Backspace count={5} delay={1000} />
+						<span>passionate </span>
+						<Typist.Backspace count={11} delay={1000} />
+						<span>hard-working </span>
+						<Typist.Backspace count={13} delay={1000} />
+						<span> nice </span>
+						<Typist.Backspace count={5} delay={1000} />
+						<span>passionate </span>
+						<Typist.Backspace count={11} delay={1000} />
+						<span>hard-working </span>
+						<Typist.Backspace count={13} delay={1000} />
+						<span> nice </span>
+						<Typist.Backspace count={5} delay={1000} />
+						<span>passionate </span>
+						<Typist.Backspace count={11} delay={1000} />
+						<span>hard-working </span>
+						<Typist.Backspace count={13} delay={1000} />
+						<span> nice </span>
+						<Typist.Backspace count={5} delay={1000} />
+						<span>passionate </span>
+						<Typist.Backspace count={11} delay={1000} />
+						<span>hard-working </span>
+					</Typist>
+					<p>developer</p>
+				</SubHeader>
+			</Section>
 
 			<Card height="426px">
 				<CardHeader>About Me</CardHeader>
