@@ -1,8 +1,8 @@
 import { Card, CardHeader } from "../components";
 import { Email, FBLogo, Linkedin, Phone, Twitter } from "../assets/icons";
+import { Particles, ProgressBar } from "../components";
 import { assessment, portal, projectDapo } from "../assets/images";
 
-import { ProgressBar } from "../components";
 import React from "react";
 import Typist from "react-typist";
 import facebook from "../assets/icons/facebook.png";
@@ -10,16 +10,21 @@ import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
 const AboutContent = styled.div`
-	margin-top: 30px;
 	p {
 		font-family: "Open Sans", sans-serif;
 		font-weight: 300;
-		font-size: 18px;
 		padding-left: 10px;
 		padding-right: 10px;
 		margin-bottom: 8px;
 	}
 `;
+
+const SoftSkills = [
+	{ label: "Website Development Agility", rating: 8 },
+	{ label: "Developing Websites", rating: 9 },
+	{ label: "Website Design", rating: 9 },
+	{ label: "Graphics", rating: 8 },
+];
 
 const HardSkills = [
 	{ label: "JavaScript", rating: 7 },
@@ -28,17 +33,14 @@ const HardSkills = [
 	{ label: "Adobe Photoshop CC", rating: 9 },
 ];
 
-const Section = styled.section`
+const Heading = styled.section`
 	width: 100%;
 	height: 581px;
 
 	background: #202a33;
 	border-radius: 0px 0px 18px 18px;
+	margin-bottom: 15px;
 `;
-
-const showAfterDelay = () => {
-	return "display: hidden";
-};
 
 const SubHeader = styled.section.attrs({
 	className: "text-xl mt-8 mb-24 leading-tight pl-8 fade-in-bottom",
@@ -55,7 +57,8 @@ const SubHeader = styled.section.attrs({
 const Landing = (props) => {
 	return (
 		<div className="block lg:hidden">
-			<Section>
+			<Heading>
+				<Particles />
 				<img
 					src={michael}
 					alt="Michael"
@@ -75,31 +78,26 @@ const Landing = (props) => {
 					<p>I am a hard-working</p>
 					<p>developer</p>
 				</SubHeader>
-			</Section>
+			</Heading>
 
-			<Card height="426px">
-				<CardHeader>About Me</CardHeader>
+			<Card height="426px" title="About Me">
 				<AboutContent>
-					<p className="text-center">
+					<p>
 						A student acquiring a bachelor’s degree in Computer
-						Engineering, currently on its 3rd year.
-					</p>
-					<p className="text-center">
+						Engineering, currently on its 3rd year. <br />
+						<br />
 						My passion is developing websites and web apps, and it
 						made me efficient in making these.
 					</p>
 				</AboutContent>
 			</Card>
 
-			<Card height="540px">
-				<CardHeader>Soft Skills</CardHeader>
+			<Card height="540px" title="Soft Skills">
 				<br />
 				{/* TODO: Transform to map */}
-				<ProgressBar rating="8" label="Developing Websites" />
-				<ProgressBar rating="8" label="Agility in Development" />
-				<ProgressBar rating="8" label="Graphic Design" />
-				<ProgressBar rating="7" label="Working with Teams" />
-				<ProgressBar rating="7" label="Socializing" />
+				{SoftSkills.map((e) => (
+					<ProgressBar rating={e.rating} label={e.label} />
+				))}
 			</Card>
 
 			<Card height="460px">

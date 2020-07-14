@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "firebase": "^7.15.0"
+    "firebase": "^7.15.0",
+    "react-tsparticles": "^1.17.0"
   },
   "name": "webfolio",
   "description": "My Web Portfolio",

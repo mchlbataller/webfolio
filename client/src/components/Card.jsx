@@ -1,20 +1,42 @@
+import React from "react";
 import styled from "styled-components";
 
-export const Card = styled.div.attrs({
+export const CardContainer = styled.div.attrs({
 	className: "mx-auto",
 })`
-	width: 100%;
-	height: ${(props) => props.height || "500px"};
-	padding-left: 20px;
-	padding-right: 20px;
+	width: 90%;
 
-	background: #fafafa;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	box-sizing: border-box;
-	border-radius: 20px;
 	margin-bottom: 2rem;
+	background: #ffffff;
+	border: 1px solid rgba(31, 31, 31, 0.08);
+	box-sizing: border-box;
+	box-shadow: 5px 9px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 20px;
 `;
 
 export const CardHeader = styled.p.attrs({
 	className: "text-center font-semibold text-2xl mt-20",
 })``;
+
+const CardHeaderContainer = styled.div.attrs({
+	className: "align-text-bottom flex",
+})`
+	height: 80px;
+	background: #3c5257;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	box-sizing: border-box;
+	border-radius: 20px 20px 0px 0px;
+`;
+
+export const Card = (props) => {
+	return (
+		<CardContainer>
+			<CardHeaderContainer>
+				<p className="text-white text-2xl font-bold pt-10 pl-16">
+					{props.title}
+				</p>
+			</CardHeaderContainer>
+			<section className="px-6 py-10">{props.children}</section>
+		</CardContainer>
+	);
+};
