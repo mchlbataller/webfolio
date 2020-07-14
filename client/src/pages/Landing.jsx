@@ -36,14 +36,20 @@ const Section = styled.section`
 	border-radius: 0px 0px 18px 18px;
 `;
 
+const showAfterDelay = () => {
+	return "display: hidden";
+};
+
 const SubHeader = styled.section.attrs({
-	className: "text-xl mt-8 mb-24 leading-tight pl-8",
+	className: "text-xl mt-8 mb-24 leading-tight pl-8 fade-in-bottom",
 })`
 	* {
 		font-family: Open Sans !important;
 		color: white;
 		font-weight: normal;
 	}
+
+	animation-delay: 0.6s;
 `;
 
 const Landing = (props) => {
@@ -53,12 +59,12 @@ const Landing = (props) => {
 				<img
 					src={michael}
 					alt="Michael"
-					className="mx-auto pt-10 z-0 relative"
+					className="mx-auto pt-16 z-0 relative w-3/5"
 				/>
 
 				<p
 					style={{ fontSize: "20pt" }}
-					className="mt-10 pl-8 text-white font-bold leading-tight"
+					className="mt-8 pl-8 text-white font-bold leading-tight fade-in-bottom"
 				>
 					Hi,
 					<br />I am{" "}
@@ -66,39 +72,7 @@ const Landing = (props) => {
 				</p>
 
 				<SubHeader>
-					<Typist>
-						<span> I am a hard-working </span>
-						<Typist.Backspace count={13} delay={1000} />
-						<span> nice </span>
-						<Typist.Backspace count={5} delay={1000} />
-						<span>passionate </span>
-						<Typist.Backspace count={11} delay={1000} />
-						<span>hard-working </span>
-						<Typist.Backspace count={13} delay={1000} />
-						<span> nice </span>
-						<Typist.Backspace count={5} delay={1000} />
-						<span>passionate </span>
-						<Typist.Backspace count={11} delay={1000} />
-						<span>hard-working </span>
-						<Typist.Backspace count={13} delay={1000} />
-						<span> nice </span>
-						<Typist.Backspace count={5} delay={1000} />
-						<span>passionate </span>
-						<Typist.Backspace count={11} delay={1000} />
-						<span>hard-working </span>
-						<Typist.Backspace count={13} delay={1000} />
-						<span> nice </span>
-						<Typist.Backspace count={5} delay={1000} />
-						<span>passionate </span>
-						<Typist.Backspace count={11} delay={1000} />
-						<span>hard-working </span>
-						<Typist.Backspace count={13} delay={1000} />
-						<span> nice </span>
-						<Typist.Backspace count={5} delay={1000} />
-						<span>passionate </span>
-						<Typist.Backspace count={11} delay={1000} />
-						<span>hard-working </span>
-					</Typist>
+					<p>I am a hard-working</p>
 					<p>developer</p>
 				</SubHeader>
 			</Section>
