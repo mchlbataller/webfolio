@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "firebase": "^7.15.0"
+  },
+  "name": "webfolio",
+  "description": "My Web Portfolio",
+  "version": "1.0.0",
+  "main": "client/src/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "cd client && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchlbataller/webfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Michael C. Bataller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mchlbataller/webfolio/issues"
+  },
+  "homepage": "https://github.com/mchlbataller/webfolio#readme"
+}
