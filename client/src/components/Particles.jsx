@@ -116,7 +116,7 @@ const particlesConfig = {
 export const ParticlesComponent = (props) => {
 	return (
 		<Particles
-			className="absolute top-0 h-1/2"
+			className="absolute top-0 h-64 w-full md:right-0 md:w-1/3 md:h-full"
 			id="tsparticles"
 			options={particlesConfig}
 		/>

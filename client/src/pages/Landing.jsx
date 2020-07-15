@@ -5,7 +5,10 @@ import React from "react";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
-const Heading = styled.section`
+const Heading = styled.section.attrs({
+	className:
+		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16",
+})`
 	width: 100%;
 	height: 581px;
 
@@ -34,22 +37,26 @@ const Landing = (props) => {
 				<img
 					src={michael}
 					alt="Michael"
-					className="mx-auto pt-16 z-0 relative w-3/5"
+					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex"
 				/>
 
-				<p
-					style={{ fontSize: "20pt" }}
-					className="mt-8 pl-8 text-white font-bold leading-tight fade-in-bottom"
-				>
-					Hi,
-					<br />I am{" "}
-					<span className="text-blue-300">Michael C. Bataller</span>
-				</p>
+				<div className="flex-col flex-grow md:pt-24">
+					<p
+						style={{ fontSize: "20pt" }}
+						className="mt-8 pl-8 text-white font-bold leading-tight fade-in-bottom"
+					>
+						Hi,
+						<br />I am{" "}
+						<span className="text-blue-300">
+							Michael C. Bataller
+						</span>
+					</p>
 
-				<SubHeader>
-					<p>I am a hard-working</p>
-					<p>developer</p>
-				</SubHeader>
+					<SubHeader>
+						<p>I am a hard-working</p>
+						<p>developer</p>
+					</SubHeader>
+				</div>
 			</Heading>
 
 			<About />
