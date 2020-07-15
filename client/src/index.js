@@ -1,4 +1,5 @@
 import "./index.css";
+import "./assets/animations.css";
 
 import * as serviceWorker from "./serviceWorker";
 
