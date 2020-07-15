@@ -1,5 +1,4 @@
 import { ReactComponent as Logo } from "../assets/logo.svg";
-import { ReactComponent as Menu } from "../assets/icons/menu.svg";
 import React from "react";
 import styled from "styled-components";
 

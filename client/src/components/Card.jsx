@@ -19,7 +19,7 @@ export const CardHeader = styled.p.attrs({
 })``;
 
 const CardHeaderContainer = styled.div.attrs({
-	className: "align-text-bottom flex",
+	className: "align-text-bottom flex pt-10 pl-8",
 })`
 	height: 80px;
 	background: #3c5257;
@@ -32,7 +32,8 @@ export const Card = (props) => {
 	return (
 		<CardContainer>
 			<CardHeaderContainer>
-				<p className="text-white text-2xl font-bold pt-10 pl-16">
+				{props.headerIcon}
+				<p className="text-white text-2xl font-bold ml-4 mb-1">
 					{props.title}
 				</p>
 			</CardHeaderContainer>
