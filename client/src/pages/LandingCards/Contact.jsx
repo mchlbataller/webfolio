@@ -2,6 +2,7 @@ import { Email, Linkedin, Phone, Twitter } from "assets/icons";
 
 import { Card } from "components";
 import React from "react";
+import { User } from "assets/icons";
 import facebook from "assets/icons/facebook.png";
 
 const Social = (props) => {
@@ -25,7 +26,7 @@ const Social = (props) => {
 export const Contact = (props) => {
 	return (
 		<>
-			<Card title="Contact Me">
+			<Card title="Contact Me" headerIcon={<User />}>
 				<div className="mx-auto w-full pl-5 md:pl-10">
 					<div className="flex items-center">
 						<Email width="35px" />
