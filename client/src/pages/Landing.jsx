@@ -11,6 +11,9 @@ const Heading = styled.section.attrs({
 })`
 	width: 100%;
 	height: 581px;
+	@media (min-width: 768px) {
+		height: 400px;
+	}
 
 	background: #202a33;
 	border-radius: 0px 0px 18px 18px;
