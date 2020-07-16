@@ -2,6 +2,7 @@ import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
 import { Particles } from "../components";
 import React from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
@@ -21,7 +22,8 @@ const Heading = styled.section.attrs({
 `;
 
 const SubHeader = styled.section.attrs({
-	className: "text-xl mt-8 mb-24 leading-tight pl-8 fade-in-bottom",
+	className:
+		"text-xl mt-8 mb-24 leading-tight pl-8 animate__animated animate__fadeInUp",
 })`
 	* {
 		font-family: Open Sans !important;
@@ -29,7 +31,7 @@ const SubHeader = styled.section.attrs({
 		font-weight: normal;
 	}
 
-	animation-delay: 0.6s;
+	animation-delay: 1s;
 `;
 
 const Landing = (props) => {
@@ -46,7 +48,7 @@ const Landing = (props) => {
 				<div className="flex-col flex-grow md:pt-24">
 					<p
 						style={{ fontSize: "20pt" }}
-						className="mt-8 pl-8 text-white font-bold leading-tight fade-in-bottom"
+						className="mt-8 pl-8 text-white font-bold leading-tight animate__animated animate__fadeInUp"
 					>
 						Hi,
 						<br />I am{" "}
