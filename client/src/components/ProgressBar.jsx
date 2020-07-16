@@ -33,12 +33,15 @@ const ProgressBar = (props) => {
 	return (
 		<ProgressBarContainer>
 			<p className="text-center mb-1">{props.label}</p>
-			<ProgressBarBox>
-				<ProgressBarMarker rating={props.rating}>
-					<p className="text-center text-sm text-white">
-						{props.rating}/10
-					</p>
-				</ProgressBarMarker>
+			<ProgressBarBox className="relative">
+				<p className="text-center text-sm text-white absolute z-10 left-0 right-0">
+					{props.rating}/10
+				</p>
+
+				<ProgressBarMarker
+					rating={props.rating}
+					className="absolute z-0 top-0"
+				/>
 			</ProgressBarBox>
 		</ProgressBarContainer>
 	);
