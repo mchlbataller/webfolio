@@ -21,7 +21,6 @@ const HardSkills = [
 export const Skills = (props) => (
 	<>
 		<Card height="540px" title="Soft Skills" headerIcon={<Computer />}>
-			<br />
 			{/* TODO: Transform to map */}
 			{SoftSkills.map((e) => (
 				<ProgressBar rating={e.rating} label={e.label} />
@@ -29,7 +28,6 @@ export const Skills = (props) => (
 		</Card>
 
 		<Card height="460px" title="Hard Skills" headerIcon={<Computer2 />}>
-			<br />
 			{HardSkills.map((element) => (
 				<ProgressBar rating={element.rating} label={element.label} />
 			))}
