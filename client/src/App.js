@@ -21,7 +21,6 @@ function App() {
 			<Navbar />
 			<Body>
 				<Landing />
-				<ErrorWidth />
 			</Body>
 		</div>
 	);

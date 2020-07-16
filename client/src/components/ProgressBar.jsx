@@ -1,5 +1,11 @@
+import styled, { keyframes } from "styled-components";
+
 import React from "react";
-import styled from "styled-components";
+
+const progressBarAnimation = keyframes`
+	0% { width: 0%; }
+	100% { width: 100%; }
+`;
 
 const ProgressBarBox = styled.div.attrs({
 	className: "mx-auto",
@@ -14,14 +20,15 @@ const ProgressBarBox = styled.div.attrs({
 `;
 
 const ProgressBarMarker = styled.div`
-	width: ${(props) => props.rating}0%;
 	height: 22px;
-
+	width: ${(props) => props.rating * 10}%;
+	max-width: ${(props) => props.rating * 10}%;
 	background: #00529e;
 	border-radius: 6px;
+	animation: ${progressBarAnimation} 4s both;
 `;
 
-const ProgressBarContainer = styled.div`
+const Box = styled.div`
 	p {
 		font-family: "Open Sans", sans-serif;
 	}
@@ -29,18 +36,27 @@ const ProgressBarContainer = styled.div`
 	margin-bottom: 16px;
 `;
 
+const ProgressBarContainer = styled.div`
+	width: ${(props) => props.rating * 10}%;
+`;
+
 const ProgressBar = (props) => {
 	return (
-		<ProgressBarContainer>
+		<Box>
 			<p className="text-center mb-1">{props.label}</p>
-			<ProgressBarBox>
-				<ProgressBarMarker rating={props.rating}>
-					<p className="text-center text-sm text-white">
-						{props.rating}/10
-					</p>
-				</ProgressBarMarker>
+			<ProgressBarBox className="relative">
+				<p className="text-center text-sm text-white absolute z-10 left-0 right-0">
+					{props.rating}/10
+				</p>
+
+				<ProgressBarContainer rating={props.rating}>
+					<ProgressBarMarker
+						className="absolute z-0 top-0"
+						rating={props.rating}
+					/>
+				</ProgressBarContainer>
 			</ProgressBarBox>
-		</ProgressBarContainer>
+		</Box>
 	);
 };
 

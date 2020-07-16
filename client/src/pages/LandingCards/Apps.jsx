@@ -8,8 +8,6 @@ export const Apps = (props) => {
 	return (
 		<>
 			<Card height="1200px" title="My Apps" headerIcon={<AppsIcon />}>
-				<br />
-				<br />
 				{/* Web Portal App */}
 				<div>
 					<div className="grid grid-cols-2 gap-2">

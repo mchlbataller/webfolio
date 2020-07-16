@@ -1,5 +1,5 @@
 import "./index.css";
-import "./assets/animations.css";
+import "animate.css";
 
 import * as serviceWorker from "./serviceWorker";
 
