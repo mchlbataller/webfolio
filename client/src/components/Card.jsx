@@ -6,6 +6,13 @@ export const CardContainer = styled.div.attrs({
 })`
 	width: 90%;
 
+	@media (min-width: 760px) {
+		width: ${(props) => props.mdWidth || 48}%;
+	}
+	@media (min-width: 1024px) {
+		width: ${(props) => props.lgWidth || props.mdWidth || 40}%;
+	}
+
 	margin-bottom: 2rem;
 	background: #ffffff;
 	box-sizing: border-box;
@@ -29,7 +36,7 @@ const CardHeaderContainer = styled.div.attrs({
 
 export const Card = (props) => {
 	return (
-		<CardContainer>
+		<CardContainer mdWidth={props.mdWidth}>
 			<CardHeaderContainer>
 				{props.headerIcon}
 				<p className="text-white text-2xl font-bold ml-4 mb-1">
