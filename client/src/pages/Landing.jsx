@@ -52,7 +52,7 @@ const Landing = (props) => {
 
 					<SubHeader>
 						<p>I am a hard-working</p>
-						<p>developer</p>
+						<p>website designer/developer</p>
 					</SubHeader>
 				</div>
 			</Heading>
