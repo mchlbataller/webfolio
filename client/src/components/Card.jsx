@@ -28,7 +28,8 @@ export const CardHeader = styled.p.attrs({
 })``;
 
 const CardHeaderContainer = styled.div.attrs({
-	className: "align-text-bottom flex pt-10 pl-8 w-full lg:w-1/4 lg:absolute",
+	className:
+		"align-text-bottom flex lg:flex-col pt-10 pl-8 w-full lg:absolute lg:px-10",
 })`
 	height: 80px;
 	background: ${(props) => props.background || "#FF0000"};
@@ -39,6 +40,14 @@ const CardHeaderContainer = styled.div.attrs({
 	@media (min-width: 1024px) {
 		border-radius: 5px 0px 0px 5px;
 		height: 100%;
+		width: 27%;
+	}
+`;
+
+const CardContent = styled.section`
+	color: ${(props) => props.color};
+	@media (min-width: 1024px) {
+		margin-left: 27%;
 	}
 `;
 
@@ -50,18 +59,15 @@ export const Card = (props) => {
 			<CardHeaderContainer background={theme.card.header}>
 				{props.headerIcon}
 				<p
-					className="text-2xl font-bold ml-4 mb-1"
+					className="text-2xl font-bold ml-4 lg:ml-0 mb-1"
 					style={{ color: theme.card.headerTitle }}
 				>
 					{props.title}
 				</p>
 			</CardHeaderContainer>
-			<section
-				className="px-6 py-10 lg:ml-64 lg:pl-64"
-				style={{ color: theme.card.content }}
-			>
+			<CardContent className="px-6 py-10" color={theme.card.content}>
 				{props.children}
-			</section>
+			</CardContent>
 		</CardContainer>
 	);
 };
