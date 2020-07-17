@@ -14,12 +14,7 @@ const AboutContent = styled.div`
 
 export const About = (props) => (
 	<>
-		<Card
-			height="426px"
-			mdWidth="70%"
-			title="About Me"
-			headerIcon={<User />}
-		>
+		<Card height="426px" title="About Me" headerIcon={<User />}>
 			<AboutContent>
 				<p>
 					A student acquiring a bachelor’s degree in Computer

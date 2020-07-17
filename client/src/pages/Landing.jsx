@@ -58,7 +58,7 @@ const Landing = (props) => {
 			</Heading>
 
 			<About />
-			<div className="flex flex-row flex-wrap items-start">
+			<div className="flex flex-col flex-wrap items-start">
 				<Skills />
 				<Apps />
 				<Contact />
