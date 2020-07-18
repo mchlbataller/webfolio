@@ -31,7 +31,12 @@ export const About = (props) => {
 
 	return (
 		<>
-			<Card height="426px" title="About Me" headerIcon={<User />}>
+			<Card
+				height="426px"
+				className="lg:py-10"
+				title="About Me"
+				headerIcon={<User />}
+			>
 				<AboutContent>
 					<AboutHeading color={theme.aboutHeader}>
 						I'm a Website Designer/Developer.

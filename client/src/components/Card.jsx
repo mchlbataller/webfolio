@@ -2,9 +2,7 @@ import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import styled from "styled-components";
 
-export const CardContainer = styled.div.attrs({
-	className: "mx-auto lg:flex lg:flex-row lg:relative",
-})`
+export const CardContainer = styled.div.attrs({})`
 	width: 90%;
 
 	@media (min-width: 760px) {
@@ -55,7 +53,11 @@ export const Card = (props) => {
 	const theme = React.useContext(ThemeContext);
 
 	return (
-		<CardContainer mdWidth={props.mdWidth} background={theme.card.body}>
+		<CardContainer
+			mdWidth={props.mdWidth}
+			background={theme.card.body}
+			className="mx-auto lg:flex lg:flex-row lg:relative"
+		>
 			<CardHeaderContainer background={theme.card.header}>
 				{props.headerIcon}
 				<p
