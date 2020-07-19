@@ -12,7 +12,7 @@ const Heading = styled.section.attrs({
 })`
 	width: 100%;
 	height: 581px;
-	background: #202a33;
+	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
 `;

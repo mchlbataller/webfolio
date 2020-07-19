@@ -37,7 +37,7 @@ export const About = (props) => {
 		<>
 			<Card
 				height="426px"
-				className="lg:py-10"
+				className="lg:mt-16"
 				title="About Me"
 				headerIcon={<User />}
 			>

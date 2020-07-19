@@ -56,7 +56,9 @@ export const Card = (props) => {
 		<CardContainer
 			mdWidth={props.mdWidth}
 			background={theme.card.body}
-			className="mx-auto lg:flex lg:flex-row lg:relative"
+			className={
+				"mx-auto lg:flex lg:flex-row lg:relative " + props.className
+			}
 		>
 			<CardHeaderContainer
 				background={theme.card.header}
@@ -70,7 +72,10 @@ export const Card = (props) => {
 					{props.title}
 				</p>
 			</CardHeaderContainer>
-			<CardContent className="px-10 py-10" color={theme.card.content}>
+			<CardContent
+				className="px-10 py-10 lg:pl-32"
+				color={theme.card.content}
+			>
 				{props.children}
 			</CardContent>
 		</CardContainer>

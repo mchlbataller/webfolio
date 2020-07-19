@@ -5,9 +5,10 @@ import Landing from "./pages/Landing";
 import { Navbar } from "./components";
 import React from "react";
 import styled from "styled-components";
+import { ThemeContext } from "ThemeProvider";
 
 const Body = styled.div`
-	background: #f3f3f3;
+	background: ${(props) => props.background};
 	min-height: 100vh;
 	padding-top: 66px;
 	* {
@@ -16,10 +17,11 @@ const Body = styled.div`
 `;
 
 function App() {
+	const theme = React.useContext(ThemeContext);
 	return (
 		<div>
 			<Navbar />
-			<Body>
+			<Body background={theme.bodyBackground}>
 				<Landing />
 			</Body>
 		</div>
