@@ -7,7 +7,9 @@ const progressBarAnimation = keyframes`
 	100% { width: 100%; }
 `;
 
-const ProgressBarBox = styled.div.attrs({
+// Holds the centered rating text and
+// the grey progress bar container
+const ProgressBarContainer = styled.div.attrs({
 	className: "mx-auto",
 })`
 	width: 11/12;
@@ -19,7 +21,7 @@ const ProgressBarBox = styled.div.attrs({
 	border-radius: 6px;
 `;
 
-const ProgressBarMarker = styled.div`
+const ProgressBarInner = styled.div`
 	height: 22px;
 	width: ${(props) => props.rating * 10}%;
 	max-width: ${(props) => props.rating * 10}%;
@@ -36,26 +38,19 @@ const Box = styled.div`
 	margin-bottom: 16px;
 `;
 
-const ProgressBarContainer = styled.div`
-	width: ${(props) => props.rating * 10}%;
-`;
-
 const ProgressBar = (props) => {
 	return (
 		<Box>
-			<p className="text-center mb-1">{props.label}</p>
-			<ProgressBarBox className="relative">
+			<p className="text-center lg:text-left mb-1">{props.label}</p>
+			<ProgressBarContainer className="relative">
 				<p className="text-center text-sm text-white absolute z-10 left-0 right-0">
 					{props.rating}/10
 				</p>
-
-				<ProgressBarContainer rating={props.rating}>
-					<ProgressBarMarker
-						className="absolute z-0 top-0"
-						rating={props.rating}
-					/>
-				</ProgressBarContainer>
-			</ProgressBarBox>
+				<ProgressBarInner
+					className="absolute z-0 top-0"
+					rating={props.rating}
+				/>
+			</ProgressBarContainer>
 		</Box>
 	);
 };
