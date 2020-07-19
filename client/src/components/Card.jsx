@@ -30,11 +30,12 @@ const CardHeaderContainer = styled.div.attrs({})`
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	box-sizing: border-box;
 	border-radius: 20px 20px 0px 0px;
+	min-width: 250px;
 
 	@media (min-width: 1024px) {
 		border-radius: 5px 0px 0px 5px;
 		height: 100%;
-		width: 27%;
+		width: 30%;
 		position: absolute;
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
@@ -45,7 +46,7 @@ const CardContent = styled.section`
 	color: ${(props) => props.color};
 	width: 100%;
 	@media (min-width: 1024px) {
-		margin-left: 27%;
+		margin-left: 35%;
 	}
 `;
 
@@ -66,16 +67,13 @@ export const Card = (props) => {
 			>
 				{props.headerIcon}
 				<p
-					className="text-2xl font-bold ml-4 lg:ml-0 mb-1"
+					className="text-xl lg:text-2xl font-bold ml-4 lg:ml-0 mb-1"
 					style={{ color: theme.card.headerTitle }}
 				>
 					{props.title}
 				</p>
 			</CardHeaderContainer>
-			<CardContent
-				className="px-10 py-10 lg:pl-32"
-				color={theme.card.content}
-			>
+			<CardContent className="px-10 py-10" color={theme.card.content}>
 				{props.children}
 			</CardContent>
 		</CardContainer>

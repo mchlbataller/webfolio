@@ -32,7 +32,7 @@ export const ThemeProvider = (props) => {
 	const [progressBar, setProgressBarColor] = React.useState(lightProgressBar);
 	// const [bodyBackground, setBodyBackground] = React.useState("#f3f3f3");
 	const [bodyBackground, setBodyBackground] = React.useState("#12202D");
-	const [navBackground, setNavBackground] = React.useState("#222222");
+	const [navBackground, setNavBackground] = React.useState("#0E0E0E");
 
 	return (
 		<ThemeContext.Provider

@@ -12,6 +12,7 @@ const AboutContent = styled.div`
 	}
 	@media (min-width: 1024px) {
 		width: 70%;
+		min-width: 400px;
 		p {
 			padding-left: 20px;
 		}
@@ -22,11 +23,12 @@ const AboutHeading = styled.h1`
 	font-family: Open Sans;
 	@media (min-width: 1024px) {
 		padding-left: 20px;
+		font-size: 24px;
+		line-height: 33px;
 	}
 	font-style: normal;
 	font-weight: bold;
-	font-size: 24px;
-	line-height: 33px;
+	font-size: 22px;
 	color: #0094ff;
 `;
 
@@ -37,7 +39,7 @@ export const About = (props) => {
 		<>
 			<Card
 				height="426px"
-				className="lg:mt-16"
+				className="mt-16"
 				title="About Me"
 				headerIcon={<User />}
 			>
