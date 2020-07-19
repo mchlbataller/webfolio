@@ -8,17 +8,21 @@ const AboutContent = styled.div`
 	p {
 		font-family: "Open Sans", sans-serif;
 		font-weight: 300;
-		padding-left: 20px;
 		margin-bottom: 8px;
 	}
 	@media (min-width: 1024px) {
 		width: 70%;
+		p {
+			padding-left: 20px;
+		}
 	}
 `;
 
 const AboutHeading = styled.h1`
 	font-family: Open Sans;
-	padding-left: 20px;
+	@media (min-width: 1024px) {
+		padding-left: 20px;
+	}
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
