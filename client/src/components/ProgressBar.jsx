@@ -16,7 +16,7 @@ const ProgressBarContainer = styled.div.attrs({
 	height: 22px;
 
 	background: ${(props) => props.background};
-	border: 1px solid #e3e3e3;
+	border: 0px solid #e3e3e3;
 	box-sizing: border-box;
 	border-radius: 6px;
 	@media (min-width: 1024px) {
