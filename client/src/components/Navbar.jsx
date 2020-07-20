@@ -13,6 +13,20 @@ const NavbarBox = styled.div.attrs({
 	z-index: 20;
 	background: ${(props) => props.background};
 	position: fixed;
+
+	* {
+		color: white;
+		margin-left: 32px;
+		margin-right: 32px;
+	}
+
+	p {
+		display: none;
+		font-size: 11pt;
+		@media (min-width: 1024px) {
+			display: block;
+		}
+	}
 `;
 
 const Navbar = (props) => {
@@ -20,7 +34,11 @@ const Navbar = (props) => {
 	return (
 		<>
 			<NavbarBox background={theme.navBackground}>
+				<p>Contact</p>
+				<p>About</p>
 				<Logo />
+				<p>Apps</p>
+				<p>Resume</p>
 			</NavbarBox>
 		</>
 	);
