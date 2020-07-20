@@ -10,7 +10,7 @@ const NavbarBox = styled.div.attrs({
 	padding-left: 20px;
 	padding-right: 20px;
 	box-shadow: #00000017 0px 4px 10px;
-	z-index: 10;
+	z-index: 20;
 	background: ${(props) => props.background};
 	position: fixed;
 `;

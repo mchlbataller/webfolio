@@ -30,6 +30,7 @@ export const ThemeProvider = (props) => {
 	const [card, setCardTheme] = React.useState(darkCard);
 	const [aboutHeader, setAboutHeaderColor] = React.useState("#FFFFFF");
 	const [progressBar, setProgressBarColor] = React.useState(lightProgressBar);
+	// Light background for body
 	// const [bodyBackground, setBodyBackground] = React.useState("#f3f3f3");
 	const [bodyBackground, setBodyBackground] = React.useState("#12202D");
 	const [navBackground, setNavBackground] = React.useState("#0e0e0ee6");
