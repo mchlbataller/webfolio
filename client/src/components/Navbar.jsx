@@ -20,7 +20,7 @@ const NavbarBox = styled.div.attrs({
 		margin-right: 32px;
 	}
 
-	p {
+	a {
 		display: none;
 		font-size: 11pt;
 		@media (min-width: 1024px) {
@@ -29,16 +29,23 @@ const NavbarBox = styled.div.attrs({
 	}
 `;
 
+const NavbarButton = styled.a`
+	&:hover {
+		color: blue;
+	}
+	cursor: pointer;
+`;
+
 const Navbar = (props) => {
 	const theme = React.useContext(ThemeContext);
 	return (
 		<>
 			<NavbarBox background={theme.navBackground}>
-				<p>About</p>
-				<p>Contact</p>
-				<Logo />
-				<p>Apps</p>
-				<p>Skills</p>
+				<NavbarButton onClick={props.about}>About</NavbarButton>
+				<NavbarButton onClick={props.skills}>Skills</NavbarButton>
+				<Logo onClick={props.top} />
+				<NavbarButton onClick={props.app}>Apps</NavbarButton>
+				<NavbarButton onClick={props.contact}>Contact</NavbarButton>
 			</NavbarBox>
 		</>
 	);

@@ -57,11 +57,19 @@ const Landing = (props) => {
 				</div>
 			</Heading>
 
-			<About />
+			<div ref={props.aboutRef} className="pt-10 w-full">
+				<About />
+			</div>
 			<div className="flex flex-col flex-wrap items-start">
-				<Skills />
-				<Apps />
-				<Contact />
+				<div ref={props.skillsRef} className="pt-10 w-full">
+					<Skills />
+				</div>
+				<div ref={props.appRef} className="py-10">
+					<Apps />
+				</div>
+				<div ref={props.contactRef} className="pb-10 w-full">
+					<Contact />
+				</div>
 			</div>
 		</div>
 	);
