@@ -34,11 +34,11 @@ const Navbar = (props) => {
 	return (
 		<>
 			<NavbarBox background={theme.navBackground}>
-				<p>Contact</p>
 				<p>About</p>
+				<p>Contact</p>
 				<Logo />
 				<p>Apps</p>
-				<p>Resume</p>
+				<p>Skills</p>
 			</NavbarBox>
 		</>
 	);
