@@ -12,14 +12,14 @@ const Heading = styled.section.attrs({
 })`
 	width: 100%;
 	height: 581px;
-	background: #202a33;
+	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
 `;
 
 const SubHeader = styled.section.attrs({
 	className:
-		"text-xl lg:text-2xl mt-8 mb-24 leading-tight pl-8 animate__animated animate__fadeInUp",
+		"text-lg lg:text-xl mt-8 mb-24 pl-8 animate__animated animate__fadeInUp",
 })`
 	* {
 		font-family: Open Sans !important;
@@ -42,7 +42,7 @@ const Landing = (props) => {
 				/>
 
 				<div className="flex-col flex-grow md:pt-24">
-					<p className="mt-8 pl-8 text-3xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
+					<p className="mt-8 pl-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
 						Hi,
 						<br />I am{" "}
 						<span className="text-blue-300">
@@ -52,16 +52,24 @@ const Landing = (props) => {
 
 					<SubHeader>
 						<p>I am a hard-working</p>
-						<p>developer</p>
+						<p>website designer/developer</p>
 					</SubHeader>
 				</div>
 			</Heading>
 
-			<About />
-			<div className="flex flex-row flex-wrap items-start">
-				<Skills />
-				<Apps />
-				<Contact />
+			<div ref={props.aboutRef} className="pt-10 w-full">
+				<About />
+			</div>
+			<div className="flex flex-col flex-wrap items-start">
+				<div ref={props.skillsRef} className="pt-10 w-full">
+					<Skills />
+				</div>
+				<div ref={props.appRef} className="py-10">
+					<Apps />
+				</div>
+				<div ref={props.contactRef} className="pb-10 w-full">
+					<Contact />
+				</div>
 			</div>
 		</div>
 	);
