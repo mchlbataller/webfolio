@@ -1,45 +1,46 @@
-import { Email, Linkedin, Phone, Twitter } from "assets/icons";
-
-import { Card } from "components";
 import React from "react";
-import { User } from "assets/icons";
+import { SocialIcon } from "react-social-icons";
 import facebook from "assets/icons/facebook.png";
+import facebookIdle from "assets/icons/facebook-gray.png";
+import styled from "styled-components";
 
-const Social = (props) => {
-	return (
-		<>
-			<div className="flex items-center mt-5">
-				<img src={facebook} alt="facebook" width="35px" />
-				<p
-					className="ml-5 text-sm text-blue-600"
-					onClick={(e) =>
-						window.open("https://www.facebook.com/mchlbataller")
-					}
-				>
-					facebook.com/mchlbataller
-				</p>
-			</div>
-		</>
-	);
-};
+const ContactContainer = styled.div`
+	animation-delay: 0s;
+	width: 100%;
+
+	& > * {
+		display: block;
+		margin-right: 10px;
+		width: 32px;
+		height: 32px;
+	}
+`;
 
 export const Contact = (props) => {
 	return (
-		<>
-			<Card title="Contact Me" headerIcon={<User />}>
-				<div className="mx-auto w-full pl-5 md:pl-10">
-					<div className="flex items-center">
-						<Email width="35px" />
-						<p className="ml-5">mchlbataller@gmail.com</p>
-					</div>
-
-					<div className="flex items-center mt-5">
-						<Phone />
-						<p className="ml-5">+639101840284</p>
-					</div>
-					<Social />
-				</div>
-			</Card>
-		</>
+		<ContactContainer className="animate__animated animate__fadeIn flex flex-row">
+			<img
+				src={facebook}
+				alt="facebook"
+				className="cursor-pointer flex-none"
+				onClick={() =>
+					window.open("https://www.facebook.com/mchlbataller")
+				}
+			/>
+			<SocialIcon
+				url="mailto:mchlbataller@gmail.com"
+				style={{ height: "32px", width: "32px" }}
+				bgColor="#d93025"
+				fgColor="white"
+			/>
+			<SocialIcon
+				url="https://github.com/mchlbataller"
+				style={{ height: "32px", width: "32px" }}
+			/>
+			<SocialIcon
+				url="https://linkedin.com/in/mchlbataller"
+				style={{ height: "32px", width: "32px" }}
+			/>
+		</ContactContainer>
 	);
 };
