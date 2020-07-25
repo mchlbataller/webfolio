@@ -24,6 +24,7 @@ const scrollToRef = (ref) => (
 
 function App() {
 	const theme = React.useContext(ThemeContext);
+	/* Refs for Scrolling START */
 	const appsRef = React.useRef(null);
 	const skillsRef = React.useRef(null);
 	const contactRef = React.useRef(null);
@@ -32,8 +33,9 @@ function App() {
 	const executeScrollSkills = () => scrollToRef(skillsRef);
 	const executeScrollContact = () => scrollToRef(contactRef);
 	const executeScrollAbout = () => scrollToRef(aboutRef);
+	/* Refs for Scrolling END */
 	return (
-		<div>
+		<main>
 			<Navbar
 				app={executeScrollApps}
 				contact={executeScrollContact}
@@ -49,7 +51,7 @@ function App() {
 					aboutRef={aboutRef}
 				/>
 			</Body>
-		</div>
+		</main>
 	);
 }
 

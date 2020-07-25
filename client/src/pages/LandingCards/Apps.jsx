@@ -68,9 +68,7 @@ export const Apps = (props) => {
 							<img src={projectDapo} alt="projectDapo" />
 						</div>
 						<div>
-							<br />
-							<br />
-							<p className="text-xl font-light mt-3">
+							<p className="text-xl font-light">
 								Project DAPO App
 							</p>
 							<p
