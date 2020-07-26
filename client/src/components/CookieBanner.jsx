@@ -1,8 +1,6 @@
-import Button from "@material-ui/core/Button";
 import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
-import { makeStyles } from "@material-ui/core/styles";
 import visitCounter from "services/visitCounter";
 
 function Alert(props) {
