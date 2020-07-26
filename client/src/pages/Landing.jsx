@@ -2,7 +2,6 @@ import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
 import { Particles } from "../components";
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
