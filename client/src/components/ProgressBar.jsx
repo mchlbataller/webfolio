@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
-import { ThemeContext } from "ThemeProvider";
 
 import React from "react";
+import { ThemeContext } from "ThemeProvider";
 
 const progressBarAnimation = keyframes`
 	0% { width: 0%; }
@@ -48,11 +48,11 @@ const ProgressBar = (props) => {
 	const theme = React.useContext(ThemeContext);
 	return (
 		<Box className="lg:w-1/3">
-			<p className="text-center lg:text-left mb-1 whitespace-no-wrap">
+			<p className="text-center text-sm sm:text-base lg:text-left mb-1 whitespace-no-wrap">
 				{props.label}
 			</p>
 			<ProgressBarContainer background={theme.progressBar.background}>
-				<p className="text-center text-sm text-white relative z-10 left-0 right-0">
+				<p className="text-center text-xs sm:text-sm text-white relative z-10 left-0 right-0">
 					{props.rating}/10
 				</p>
 				<ProgressBarInner

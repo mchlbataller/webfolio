@@ -1,7 +1,6 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import facebook from "assets/icons/facebook.png";
-import facebookIdle from "assets/icons/facebook-gray.png";
 import styled from "styled-components";
 
 const ContactContainer = styled.div`
