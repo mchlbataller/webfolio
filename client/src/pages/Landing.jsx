@@ -1,8 +1,8 @@
 import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
-import { Particles } from "../components";
+import { Particles } from "components";
 import React from "react";
-import michael from "../assets/Michael.png";
+import michael from "assets/Michael.png";
 import styled from "styled-components";
 
 const Heading = styled.section.attrs({
@@ -37,7 +37,7 @@ const Landing = (props) => {
 				<img
 					src={michael}
 					alt="Michael"
-					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3"
+					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3 pointer-events-none"
 				/>
 
 				<div className="flex-col flex-grow md:pt-24 pl-8">
@@ -65,7 +65,7 @@ const Landing = (props) => {
 				<div ref={props.skillsRef} className="pt-10 w-full">
 					<Skills />
 				</div>
-				<div ref={props.appRef} className="py-10">
+				<div ref={props.appRef} className="py-10 w-full">
 					<Apps />
 				</div>
 				<div ref={props.contactRef} className="pb-10 w-full"></div>

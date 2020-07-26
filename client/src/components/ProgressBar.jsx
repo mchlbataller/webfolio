@@ -52,7 +52,7 @@ const ProgressBar = (props) => {
 					animateIn="animate__slideInLeft"
 					style={fillerStyles}
 				>
-					<span className="text-xs sm:text-sm text-white mr-5 font-medium">
+					<span className="text-xs sm:text-sm text-white mr-5 font-medium font-regular">
 						{props.rating}0%
 					</span>
 				</ScrollAnimation>
