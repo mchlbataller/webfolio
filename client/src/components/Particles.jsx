@@ -9,7 +9,7 @@ const particlesConfig = {
 				value: 160,
 				density: {
 					enable: true,
-					value_area: 1400,
+					value_area: 1000,
 				},
 			},
 			color: {
@@ -31,7 +31,7 @@ const particlesConfig = {
 				},
 			},
 			opacity: {
-				value: 0.1,
+				value: 0.3,
 				random: false,
 				anim: {
 					enable: false,
@@ -54,7 +54,7 @@ const particlesConfig = {
 				enable: true,
 				distance: 150,
 				color: "#ffffff",
-				opacity: 0.4,
+				opacity: 0.3,
 				width: 1,
 			},
 			move: {
@@ -228,7 +228,7 @@ const particlesConfig = {
 export const ParticlesComponent = (props) => {
 	return (
 		<Particles
-			className="absolute top-0 h-64 w-full md:right-0 md:h-full"
+			className="absolute top-0 h-64 w-full md:right-0 md:w-1/3 md:h-full"
 			id="tsparticles"
 			options={particlesConfig.particles}
 		/>
