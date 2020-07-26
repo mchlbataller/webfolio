@@ -1,6 +1,6 @@
 import "assets/fonts.css";
 
-import { Footer, Navbar } from "components";
+import { CookieBanner, Footer, Navbar } from "components";
 
 import Landing from "pages/Landing";
 import React from "react";
@@ -47,6 +47,7 @@ function App() {
 					contactRef={contactRef}
 					aboutRef={aboutRef}
 				/>
+				<CookieBanner />
 			</Body>
 			<Footer />
 		</main>
