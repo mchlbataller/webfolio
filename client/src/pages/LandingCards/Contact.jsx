@@ -11,8 +11,8 @@ const ContactContainer = styled.div`
 	& > * {
 		display: block;
 		margin-right: 10px;
-		width: 32px;
-		height: 32px;
+		width: 40px;
+		height: 40px;
 	}
 `;
 
@@ -29,17 +29,21 @@ export const Contact = (props) => {
 			/>
 			<SocialIcon
 				url="mailto:mchlbataller@gmail.com"
-				style={{ height: "32px", width: "32px" }}
+				style={{ height: "40px", width: "40px" }}
 				bgColor="#d93025"
 				fgColor="white"
 			/>
 			<SocialIcon
 				url="https://github.com/mchlbataller"
-				style={{ height: "32px", width: "32px" }}
+				style={{ height: "40px", width: "40px" }}
+				fgColor="#192835"
+				bgColor="white"
 			/>
 			<SocialIcon
 				url="https://linkedin.com/in/mchlbataller"
-				style={{ height: "32px", width: "32px" }}
+				style={{ height: "40px", width: "40px" }}
+				bgColor="#0077b5"
+				fgColor="white"
 			/>
 		</ContactContainer>
 	);
