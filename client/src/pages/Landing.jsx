@@ -37,7 +37,7 @@ const Landing = (props) => {
 				<img
 					src={michael}
 					alt="Michael"
-					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3"
+					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3 pointer-events-none"
 				/>
 
 				<div className="flex-col flex-grow md:pt-24 pl-8">
