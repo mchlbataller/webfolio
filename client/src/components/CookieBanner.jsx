@@ -3,6 +3,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import { makeStyles } from "@material-ui/core/styles";
+import visitCounter from "services/visitCounter";
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -11,7 +12,11 @@ function Alert(props) {
 export const CookieBanner = (props) => {
 	const [open, setOpen] = React.useState(false);
 
-	React.useEffect(() => setTimeout(setOpen, 1000, true), []);
+	React.useEffect(() => {
+		if (localStorage.getItem("visits") !== "1")
+			setTimeout(setOpen, 1000, true);
+		visitCounter();
+	}, []);
 
 	const handleClose = (event, reason) => {
 		if (reason === "clickaway") {
