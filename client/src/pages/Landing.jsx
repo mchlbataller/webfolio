@@ -1,8 +1,8 @@
 import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
-import { Particles } from "../components";
+import { Particles } from "components";
 import React from "react";
-import michael from "../assets/Michael.png";
+import michael from "assets/Michael.png";
 import styled from "styled-components";
 
 const Heading = styled.section.attrs({

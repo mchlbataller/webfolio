@@ -1,7 +1,8 @@
-import "./assets/fonts.css";
+import "assets/fonts.css";
 
-import Landing from "./pages/Landing";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "components";
+
+import Landing from "pages/Landing";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import styled from "styled-components";
@@ -47,6 +48,7 @@ function App() {
 					aboutRef={aboutRef}
 				/>
 			</Body>
+			<Footer />
 		</main>
 	);
 }
