@@ -1,17 +1,12 @@
-import styled, { keyframes } from "styled-components";
-import { ThemeContext } from "ThemeProvider";
-
 import React from "react";
-
-const progressBarAnimation = keyframes`
-	0% { width: 0%; }
-	100% { width: 100%; }
-`;
+import ScrollAnimation from "react-animate-on-scroll";
+import { ThemeContext } from "ThemeProvider";
+import styled from "styled-components";
 
 // Holds the centered rating text and
 // the grey progress bar container
 const ProgressBarContainer = styled.div.attrs({
-	className: "mx-auto relative",
+	className: "mx-auto",
 })`
 	height: 22px;
 
@@ -22,15 +17,7 @@ const ProgressBarContainer = styled.div.attrs({
 	@media (min-width: 1024px) {
 		width: 200%;
 	}
-`;
-
-const ProgressBarInner = styled.div`
-	height: 22px;
-	width: ${(props) => props.rating * 10}%;
-	max-width: ${(props) => props.rating * 10}%;
-	background: ${(props) => props.background};
-	border-radius: 6px;
-	animation: ${progressBarAnimation} 4s both;
+	overflow: hidden;
 `;
 
 const Box = styled.div`
@@ -46,20 +33,29 @@ const Box = styled.div`
 
 const ProgressBar = (props) => {
 	const theme = React.useContext(ThemeContext);
+
+	const fillerStyles = {
+		height: "100%",
+		width: `${props.rating * 10}%`,
+		backgroundColor: theme.progressBar.foreground,
+		borderRadius: "inherit",
+		textAlign: "right",
+	};
+
 	return (
 		<Box className="lg:w-1/3">
-			<p className="text-center lg:text-left mb-1 whitespace-no-wrap">
+			<p className="text-center text-sm sm:text-base lg:text-left mb-1 whitespace-no-wrap">
 				{props.label}
 			</p>
 			<ProgressBarContainer background={theme.progressBar.background}>
-				<p className="text-center text-sm text-white relative z-10 left-0 right-0">
-					{props.rating}/10
-				</p>
-				<ProgressBarInner
-					background={theme.progressBar.foreground}
-					className="absolute z-0 top-0"
-					rating={props.rating}
-				/>
+				<ScrollAnimation
+					animateIn="animate__slideInLeft"
+					style={fillerStyles}
+				>
+					<span className="text-xs sm:text-sm text-white mr-5 font-medium">
+						{props.rating}0%
+					</span>
+				</ScrollAnimation>
 			</ProgressBarContainer>
 		</Box>
 	);

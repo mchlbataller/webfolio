@@ -1,7 +1,7 @@
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import React from "react";
-import styled from "styled-components";
 import { ThemeContext } from "ThemeProvider";
+import styled from "styled-components";
 
 const NavbarBox = styled.div.attrs({
 	className: "w-full bg-white flex items-center justify-center",
@@ -43,7 +43,7 @@ const Navbar = (props) => {
 			<NavbarBox background={theme.navBackground}>
 				<NavbarButton onClick={props.about}>About</NavbarButton>
 				<NavbarButton onClick={props.skills}>Skills</NavbarButton>
-				<Logo onClick={props.top} />
+				<Logo onClick={props.top} style={{ cursor: "pointer" }} />
 				<NavbarButton onClick={props.app}>Apps</NavbarButton>
 				<NavbarButton onClick={props.contact}>Contact</NavbarButton>
 			</NavbarBox>

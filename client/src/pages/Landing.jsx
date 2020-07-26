@@ -2,7 +2,6 @@ import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
 import { Particles } from "../components";
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import michael from "../assets/Michael.png";
 import styled from "styled-components";
 
@@ -11,7 +10,7 @@ const Heading = styled.section.attrs({
 		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16 xl:px-64",
 })`
 	width: 100%;
-	height: 581px;
+	min-height: 621px;
 	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
@@ -19,7 +18,7 @@ const Heading = styled.section.attrs({
 
 const SubHeader = styled.section.attrs({
 	className:
-		"text-lg lg:text-xl mt-8 mb-24 pl-8 animate__animated animate__fadeInUp",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
 })`
 	* {
 		font-family: Open Sans !important;
@@ -41,8 +40,8 @@ const Landing = (props) => {
 					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3"
 				/>
 
-				<div className="flex-col flex-grow md:pt-24">
-					<p className="mt-8 pl-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
+				<div className="flex-col flex-grow md:pt-24 pl-8">
+					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
 						Hi,
 						<br />I am{" "}
 						<span className="text-blue-300">
@@ -54,6 +53,8 @@ const Landing = (props) => {
 						<p>I am a hard-working</p>
 						<p>website designer/developer</p>
 					</SubHeader>
+
+					<Contact />
 				</div>
 			</Heading>
 
@@ -67,9 +68,7 @@ const Landing = (props) => {
 				<div ref={props.appRef} className="py-10">
 					<Apps />
 				</div>
-				<div ref={props.contactRef} className="pb-10 w-full">
-					<Contact />
-				</div>
+				<div ref={props.contactRef} className="pb-10 w-full"></div>
 			</div>
 		</div>
 	);

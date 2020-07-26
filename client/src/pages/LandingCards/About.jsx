@@ -11,8 +11,8 @@ const AboutContent = styled.div`
 		margin-bottom: 8px;
 	}
 	@media (min-width: 1024px) {
-		width: 70%;
-		min-width: 400px;
+		width: 75%;
+		min-width: 350px;
 		p {
 			padding-left: 20px;
 		}
@@ -22,13 +22,12 @@ const AboutContent = styled.div`
 const AboutHeading = styled.h1`
 	font-family: Open Sans;
 	@media (min-width: 1024px) {
-		padding-left: 20px;
+		margin-left: 20px;
 		font-size: 24px;
 		line-height: 33px;
 	}
 	font-style: normal;
 	font-weight: bold;
-	font-size: 22px;
 	color: #0094ff;
 `;
 
@@ -44,16 +43,20 @@ export const About = (props) => {
 				headerIcon={<User />}
 			>
 				<AboutContent>
-					<AboutHeading color={theme.aboutHeader}>
+					<AboutHeading
+						color={theme.aboutHeader}
+						className="text-xl leading-snug md:leading-normal"
+					>
 						I'm a Website Designer/Developer.
 					</AboutHeading>
-					<p className="text-base mt-3">
+					<p className="text-sm md:text-base mt-3">
 						A student acquiring a bachelor’s degree in Computer
 						Engineering, currently on its 3rd year.
 					</p>
-					<p>
-						My passion is developing websites and web apps, and it
-						made me efficient in making these.
+					<p className="text-sm md:text-base">
+						Having 2 years of experience in the programming and
+						designing field, I have made myself efficient in the
+						development of these apps.
 					</p>
 				</AboutContent>
 			</Card>

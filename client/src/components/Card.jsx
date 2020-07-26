@@ -63,7 +63,7 @@ export const Card = (props) => {
 		>
 			<CardHeaderContainer
 				background={theme.card.header}
-				className="align-text-bottom flex lg:flex-col pt-10 pl-8 w-full"
+				className="align-text-bottom flex lg:flex-col pt-10 pl-5 sm:pl-8 w-full"
 			>
 				{props.headerIcon}
 				<p
@@ -73,7 +73,10 @@ export const Card = (props) => {
 					{props.title}
 				</p>
 			</CardHeaderContainer>
-			<CardContent className="px-10 py-10" color={theme.card.content}>
+			<CardContent
+				className="px-5 sm:px-10 py-10"
+				color={theme.card.content}
+			>
 				{props.children}
 			</CardContent>
 		</CardContainer>

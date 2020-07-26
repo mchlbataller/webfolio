@@ -3,6 +3,19 @@ import { assessment, portal, projectDapo } from "assets/images";
 import { Apps as AppsIcon } from "assets/icons";
 import { Card } from "components";
 import React from "react";
+import styled from "styled-components";
+
+const Caption = styled.p.attrs({
+	className: "text-xs sm:text-sm font-regular text-gray-400",
+})``;
+
+const Title = styled.h1.attrs({
+	className: "sm:text-xl font-medium",
+})``;
+
+const Link = styled.p.attrs({
+	className: "text-blue-400 text-xs cursor-pointer",
+})``;
 
 export const Apps = (props) => {
 	return (
@@ -12,10 +25,11 @@ export const Apps = (props) => {
 				<div>
 					<div className="grid grid-cols-2 gap-2">
 						<div className="leading-tight">
-							<p>In the works:</p>
-							<p className="text-xl font-light">Web Portal App</p>
-							<p
-								className="text-blue-600 text-xs cursor-pointer"
+							<p className="text-xs md:text-base text-gray-400">
+								In the works:
+							</p>
+							<Title> Web Portal App</Title>
+							<Link
 								onClick={(e) =>
 									window.open(
 										"https://portal.lynx-web.systems"
@@ -23,9 +37,9 @@ export const Apps = (props) => {
 								}
 							>
 								portal.lynx-web.systems
-							</p>
+							</Link>
 							<br />
-							<p className="text-sm font-regular">
+							<Caption>
 								A web app that displays all of your subscribed
 								apps.
 								<br />
@@ -33,7 +47,7 @@ export const Apps = (props) => {
 								People won’t have to remember the web apps by
 								mind and type ‘facebook.com’ or ‘youtube.com’ in
 								the browser again.
-							</p>
+							</Caption>
 						</div>
 						<div>
 							<img src={portal} alt="portal" width="100%" />
@@ -48,17 +62,17 @@ export const Apps = (props) => {
 						alt="assessment"
 						className="w-3/4 mx-auto"
 					/>
-					<p className="text-xl font-light mt-3">
+					<Title className="mt-3">
 						Xavier School Nuvali <br /> Assessment App
-					</p>
-					<p className="text-xs">
+					</Title>
+					<p className="text-xs text-gray-600">
 						App is currently not available for viewing
 					</p>
-					<p className="text-sm mt-2 w-5/6 mx-auto font-regular">
+					<Caption className="mt-2 w-5/6 mx-auto">
 						An app that enables the enrollees to select School
 						Supplies, Books, and Tuition Fees then the app gives a
 						printable PDF for later assessment.
-					</p>
+					</Caption>
 				</div>
 
 				{/* Project DAPO App */}
@@ -68,23 +82,18 @@ export const Apps = (props) => {
 							<img src={projectDapo} alt="projectDapo" />
 						</div>
 						<div>
-							<br />
-							<br />
-							<p className="text-xl font-light mt-3">
-								Project DAPO App
-							</p>
-							<p
-								className="text-blue-600 text-xs cursor-pointer"
+							<Title>Project DAPO App</Title>
+							<Link
 								onClick={(e) =>
 									window.open("https://dapo.bnshosting.net")
 								}
 							>
 								dapo.bnshosting.net
-							</p>
-							<p className="text-sm mt-2 mx-auto font-regular">
+							</Link>
+							<Caption className="mt-2 mx-auto">
 								A web system that displays the project’s
 								homepage and tracks the collected data.
-							</p>
+							</Caption>
 						</div>
 					</div>
 				</div>

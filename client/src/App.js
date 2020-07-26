@@ -1,6 +1,5 @@
 import "./assets/fonts.css";
 
-import ErrorWidth from "./pages/ErrorWidth";
 import Landing from "./pages/Landing";
 import { Navbar } from "./components";
 import React from "react";
@@ -17,13 +16,11 @@ const Body = styled.div`
 `;
 
 // Scroll to element function
-const scrollToRef = (ref) => (
-	window.scrollTo(0, ref.current.offsetTop - 50),
-	console.log(ref.current.offsetTop)
-);
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
 
 function App() {
 	const theme = React.useContext(ThemeContext);
+	/* Refs for Scrolling START */
 	const appsRef = React.useRef(null);
 	const skillsRef = React.useRef(null);
 	const contactRef = React.useRef(null);
@@ -32,8 +29,9 @@ function App() {
 	const executeScrollSkills = () => scrollToRef(skillsRef);
 	const executeScrollContact = () => scrollToRef(contactRef);
 	const executeScrollAbout = () => scrollToRef(aboutRef);
+	/* Refs for Scrolling END */
 	return (
-		<div>
+		<main>
 			<Navbar
 				app={executeScrollApps}
 				contact={executeScrollContact}
@@ -49,7 +47,7 @@ function App() {
 					aboutRef={aboutRef}
 				/>
 			</Body>
-		</div>
+		</main>
 	);
 }
 
