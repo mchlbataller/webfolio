@@ -20,7 +20,8 @@
     "react-tsparticles": "^1.17.0",
     "react-typist": "^2.0.5",
     "styled-components": "^5.1.1",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "zustand": "^3.0.2"
   },
   "scripts": {
     "start": "yarn build:css && react-scripts start",
