@@ -1,7 +1,6 @@
 import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
-import LazyLoad from "react-lazyload";
 import { Particles } from "components";
 import React from "react";
 import styled from "styled-components";

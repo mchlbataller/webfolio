@@ -25,10 +25,20 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+const ServiceWorkerInstallListener = (props) => {
+	const [cached, setCachedState] = React.useState(false);
+
+	serviceWorker.register({
+		onSuccess: () => setCachedState(true),
+	});
+
+	return <App availableOffline={cached} />;
+};
+
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider>
-			<App />
+			<ServiceWorkerInstallListener />
 		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
@@ -37,4 +47,3 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
