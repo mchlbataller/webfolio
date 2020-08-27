@@ -55,7 +55,7 @@ export const About = (props) => {
 					<br />
 					{data &&
 						data.about_text.map((text) => (
-							<p className="text-sm md:text-base">{text}</p>
+							<p className="text-sm">{text}</p>
 						))}
 				</AboutContent>
 			</Card>
