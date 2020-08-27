@@ -52,6 +52,7 @@ function App(props) {
 				.then((res) => setUserData(res.data()));
 		};
 		fetchData();
+		// eslint-disable-next-line
 	}, []);
 
 	return (
