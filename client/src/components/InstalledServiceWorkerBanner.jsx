@@ -23,8 +23,9 @@ export const InstalledServiceWorkerBanner = (props) => {
 			autoHideDuration={10000}
 			onClose={handleClose}
 			anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+			style={{ marginBottom: "60px" }}
 		>
-			<Alert onClose={handleClose} severity="info">
+			<Alert onClose={handleClose} severity="success">
 				You may now use this app offline! Try to disconnect from the
 				internet then see the magic.
 			</Alert>
