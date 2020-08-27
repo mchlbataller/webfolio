@@ -27,7 +27,7 @@ export const CookieBanner = (props) => {
 	return (
 		<Snackbar
 			open={open}
-			autoHideDuration={5000}
+			autoHideDuration={15000}
 			onClose={handleClose}
 			anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
 		>

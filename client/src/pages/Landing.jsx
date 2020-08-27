@@ -1,9 +1,10 @@
 import { About, Apps, Contact, Skills } from "pages/LandingCards";
 
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { Particles } from "components";
 import React from "react";
-import michael from "assets/Michael.png";
 import styled from "styled-components";
+import { useDataStore } from "state/data";
 
 const Heading = styled.section.attrs({
 	className:
@@ -18,7 +19,7 @@ const Heading = styled.section.attrs({
 
 const SubHeader = styled.section.attrs({
 	className:
-		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInLeft",
 })`
 	* {
 		font-family: Open Sans !important;
@@ -30,19 +31,39 @@ const SubHeader = styled.section.attrs({
 `;
 
 const Landing = (props) => {
+	const data = useDataStore((state) => state.userData);
+	const [imageIsLoaded, setImageLoadState] = React.useState(false);
 	return (
 		<div className="block">
 			<Heading>
 				<Particles />
-				<img
-					src={michael}
-					alt="Michael"
-					className="mx-auto pt-16 md:pt-0 z-0 relative w-64 flex-shrink-0 flex md:w-1/2 lg:w-1/3 pointer-events-none"
-				/>
+				<div
+					className="
+						border-white rounded-full border-4
+						w-64 md:w-1/2 lg:w-1/3 pointer-events-none
+						overflow-hidden
+						mx-auto mt-16 md:pt-0 z-0 
+						relative flex-shrink-0 flex 
+						bg-gray-200
+						"
+				>
+					{!imageIsLoaded && (
+						<div className="my-20 mx-auto">
+							<CircularProgress />
+						</div>
+					)}
+					<img
+						src={data && data.header_profileURL}
+						alt="Michael"
+						className="object-contain"
+						style={{ display: imageIsLoaded ? "block" : "none" }}
+						onLoad={() => setImageLoadState(true)}
+					/>
+				</div>
 
 				<div className="flex-col flex-grow md:pt-24 pl-8">
-					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
-						Hi,
+					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
+						{data && data.header_greeting}
 						<br />I am{" "}
 						<span className="text-blue-300">
 							Michael C. Bataller
@@ -50,8 +71,11 @@ const Landing = (props) => {
 					</p>
 
 					<SubHeader>
-						<p>I am a hard-working</p>
-						<p>website designer/developer</p>
+						{data &&
+							data.header_description &&
+							data.header_description.map((text) => (
+								<p>{text}</p>
+							))}
 					</SubHeader>
 
 					<Contact />

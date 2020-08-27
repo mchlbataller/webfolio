@@ -13,6 +13,7 @@ const NavbarBox = styled.div.attrs({
 	z-index: 20;
 	background: ${(props) => props.background};
 	position: fixed;
+	transition: 0.5s;
 
 	* {
 		color: white;
@@ -37,10 +38,21 @@ const NavbarButton = styled.a`
 `;
 
 const Navbar = (props) => {
+	const [navigationColor, setNavigationColor] = React.useState("#192835");
+	React.useEffect(() => window.addEventListener("scroll", isOnTop), []);
 	const theme = React.useContext(ThemeContext);
+
+	const isOnTop = () => {
+		if (window.scrollY === 0) {
+			setNavigationColor("#192835");
+		} else {
+			setNavigationColor(null);
+		}
+	};
+
 	return (
 		<>
-			<NavbarBox background={theme.navBackground}>
+			<NavbarBox background={navigationColor || theme.navBackground}>
 				<NavbarButton onClick={props.about}>About</NavbarButton>
 				<NavbarButton onClick={props.skills}>Skills</NavbarButton>
 				<Logo onClick={props.top} style={{ cursor: "pointer" }} />

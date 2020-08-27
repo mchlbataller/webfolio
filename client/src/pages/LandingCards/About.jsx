@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import { User } from "assets/icons";
 import styled from "styled-components";
+import { useDataStore } from "state/data";
 
 const AboutContent = styled.div`
 	p {
@@ -34,6 +35,8 @@ const AboutHeading = styled.h1`
 export const About = (props) => {
 	const theme = React.useContext(ThemeContext);
 
+	const data = useDataStore((state) => state.userData);
+
 	return (
 		<>
 			<Card
@@ -47,17 +50,13 @@ export const About = (props) => {
 						color={theme.aboutHeader}
 						className="text-xl leading-snug md:leading-normal"
 					>
-						I'm a Website Designer/Developer.
+						{data && data.about_header}
 					</AboutHeading>
-					<p className="text-sm md:text-base mt-3">
-						A student acquiring a bachelor’s degree in Computer
-						Engineering, currently on its 3rd year.
-					</p>
-					<p className="text-sm md:text-base">
-						Having 2 years of experience in the programming and
-						designing field, I have made myself efficient in the
-						development of these apps.
-					</p>
+					<br />
+					{data &&
+						data.about_text.map((text) => (
+							<p className="text-sm">{text}</p>
+						))}
 				</AboutContent>
 			</Card>
 		</>

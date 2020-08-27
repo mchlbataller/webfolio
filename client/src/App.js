@@ -1,11 +1,19 @@
 import "assets/fonts.css";
+import "firebase/firestore";
 
-import { CookieBanner, Footer, Navbar } from "components";
+import {
+	CookieBanner,
+	Footer,
+	InstalledServiceWorkerBanner,
+	Navbar,
+} from "components";
 
 import Landing from "pages/Landing";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
+import firebase from "firebase";
 import styled from "styled-components";
+import { useDataStore } from "state/data";
 
 const Body = styled.div`
 	background: ${(props) => props.background};
@@ -19,7 +27,7 @@ const Body = styled.div`
 // Scroll to element function
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
 
-function App() {
+function App(props) {
 	const theme = React.useContext(ThemeContext);
 	/* Refs for Scrolling START */
 	const appsRef = React.useRef(null);
@@ -31,6 +39,22 @@ function App() {
 	const executeScrollContact = () => scrollToRef(contactRef);
 	const executeScrollAbout = () => scrollToRef(aboutRef);
 	/* Refs for Scrolling END */
+
+	const setUserData = useDataStore((state) => state.setUserData);
+
+	React.useEffect(() => {
+		const fetchData = async () => {
+			await firebase
+				.firestore()
+				.collection("data")
+				.doc("info")
+				.get()
+				.then((res) => setUserData(res.data()));
+		};
+		fetchData();
+		// eslint-disable-next-line
+	}, []);
+
 	return (
 		<main>
 			<Navbar
@@ -48,6 +72,7 @@ function App() {
 					aboutRef={aboutRef}
 				/>
 				<CookieBanner />
+				{props.availableOffline && <InstalledServiceWorkerBanner />}
 			</Body>
 			<Footer />
 		</main>

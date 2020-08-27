@@ -2,6 +2,7 @@ import { assessment, portal, projectDapo } from "assets/images";
 
 import { Apps as AppsIcon } from "assets/icons";
 import { Card } from "components";
+import LazyLoad from "react-lazyload";
 import React from "react";
 import styled from "styled-components";
 
@@ -46,18 +47,22 @@ export const Apps = (props) => {
 						</Caption>
 					</div>
 					<div>
-						<img src={portal} alt="portal" width="100%" />
+						<LazyLoad>
+							<img src={portal} alt="portal" width="100%" />
+						</LazyLoad>
 					</div>
 				</div>
 			</div>
 
 			{/* Assessment App */}
 			<div className="leading-tight text-center mt-16">
-				<img
-					src={assessment}
-					alt="assessment"
-					className="w-3/4 mx-auto"
-				/>
+				<LazyLoad>
+					<img
+						src={assessment}
+						alt="assessment"
+						className="w-3/4 mx-auto"
+					/>
+				</LazyLoad>
 				<Title className="mt-3">
 					Xavier School Nuvali <br /> Assessment App
 				</Title>
@@ -75,7 +80,9 @@ export const Apps = (props) => {
 			<div className="leading-tight mt-16">
 				<div className="grid grid-cols-2 gap-2">
 					<div>
-						<img src={projectDapo} alt="projectDapo" />
+						<LazyLoad>
+							<img src={projectDapo} alt="projectDapo" />
+						</LazyLoad>
 					</div>
 					<div>
 						<Title>Project DAPO App</Title>

@@ -10,13 +10,18 @@ const ProgressBarContainer = styled.div.attrs({
 })`
 	height: 22px;
 
-	background: ${(props) => props.background};
-	border: 0px solid #e3e3e3;
-	box-sizing: border-box;
-	border-radius: 6px;
+	background-color: ${(props) => props.background};
 	@media (min-width: 1024px) {
 		width: 200%;
 	}
+	border-radius: 5px;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	outline: none;
+	border: none;
+	text-decoration: none;
+
 	overflow: hidden;
 `;
 
@@ -24,7 +29,6 @@ const Box = styled.div`
 	p {
 		font-family: "Open Sans", sans-serif;
 	}
-
 	margin-bottom: 16px;
 	@media (min-width: 1024px) {
 		padding-left: 20px;
@@ -38,12 +42,13 @@ const ProgressBar = (props) => {
 		height: "100%",
 		width: `${props.rating * 10}%`,
 		backgroundColor: theme.progressBar.foreground,
-		borderRadius: "inherit",
+		borderRadius: "2px",
 		textAlign: "right",
 	};
 
 	return (
 		<Box className="lg:w-1/3">
+			{console.log(window.scrollY)}
 			<p className="text-center text-sm sm:text-base lg:text-left mb-1 whitespace-no-wrap">
 				{props.label}
 			</p>
