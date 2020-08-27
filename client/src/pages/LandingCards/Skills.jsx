@@ -12,7 +12,7 @@ const SoftSkills = [
 ];
 
 const HardSkills = [
-	{ label: "JavaScript", rating: 7 },
+	{ label: "JavaScript", rating: 8 },
 	{ label: "React", rating: 8 },
 	{ label: "PHP", rating: 8 },
 	{ label: "Adobe Photoshop CC", rating: 9 },

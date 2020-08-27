@@ -18,7 +18,7 @@ const Heading = styled.section.attrs({
 
 const SubHeader = styled.section.attrs({
 	className:
-		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInLeft",
 })`
 	* {
 		font-family: Open Sans !important;
@@ -41,7 +41,7 @@ const Landing = (props) => {
 				/>
 
 				<div className="flex-col flex-grow md:pt-24 pl-8">
-					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInUp">
+					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
 						Hi,
 						<br />I am{" "}
 						<span className="text-blue-300">
