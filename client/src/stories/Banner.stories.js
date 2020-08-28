@@ -12,7 +12,7 @@ export const InfoBanner = Template.bind({});
 InfoBanner.args = {
 	type: "info",
 	forFirstVisitsOnly: true,
-	label: `This site uses analytics. 
+	message: `This site uses analytics. 
     By using our site, you agree to the 
     collection of anonymous data to 
     analyze web traffic and optimize 
@@ -23,6 +23,6 @@ export const SuccessBanner = Template.bind({});
 SuccessBanner.args = {
 	type: "success",
 	style: { marginBottom: "60px" },
-	label: `You may now use this app offline! 
+	message: `You may now use this app offline! 
         Try to disconnect from the internet then see the magic.`,
 };

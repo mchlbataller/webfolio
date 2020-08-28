@@ -1,12 +1,7 @@
 import "assets/fonts.css";
 import "firebase/firestore";
 
-import {
-	CookieBanner,
-	Footer,
-	InstalledServiceWorkerBanner,
-	Navbar,
-} from "components";
+import { Banner, Footer, Navbar } from "components";
 
 import Landing from "pages/Landing";
 import React from "react";
@@ -71,8 +66,25 @@ function App(props) {
 					contactRef={contactRef}
 					aboutRef={aboutRef}
 				/>
-				<CookieBanner />
-				{props.availableOffline && <InstalledServiceWorkerBanner />}
+				<Banner
+					autoHideDuration={15000}
+					forFirstVisitsOnly
+					message="This site uses analytics. 
+					By using our site, you agree to the 
+					collection of anonymous data to 
+					analyze web traffic and optimize 
+					your experience. "
+					type="info"
+				/>
+				{props.availableOffline && (
+					<Banner
+						autoHideDuration={10000}
+						message="You may now use this app offline! 
+        Try to disconnect from the internet then see the magic."
+						style={{ marginBottom: "60px" }}
+						type="success"
+					/>
+				)}
 			</Body>
 			<Footer />
 		</main>
