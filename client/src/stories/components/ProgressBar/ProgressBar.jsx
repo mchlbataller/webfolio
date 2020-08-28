@@ -1,5 +1,6 @@
 import "index.css";
 
+import PropTypes from "prop-types";
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import styled from "styled-components";
@@ -36,11 +37,16 @@ const Box = styled.div`
 	}
 `;
 
+/**
+ * UI Component for displaying skill progress.
+ * Animated via animate.css, animations will trigger on scroll.
+ */
 export const ProgressBar = ({
 	rating,
 	label,
 	backgroundColor,
 	foregroundColor,
+	isStorybook,
 }) => {
 	const fillerStyles = {
 		height: "100%",
@@ -48,7 +54,7 @@ export const ProgressBar = ({
 		backgroundColor: foregroundColor,
 		borderRadius: "2px",
 		textAlign: "right",
-		opacity: 1,
+		opacity: isStorybook ? 1 : 0,
 	};
 
 	return (
@@ -70,8 +76,32 @@ export const ProgressBar = ({
 	);
 };
 
+ProgressBar.propTypes = {
+	/**
+	 * Progress Bar Label
+	 */
+	label: PropTypes.string.isRequired,
+	/**
+	 * Percentage of the progress bar (1-10).
+	 * 10 is the highest, 1 is the lowest.
+	 */
+	rating: PropTypes.number.isRequired,
+	/**
+	 * Color of the progress bar
+	 */
+	foregroundColor: PropTypes.string,
+	/**
+	 * Color of the progress bar container
+	 */
+	backgroundColor: PropTypes.string,
+	/**
+	 * Enables storybook-specific configuration (opacity, in this case.)
+	 */
+	isStorybook: PropTypes.bool,
+};
+
 ProgressBar.defaultProps = {
 	backgroundColor: "#efefef",
 	foregroundColor: "#23629A",
-	label: "Change me",
+	isStorybook: "false",
 };

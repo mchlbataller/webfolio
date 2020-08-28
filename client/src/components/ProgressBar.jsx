@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
-import { ThemeContext } from "ThemeProvider";
 import styled from "styled-components";
 
 // Holds the centered rating text and
@@ -35,30 +35,38 @@ const Box = styled.div`
 	}
 `;
 
-const ProgressBar = (props) => {
-	const theme = React.useContext(ThemeContext);
-
+/**
+ * UI Component for displaying skill progress.
+ * Animated via animate.css, animations will trigger on scroll.
+ */
+export const ProgressBar = ({
+	rating,
+	label,
+	backgroundColor,
+	foregroundColor,
+	isStorybook,
+}) => {
 	const fillerStyles = {
 		height: "100%",
-		width: `${props.rating * 10}%`,
-		backgroundColor: theme.progressBar.foreground,
+		width: `${rating * 10}%`,
+		backgroundColor: foregroundColor,
 		borderRadius: "2px",
 		textAlign: "right",
+		opacity: isStorybook ? 1 : 0,
 	};
 
 	return (
 		<Box className="lg:w-1/3">
-			{console.log(window.scrollY)}
 			<p className="text-center text-sm sm:text-base lg:text-left mb-1 whitespace-no-wrap">
-				{props.label}
+				{label}
 			</p>
-			<ProgressBarContainer background={theme.progressBar.background}>
+			<ProgressBarContainer background={backgroundColor}>
 				<ScrollAnimation
 					animateIn="animate__slideInLeft"
 					style={fillerStyles}
 				>
 					<span className="text-xs sm:text-sm text-white mr-5 font-medium font-regular">
-						{props.rating}0%
+						{rating}0%
 					</span>
 				</ScrollAnimation>
 			</ProgressBarContainer>
@@ -66,4 +74,32 @@ const ProgressBar = (props) => {
 	);
 };
 
-export default ProgressBar;
+ProgressBar.propTypes = {
+	/**
+	 * Progress Bar Label
+	 */
+	label: PropTypes.string.isRequired,
+	/**
+	 * Percentage of the progress bar (1-10).
+	 * 10 is the highest, 1 is the lowest.
+	 */
+	rating: PropTypes.number.isRequired,
+	/**
+	 * Color of the progress bar
+	 */
+	foregroundColor: PropTypes.string,
+	/**
+	 * Color of the progress bar container
+	 */
+	backgroundColor: PropTypes.string,
+	/**
+	 * Enables storybook-specific configuration (opacity, in this case.)
+	 */
+	isStorybook: PropTypes.bool,
+};
+
+ProgressBar.defaultProps = {
+	backgroundColor: "#efefef",
+	foregroundColor: "#23629A",
+	isStorybook: "false",
+};
