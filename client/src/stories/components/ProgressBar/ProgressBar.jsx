@@ -1,6 +1,7 @@
+import "index.css";
+
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
-import { ThemeContext } from "ThemeProvider";
 import styled from "styled-components";
 
 // Holds the centered rating text and
@@ -35,24 +36,27 @@ const Box = styled.div`
 	}
 `;
 
-export const ProgressBar = (rating, label) => {
-	const theme = React.useContext(ThemeContext);
-
+export const ProgressBar = ({
+	rating,
+	label,
+	backgroundColor,
+	foregroundColor,
+}) => {
 	const fillerStyles = {
 		height: "100%",
 		width: `${rating * 10}%`,
-		backgroundColor: theme.progressBar.foreground,
+		backgroundColor: foregroundColor,
 		borderRadius: "2px",
 		textAlign: "right",
+		opacity: 1,
 	};
 
 	return (
 		<Box className="lg:w-1/3">
-			{console.log(window.scrollY)}
 			<p className="text-center text-sm sm:text-base lg:text-left mb-1 whitespace-no-wrap">
 				{label}
 			</p>
-			<ProgressBarContainer background={theme.progressBar.background}>
+			<ProgressBarContainer background={backgroundColor}>
 				<ScrollAnimation
 					animateIn="animate__slideInLeft"
 					style={fillerStyles}
@@ -64,4 +68,10 @@ export const ProgressBar = (rating, label) => {
 			</ProgressBarContainer>
 		</Box>
 	);
+};
+
+ProgressBar.defaultProps = {
+	backgroundColor: "#efefef",
+	foregroundColor: "#23629A",
+	label: "Change me",
 };
