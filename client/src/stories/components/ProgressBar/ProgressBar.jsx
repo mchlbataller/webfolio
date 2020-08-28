@@ -1,3 +1,5 @@
+import "index.css";
+
 import PropTypes from "prop-types";
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
