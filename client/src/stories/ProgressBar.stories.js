@@ -12,10 +12,8 @@ export default {
 
 const Template = (args) => <ProgressBar {...args} />;
 
-export const DarkProgressBar = Template.bind({});
-DarkProgressBar.args = {
+export const Dark = Template.bind({});
+Dark.args = {
 	label: "JavaScript",
 	rating: 7,
-	foregroundColor: "#23629A",
-	backgroundColor: "#efefef",
 };
