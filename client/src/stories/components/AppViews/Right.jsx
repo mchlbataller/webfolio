@@ -46,11 +46,11 @@ Right.propTypes = {
 	/**
 	 * URL of image to display
 	 */
-	imgSrc: PropTypes.string,
+	imgSrc: PropTypes.string.isRequired,
 	/**
 	 * Title of the app
 	 */
-	appTitle: PropTypes.string,
+	appTitle: PropTypes.string.isRequired,
 	/**
 	 * Link to app
 	 */
@@ -58,7 +58,7 @@ Right.propTypes = {
 	/**
 	 * Description of the app
 	 */
-	appDescription: PropTypes.string,
+	appDescription: PropTypes.string.isRequired,
 };
 
 Right.defaultProps = {

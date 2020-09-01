@@ -6,13 +6,10 @@ import { Caption, Link, Title } from "./styles";
 import LazyLoad from "react-lazyload";
 import PropTypes from "prop-types";
 import React from "react";
-import { assessment } from "assets/images";
-import { portal } from "assets/images";
 
 /**
- * Test
+ * Centered view of apps
  */
-
 export const Center = ({
 	titleTextColor,
 	imgSrc,
@@ -48,11 +45,11 @@ Center.propTypes = {
 	/**
 	 * URL of image to display
 	 */
-	imgSrc: PropTypes.string,
+	imgSrc: PropTypes.string.isRequired,
 	/**
 	 * Title of the app
 	 */
-	appTitle: PropTypes.string,
+	appTitle: PropTypes.string.isRequired,
 	/**
 	 * Link to app
 	 */
@@ -60,7 +57,7 @@ Center.propTypes = {
 	/**
 	 * Description of the app
 	 */
-	appDescription: PropTypes.string,
+	appDescription: PropTypes.string.isRequired,
 };
 
 Center.defaultProps = {

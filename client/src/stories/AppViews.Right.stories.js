@@ -1,15 +1,15 @@
-import { Center } from "./components/AppViews/Center";
 import React from "react";
+import { Right } from "./components/AppViews/Right";
 
 export default {
-	title: "Portfolio/AppViews/Center",
-	component: Center,
+	title: "Portfolio/AppViews/Right",
+	component: Right,
 	argTypes: {
 		titleTextColor: { control: "color" },
 	},
 };
 
-const Template = (args) => <Center {...args} />;
+const Template = (args) => <Right {...args} />;
 
 export const Default = Template.bind({});
 const url =
