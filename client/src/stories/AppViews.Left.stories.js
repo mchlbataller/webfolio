@@ -1,4 +1,4 @@
-import { Left } from "./components/Apps/Left";
+import { Left } from "./components/AppViews/Left";
 import React from "react";
 
 export default {

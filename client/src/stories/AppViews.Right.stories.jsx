@@ -1,5 +1,5 @@
 import React from "react";
-import { Right } from "./components/Apps/Right";
+import { Right } from "./components/AppViews/Right";
 
 export default {
 	title: "Portfolio/AppViews/Right",
