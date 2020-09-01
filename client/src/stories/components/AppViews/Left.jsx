@@ -42,7 +42,11 @@ export const Left = ({
 			</div>
 			<div>
 				<LazyLoad>
-					<img src={imgSrc} alt="portal" width="100%" />
+					<img
+						src={imgSrc}
+						alt="url"
+						className="w-full mx-auto border rounded-lg shadow-lg"
+					/>
 				</LazyLoad>
 			</div>
 		</div>

@@ -19,7 +19,11 @@ export const Right = ({
 		<div className="grid grid-cols-2 gap-2">
 			<div>
 				<LazyLoad>
-					<img src={imgSrc} alt="projectDapo" />
+					<img
+						src={imgSrc}
+						alt="url"
+						className="w-full mx-auto border rounded-lg shadow-lg"
+					/>
 				</LazyLoad>
 			</div>
 			<div>

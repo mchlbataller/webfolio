@@ -19,7 +19,11 @@ export const Center = ({
 }) => (
 	<div className="leading-tight text-center mt-16">
 		<LazyLoad>
-			<img src={imgSrc} alt="url" className="w-3/4 mx-auto" />
+			<img
+				src={imgSrc}
+				alt="url"
+				className="w-3/4 mx-auto border rounded-lg shadow-lg"
+			/>
 		</LazyLoad>
 		<Title className="mt-3" style={{ color: titleTextColor }}>
 			{appTitle}
