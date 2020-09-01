@@ -2,7 +2,7 @@ import { ProgressBar } from "./components/ProgressBar";
 import React from "react";
 
 export default {
-	title: "Components/ProgressBar",
+	title: "Portfolio/ProgressBar",
 	component: ProgressBar,
 	argTypes: {
 		backgroundColor: { control: "color" },

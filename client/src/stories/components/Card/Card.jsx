@@ -1,5 +1,6 @@
 import "index.css";
 
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -51,35 +52,67 @@ const CardContent = styled.section`
 	}
 `;
 
-export const Card = (props) => {
+export const Card = ({
+	mdWidth,
+	backgroundColor,
+	className,
+	headerBackgroundColor,
+	headerIcon,
+	headerTitleColor,
+	title,
+	contentColor,
+	children,
+}) => {
 	return (
 		<CardContainer
-			mdWidth={props.mdWidth}
-			background={props.backgroundColor}
-			className={
-				"mx-auto lg:flex lg:flex-row lg:relative " + props.className
-			}
+			mdWidth={mdWidth}
+			background={backgroundColor}
+			className={"mx-auto lg:flex lg:flex-row lg:relative " + className}
 		>
 			<CardHeaderContainer
-				background={props.headerBackgroundColor}
+				background={headerBackgroundColor}
 				className="align-text-bottom flex lg:flex-col pt-10 pl-5 sm:pl-8 w-full"
 			>
-				{props.headerIcon}
+				{headerIcon}
 				<p
 					className="text-xl lg:text-2xl font-bold ml-4 lg:ml-0 mb-1"
-					style={{ color: props.headerTitleColor }}
+					style={{ color: headerTitleColor }}
 				>
-					{props.title}
+					{title}
 				</p>
 			</CardHeaderContainer>
-			<CardContent
-				className="px-5 sm:px-10 py-10"
-				color={props.contentColor}
-			>
-				{props.children}
+			<CardContent className="px-5 sm:px-10 py-10" color={contentColor}>
+				{children}
 			</CardContent>
 		</CardContainer>
 	);
+};
+
+Card.propTypes = {
+	/**
+	 * Width when the viewport is on Laptop
+	 */
+	mdWidth: PropTypes.string,
+	/**
+	 * Title of the Card
+	 */
+	title: PropTypes.string,
+	/**
+	 * Card contents
+	 */
+	children: PropTypes.element,
+	/**
+	 * Icon of the header
+	 */
+	headerIcon: PropTypes.element,
+	headerBackgroundColor: PropTypes.string,
+	backgroundColor: PropTypes.string,
+	headerTitleColor: PropTypes.string,
+	contentColor: PropTypes.string,
+	/**
+	 * Class Name for styling
+	 */
+	className: PropTypes.string,
 };
 
 // Dark theme
