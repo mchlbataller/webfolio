@@ -2,7 +2,6 @@ import MuiAlert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
 import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
-import visitCounter from "services/visitCounter";
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -26,11 +25,12 @@ export const Banner = ({
 			if (
 				localStorage.getItem("visits") !== "1" ||
 				process.env.NODE_ENV === "development"
-			)
+			) {
 				setTimeout(setOpen, 1000, true);
+			}
 		}
 
-		visitCounter();
+		localStorage.setItem("visits", 1);
 		// eslint-disable-next-line
 	}, []);
 
@@ -74,6 +74,10 @@ Banner.propTypes = {
 	 * Hides the banner after \_\_ milliseconds.
 	 */
 	autoHideDuration: PropTypes.number,
+	/**
+	 * Additional styles, such as margins and paddings.
+	 */
+	style: PropTypes.object,
 };
 
 Banner.defaultProps = {
