@@ -1,6 +1,3 @@
-import "index.css";
-import "./fonts.css";
-
 import { Caption, Link, Title } from "./styles";
 
 import LazyLoad from "react-lazyload";
@@ -25,7 +22,7 @@ export const Center = ({
 				className="w-3/4 mx-auto border rounded-lg shadow-lg"
 			/>
 		</LazyLoad>
-		<Title className="mt-3" style={{ color: titleTextColor }}>
+		<Title className="mt-5" style={{ color: titleTextColor }}>
 			{appTitle}
 		</Title>
 		{!linkToApp ? (

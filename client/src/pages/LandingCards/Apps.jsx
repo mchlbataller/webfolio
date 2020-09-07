@@ -1,3 +1,4 @@
+import { Center, Left, Right } from "components/AppViews";
 import { assessment, portal, projectDapo } from "assets/images";
 
 import { Apps as AppsIcon } from "assets/icons";
@@ -5,6 +6,7 @@ import { Card } from "components";
 import LazyLoad from "react-lazyload";
 import React from "react";
 import styled from "styled-components";
+import { useDataStore } from "state/data";
 
 const Caption = styled.p.attrs({
 	className: "text-xs sm:text-sm font-regular text-gray-400",
@@ -19,10 +21,37 @@ const Link = styled.p.attrs({
 })``;
 
 export const Apps = (props) => {
+	const userData = useDataStore((state) => state.userData);
+
 	return (
 		<Card height="1200px" title="My Apps" headerIcon={<AppsIcon />}>
 			{/* Web Portal App */}
 			<div>
+				{userData && userData.apps.map(app => (
+					app.view === "left" ?
+						<Left appTitle={app.appTitle} 
+							appDescription={app.appDescription}
+							imgSrc={app.imageUrl}
+							linkToApp={app.linkToApp}
+							inTheWorks={app.intheWorks}
+						/> : 
+					app.view === "center" ?
+						<Center appTitle={app.appTitle} 
+							appDescription={app.appDescription}
+							imgSrc={app.imageUrl}
+							linkToApp={app.linkToApp}
+							inTheWorks={app.intheWorks}
+						/> : 
+						<Right appTitle={app.appTitle} 
+							appDescription={app.appDescription}
+							imgSrc={app.imageUrl}
+							linkToApp={app.linkToApp}
+							inTheWorks={app.intheWorks}
+						/>
+				))}
+				{console.log(userData && userData.apps)}
+				<br />
+				<br />
 				<div className="grid grid-cols-2 gap-2">
 					<div className="leading-tight">
 						<p className="text-xs md:text-base text-gray-400">

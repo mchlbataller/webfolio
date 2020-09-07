@@ -1,6 +1,3 @@
-import "index.css";
-import "./fonts.css";
-
 import { Caption, Link, Title } from "./styles";
 
 import LazyLoad from "react-lazyload";
