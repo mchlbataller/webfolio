@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+    service_name:
+        build: .
+        ports:
+            - 3000:3000
+        volumes:
+            - ./:/app
+            - /app/node_modules
+        working_dir: /app
+        stdin_open: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        
