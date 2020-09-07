@@ -19,7 +19,7 @@ export const Right = ({
 					<img
 						src={imgSrc}
 						alt="url"
-						className="w-full mx-auto border rounded-lg shadow-lg"
+						className="w-full mx-auto border border-transparent rounded-lg shadow-lg"
 					/>
 				</LazyLoad>
 			</div>

@@ -25,8 +25,6 @@ export const Apps = (props) => {
 
 	return (
 		<Card height="1200px" title="My Apps" headerIcon={<AppsIcon />}>
-			{/* Web Portal App */}
-			<div>
 				{userData && userData.apps.map(app => (
 					app.view === "left" ?
 						<Left appTitle={app.appTitle} 
@@ -49,39 +47,6 @@ export const Apps = (props) => {
 							inTheWorks={app.intheWorks}
 						/>
 				))}
-				{console.log(userData && userData.apps)}
-				<br />
-				<br />
-				<div className="grid grid-cols-2 gap-2">
-					<div className="leading-tight">
-						<p className="text-xs md:text-base text-gray-400">
-							In the works:
-						</p>
-						<Title> Web Portal App</Title>
-						<Link
-							onClick={(e) =>
-								window.open("https://portal.lynx-web.systems")
-							}
-						>
-							portal.lynx-web.systems
-						</Link>
-						<br />
-						<Caption>
-							A web app that displays all of your subscribed apps.
-							<br />
-							<br />
-							People won’t have to remember the web apps by mind
-							and type ‘facebook.com’ or ‘youtube.com’ in the
-							browser again.
-						</Caption>
-					</div>
-					<div>
-						<LazyLoad>
-							<img src={portal} alt="portal" width="100%" />
-						</LazyLoad>
-					</div>
-				</div>
-			</div>
 
 			{/* Assessment App */}
 			<div className="leading-tight text-center mt-16">
@@ -103,31 +68,6 @@ export const Apps = (props) => {
 					Books, and Tuition Fees then the app gives a printable PDF
 					for later assessment.
 				</Caption>
-			</div>
-
-			{/* Project DAPO App */}
-			<div className="leading-tight mt-16">
-				<div className="grid grid-cols-2 gap-2">
-					<div>
-						<LazyLoad>
-							<img src={projectDapo} alt="projectDapo" />
-						</LazyLoad>
-					</div>
-					<div>
-						<Title>Project DAPO App</Title>
-						<Link
-							onClick={(e) =>
-								window.open("https://dapo.bnshosting.net")
-							}
-						>
-							dapo.bnshosting.net
-						</Link>
-						<Caption className="mt-2 mx-auto">
-							A web system that displays the project’s homepage
-							and tracks the collected data.
-						</Caption>
-					</div>
-				</div>
 			</div>
 		</Card>
 	);

@@ -14,7 +14,7 @@ export const Center = ({
 	linkToApp,
 	appDescription,
 }) => (
-	<div className="leading-tight text-center mt-16">
+	<div className="leading-tight text-center">
 		<LazyLoad>
 			<img
 				src={imgSrc}
