@@ -3,6 +3,7 @@ import { About, Apps, Contact, Skills } from "pages/LandingCards";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Particles } from "components";
 import React from "react";
+import Typist from "react-typist";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
@@ -71,11 +72,23 @@ const Landing = (props) => {
 					</p>
 
 					<SubHeader>
-						{data &&
-							data.header_description &&
-							data.header_description.map((text) => (
-								<p>{text}</p>
-							))}
+						{data && <p>{data.header_intro}</p>}
+
+						{data && (
+							<Typist cursor={{ show: false }}>
+								{data.header_description.map((text, key) => (
+									<div key={key}>
+										<span>{text}</span>
+										<Typist.Backspace
+											count={text.length}
+											delay={1500}
+										/>
+									</div>
+								))}
+
+								<span>{data.header_descriptionFinal}</span>
+							</Typist>
+						)}
 					</SubHeader>
 
 					<Contact />

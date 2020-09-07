@@ -6,7 +6,7 @@ services:
         ports:
             - 3000:3000
         volumes:
-            - ./:/app
+            - ./client:/app
             - /app/node_modules
         working_dir: /app
         stdin_open: true
