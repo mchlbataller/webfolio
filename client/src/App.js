@@ -39,8 +39,8 @@ function App(props) {
 
 	React.useEffect(() => {
 		// Use data from cache first
-		const cache = localStorage.getItem("cachedData")
-		setUserData(cache ? JSON.parse(cache) : null)
+		const cache = localStorage.getItem("cachedData");
+		setUserData(cache ? JSON.parse(cache) : null);
 
 		const fetchData = async () => {
 			await firebase
@@ -48,7 +48,13 @@ function App(props) {
 				.collection("data")
 				.doc("info")
 				.get()
-				.then((res) => { setUserData(res.data()); localStorage.setItem("cachedData", JSON.stringify(res.data())) });
+				.then((res) => {
+					setUserData(res.data());
+					localStorage.setItem(
+						"cachedData",
+						JSON.stringify(res.data())
+					);
+				});
 		};
 		fetchData();
 		// eslint-disable-next-line
