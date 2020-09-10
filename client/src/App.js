@@ -6,7 +6,7 @@ import { Banner, Footer, Navbar } from "components";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
