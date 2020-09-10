@@ -3,13 +3,14 @@ import "firebase/firestore";
 
 import { Banner, Footer, Navbar } from "components";
 
-import Landing from "pages/Landing";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import firebase from "firebase";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
+
+const Landing = React.lazy(() => import("pages/Landing"))
 
 const Body = styled.div`
 	background: ${(props) => props.background};
@@ -78,12 +79,14 @@ function App(props) {
 			/>
 			<Body background={theme.bodyBackground}>
 				{initialized ? (
-					<Landing
-						appRef={appsRef}
-						skillsRef={skillsRef}
-						contactRef={contactRef}
-						aboutRef={aboutRef}
-					/>
+					<React.Suspense fallback={<LinearProgress />}>
+						<Landing
+							appRef={appsRef}
+							skillsRef={skillsRef}
+							contactRef={contactRef}
+							aboutRef={aboutRef}
+						/>
+					</React.Suspense>
 				) : (
 					<>
 						<LinearProgress />
