@@ -1,5 +1,5 @@
 import "./index.css";
-import "animate.css";
+import "animate.css/animate.min.css";
 import "firebase/analytics";
 import "firebase/firestore";
 

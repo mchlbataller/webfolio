@@ -10,7 +10,7 @@ import firebase from "firebase/app";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
-const Landing = React.lazy(() => import("pages/Landing"))
+const Landing = React.lazy(() => import("pages/Landing"));
 
 const Body = styled.div`
 	background: ${(props) => props.background};
@@ -43,13 +43,13 @@ function App(props) {
 
 	React.useEffect(() => {
 		// Use data from cache first
-		const cache = localStorage.getItem("cachedData");
-		if (cache) {
-			setUserData(JSON.parse(cache));
+		const cachedDataFromFirestore = localStorage.getItem("cachedData");
+		if (cachedDataFromFirestore) {
+			setUserData(JSON.parse(cachedDataFromFirestore));
 			appNowInitialized();
 		}
 
-		const fetchData = async () => {
+		const fetchDataFromFirestore = async () => {
 			await firebase
 				.firestore()
 				.collection("data")
@@ -64,7 +64,7 @@ function App(props) {
 					);
 				});
 		};
-		fetchData();
+		fetchDataFromFirestore();
 		// eslint-disable-next-line
 	}, []);
 
@@ -96,18 +96,19 @@ function App(props) {
 								We're getting things ready for you.
 							</p>
 						</div>
+
+						<Banner
+							autoHideDuration={15000}
+							forFirstVisitsOnly
+							message="This site uses analytics. 
+							By using our site, you agree to the 
+							collection of anonymous data to 
+							analyze web traffic and optimize 
+							your experience. "
+							type="info"
+						/>
 					</>
 				)}
-				<Banner
-					autoHideDuration={15000}
-					forFirstVisitsOnly
-					message="This site uses analytics. 
-					By using our site, you agree to the 
-					collection of anonymous data to 
-					analyze web traffic and optimize 
-					your experience. "
-					type="info"
-				/>
 				{props.availableOffline && (
 					<Banner
 						autoHideDuration={10000}
