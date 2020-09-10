@@ -32,6 +32,7 @@ export const Apps = (props) => {
 							imgSrc={app.imageUrl}
 							linkToApp={app.linkToApp}
 							inTheWorks={app.intheWorks}
+							firstApp={app.firstApp}
 						/> : 
 					app.view === "center" ?
 						<Center appTitle={app.appTitle} 
@@ -39,12 +40,14 @@ export const Apps = (props) => {
 							imgSrc={app.imageUrl}
 							linkToApp={app.linkToApp}
 							inTheWorks={app.intheWorks}
+							firstApp={app.firstApp}
 						/> : 
 						<Right appTitle={app.appTitle} 
 							appDescription={app.appDescription}
 							imgSrc={app.imageUrl}
 							linkToApp={app.linkToApp}
 							inTheWorks={app.intheWorks}
+							firstApp={app.firstApp}
 						/>
 				))}
 

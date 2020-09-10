@@ -21,7 +21,6 @@ const AboutContent = styled.div`
 `;
 
 const AboutHeading = styled.h1`
-	font-family: Open Sans;
 	@media (min-width: 1024px) {
 		margin-left: 20px;
 		font-size: 24px;
