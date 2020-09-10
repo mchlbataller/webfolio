@@ -14,12 +14,12 @@ export const Center = ({
 	linkToApp,
 	appDescription,
 }) => (
-	<div className="leading-tight text-center">
+	<div className="leading-tight text-center mt-5">
 		<LazyLoad>
 			<img
 				src={imgSrc}
 				alt="url"
-				className="w-3/4 mx-auto border rounded-lg shadow-lg"
+				className="w-3/4 mx-auto border border-transparent rounded-lg shadow-lg"
 			/>
 		</LazyLoad>
 		<Title className="mt-5" style={{ color: titleTextColor }}>
