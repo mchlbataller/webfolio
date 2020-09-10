@@ -37,7 +37,7 @@ export const Center = ({
 		)}
 		<Caption className="mt-2 w-5/6 mx-auto">
 			{appDescription.split("\\n").map((e) => (
-				<p>{e === "" ? <br /> : e}</p>
+						<p className="font-regular text-gray-400">{e === "" ? <br /> : e}</p>
 			))}
 		</Caption>
 	</div>
