@@ -1,7 +1,7 @@
 import { Caption, Link, Title } from "./styles";
+import {defaultProps, propTypes} from './proptypes'
 
 import LazyLoad from "react-lazyload";
-import PropTypes from "prop-types";
 import React from "react";
 
 /**
@@ -13,8 +13,9 @@ export const Center = ({
 	appTitle,
 	linkToApp,
 	appDescription,
+	firstApp
 }) => (
-	<div className="leading-tight text-center mt-5">
+	<div className={firstApp ? "leading-tight text-center" : "leading-tight text-center mt-16" }>
 		<LazyLoad>
 			<img
 				src={imgSrc}
@@ -43,32 +44,9 @@ export const Center = ({
 );
 
 Center.propTypes = {
-	/**
-	 * Title Text Color
-	 */
-	titleTextColor: PropTypes.string,
-	/**
-	 * URL of image to display
-	 */
-	imgSrc: PropTypes.string.isRequired,
-	/**
-	 * Title of the app
-	 */
-	appTitle: PropTypes.string.isRequired,
-	/**
-	 * Link to app
-	 */
-	linkToApp: PropTypes.string,
-	/**
-	 * Description of the app
-	 */
-	appDescription: PropTypes.string.isRequired,
+	propTypes
 };
 
 Center.defaultProps = {
-	titleTextColor: "white",
-	imgSrc: "img is blank",
-	appTitle: "App Title Goes Here",
-	linkToApp: null,
-	appDescription: "Description goes here.",
+	defaultProps
 };

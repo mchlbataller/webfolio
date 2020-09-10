@@ -1,7 +1,7 @@
 import { Caption, Link, Title } from "./styles";
+import {defaultProps, propTypes} from './proptypes'
 
 import LazyLoad from "react-lazyload";
-import PropTypes from "prop-types";
 import React from "react";
 
 export const Right = ({
@@ -11,8 +11,9 @@ export const Right = ({
 	linkToApp,
 	appDescription,
 	inTheWorks,
+	firstApp
 }) => (
-	<div className="leading-tight mt-16">
+	<div className={firstApp ?  "leading-tight" : "leading-tight mt-16" }>
 		<div className="grid grid-cols-2 gap-2">
 			<div>
 				<LazyLoad>
@@ -44,32 +45,9 @@ export const Right = ({
 	</div>
 );
 Right.propTypes = {
-	/**
-	 * Title Text Color
-	 */
-	titleTextColor: PropTypes.string,
-	/**
-	 * URL of image to display
-	 */
-	imgSrc: PropTypes.string.isRequired,
-	/**
-	 * Title of the app
-	 */
-	appTitle: PropTypes.string.isRequired,
-	/**
-	 * Link to app
-	 */
-	linkToApp: PropTypes.string,
-	/**
-	 * Description of the app
-	 */
-	appDescription: PropTypes.string.isRequired,
+	propTypes
 };
 
 Right.defaultProps = {
-	titleTextColor: "white",
-	imgSrc: "img is blank",
-	appTitle: "App Title Goes Here",
-	linkToApp: null,
-	appDescription: "Description goes here.",
+	defaultProps
 };
