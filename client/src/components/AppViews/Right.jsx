@@ -24,7 +24,7 @@ export const Right = ({
 				</LazyLoad>
 			</div>
 			<div>
-				<Title>Project DAPO App</Title>
+				<Title>{appTitle}</Title>
 				{!linkToApp ? (
 					<p className="text-xs text-gray-600">
 						App is currently not available for viewing
@@ -34,7 +34,11 @@ export const Right = ({
 						{linkToApp}
 					</Link>
 				)}
-				<Caption className="mt-2 mx-auto">{appDescription}</Caption>
+				<Caption className="mt-2 mx-auto">
+					{appDescription.split("\\n").map((e) => (
+						<p>{e === "" ? <br /> : e}</p>
+					))}
+				</Caption>
 			</div>
 		</div>
 	</div>

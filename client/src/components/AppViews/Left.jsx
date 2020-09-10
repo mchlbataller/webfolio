@@ -35,7 +35,11 @@ export const Left = ({
 				)}
 
 				<br />
-				<Caption>{appDescription}</Caption>
+				<Caption>
+					{appDescription.split("\\n").map((e) => (
+						<p>{e === "" ? <br /> : e}</p>
+					))}
+				</Caption>
 			</div>
 			<div>
 				<LazyLoad>

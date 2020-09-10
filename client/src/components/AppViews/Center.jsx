@@ -34,7 +34,11 @@ export const Center = ({
 				{linkToApp}
 			</Link>
 		)}
-		<Caption className="mt-2 w-5/6 mx-auto">{appDescription}</Caption>
+		<Caption className="mt-2 w-5/6 mx-auto">
+			{appDescription.split("\\n").map((e) => (
+				<p>{e === "" ? <br /> : e}</p>
+			))}
+		</Caption>
 	</div>
 );
 
