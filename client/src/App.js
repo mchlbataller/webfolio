@@ -4,6 +4,7 @@ import "firebase/firestore";
 import { Banner, Footer, Navbar } from "components";
 
 import Landing from "pages/Landing";
+import LinearProgress from "@material-ui/core/LinearProgress";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import firebase from "firebase";
@@ -36,11 +37,16 @@ function App(props) {
 	/* Refs for Scrolling END */
 
 	const setUserData = useDataStore((state) => state.setUserData);
+	const initialized = useDataStore((state) => state.initialized);
+	const appNowInitialized = useDataStore((state) => state.appNowInitialized);
 
 	React.useEffect(() => {
 		// Use data from cache first
 		const cache = localStorage.getItem("cachedData");
-		setUserData(cache ? JSON.parse(cache) : null);
+		if (cache) {
+			setUserData(JSON.parse(cache));
+			appNowInitialized();
+		}
 
 		const fetchData = async () => {
 			await firebase
@@ -50,6 +56,7 @@ function App(props) {
 				.get()
 				.then((res) => {
 					setUserData(res.data());
+					appNowInitialized();
 					localStorage.setItem(
 						"cachedData",
 						JSON.stringify(res.data())
@@ -70,12 +77,24 @@ function App(props) {
 				about={executeScrollAbout}
 			/>
 			<Body background={theme.bodyBackground}>
-				<Landing
-					appRef={appsRef}
-					skillsRef={skillsRef}
-					contactRef={contactRef}
-					aboutRef={aboutRef}
-				/>
+				{initialized ? (
+					<Landing
+						appRef={appsRef}
+						skillsRef={skillsRef}
+						contactRef={contactRef}
+						aboutRef={aboutRef}
+					/>
+				) : (
+					<>
+						<LinearProgress />
+						<div className="flex h-32 text-center w-full items-center">
+							<p className="mx-auto text-white font-regular">
+								Welcome! <br />
+								We're getting things ready for you.
+							</p>
+						</div>
+					</>
+				)}
 				<Banner
 					autoHideDuration={15000}
 					forFirstVisitsOnly
