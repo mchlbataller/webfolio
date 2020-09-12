@@ -6,7 +6,7 @@ const particlesConfig = {
 		fpsLimit: 60,
 		particles: {
 			number: {
-				value: 160,
+				value: 80,
 				density: {
 					enable: true,
 					value_area: 1000,
@@ -31,7 +31,7 @@ const particlesConfig = {
 				},
 			},
 			opacity: {
-				value: 0.3,
+				value: 1,
 				random: false,
 				anim: {
 					enable: false,
@@ -41,11 +41,11 @@ const particlesConfig = {
 				},
 			},
 			size: {
-				value: 5,
+				value: 2,
 				random: true,
 				anim: {
 					enable: false,
-					speed: 20,
+					speed: 10,
 					size_min: 0.1,
 					sync: false,
 				},
