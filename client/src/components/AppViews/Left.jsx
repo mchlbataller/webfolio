@@ -1,9 +1,10 @@
 import "assets/fonts.css"
 
-import { Caption, Link, Title } from "./assets/styles";
+import { Caption, Title } from "./assets/styles";
 import {defaultProps, propTypes} from './assets/proptypes'
 
 import LazyLoad from "react-lazyload";
+import LinkToApp from "./assets/LinkToApp";
 import React from "react";
 
 /**
@@ -27,20 +28,12 @@ export const Left = ({
 					</p>
 				)}
 				<Title style={{ color: titleTextColor }}> {appTitle}</Title>
-				{!linkToApp ? (
-					<p className="text-xs text-gray-600">
-						App is currently not available for viewing
-					</p>
-				) : (
-					<Link onClick={() => window.open("https://" + linkToApp)}>
-						{linkToApp}
-					</Link>
-				)}
+				<LinkToApp linkToApp={linkToApp} />
 
 				<br />
 				<Caption>
-					{appDescription.split("\\n").map((e) => (
-						<p className="font-regular text-gray-400">{e === "" ? <br /> : e}</p>
+					{appDescription.split("\\n").map((e, key) => (
+						<p className="font-regular text-gray-400" key={key}>{e === "" ? <br /> : e}</p>
 					))}
 				</Caption>
 			</div>
