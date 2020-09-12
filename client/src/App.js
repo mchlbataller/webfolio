@@ -26,14 +26,12 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
 function App(props) {
 	const theme = React.useContext(ThemeContext);
 	/* Refs for Scrolling START */
-	const appsRef = React.useRef(null);
-	const skillsRef = React.useRef(null);
-	const contactRef = React.useRef(null);
-	const aboutRef = React.useRef(null);
-	const executeScrollApps = () => scrollToRef(appsRef);
-	const executeScrollSkills = () => scrollToRef(skillsRef);
-	const executeScrollContact = () => scrollToRef(contactRef);
-	const executeScrollAbout = () => scrollToRef(aboutRef);
+	const [appsRef, skillsRef, contactRef, aboutRef] = [
+		React.useRef(null),
+		React.useRef(null),
+		React.useRef(null),
+		React.useRef(null),
+	];
 	/* Refs for Scrolling END */
 
 	const setUserData = useDataStore((state) => state.setUserData);
@@ -70,11 +68,11 @@ function App(props) {
 	return (
 		<main>
 			<Navbar
-				app={executeScrollApps}
-				contact={executeScrollContact}
-				skills={executeScrollSkills}
+				app={() => scrollToRef(appsRef)}
+				contact={() => scrollToRef(contactRef)}
+				skills={() => scrollToRef(skillsRef)}
 				top={() => window.scrollTo(0, 0)}
-				about={executeScrollAbout}
+				about={() => scrollToRef(aboutRef)}
 			/>
 			<Body background={theme.bodyBackground}>
 				{initialized ? (
