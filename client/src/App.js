@@ -113,7 +113,7 @@ function App(props) {
 					<Banner
 						autoHideDuration={10000}
 						message="You may now use this app offline! 
-        Try to disconnect from the internet then see the magic."
+						Open this app while offline then see the magic."
 						style={{ marginBottom: "60px" }}
 						type="success"
 					/>
