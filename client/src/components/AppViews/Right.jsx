@@ -1,5 +1,7 @@
-import { Caption, Link, Title } from "./styles";
-import {defaultProps, propTypes} from './proptypes'
+import "assets/fonts.css"
+
+import { Caption, Link, Title } from "./assets/styles";
+import {defaultProps, propTypes} from './assets/proptypes'
 
 import LazyLoad from "react-lazyload";
 import React from "react";
