@@ -1,4 +1,3 @@
-import "assets/fonts.css";
 import "firebase/firestore";
 
 import { Banner, Footer, Navbar } from "components";
@@ -10,7 +9,7 @@ import firebase from "firebase/app";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
-const Landing = React.lazy(() => import("pages/Landing"))
+const Landing = React.lazy(() => import("pages/Landing"));
 
 const Body = styled.div`
 	background: ${(props) => props.background};
@@ -27,14 +26,12 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
 function App(props) {
 	const theme = React.useContext(ThemeContext);
 	/* Refs for Scrolling START */
-	const appsRef = React.useRef(null);
-	const skillsRef = React.useRef(null);
-	const contactRef = React.useRef(null);
-	const aboutRef = React.useRef(null);
-	const executeScrollApps = () => scrollToRef(appsRef);
-	const executeScrollSkills = () => scrollToRef(skillsRef);
-	const executeScrollContact = () => scrollToRef(contactRef);
-	const executeScrollAbout = () => scrollToRef(aboutRef);
+	const [appsRef, skillsRef, contactRef, aboutRef] = [
+		React.useRef(null),
+		React.useRef(null),
+		React.useRef(null),
+		React.useRef(null),
+	];
 	/* Refs for Scrolling END */
 
 	const setUserData = useDataStore((state) => state.setUserData);
@@ -43,13 +40,13 @@ function App(props) {
 
 	React.useEffect(() => {
 		// Use data from cache first
-		const cache = localStorage.getItem("cachedData");
-		if (cache) {
-			setUserData(JSON.parse(cache));
+		const cachedDataFromFirestore = localStorage.getItem("cachedData");
+		if (cachedDataFromFirestore) {
+			setUserData(JSON.parse(cachedDataFromFirestore));
 			appNowInitialized();
 		}
 
-		const fetchData = async () => {
+		const fetchDataFromFirestore = async () => {
 			await firebase
 				.firestore()
 				.collection("data")
@@ -64,18 +61,18 @@ function App(props) {
 					);
 				});
 		};
-		fetchData();
+		fetchDataFromFirestore();
 		// eslint-disable-next-line
 	}, []);
 
 	return (
 		<main>
 			<Navbar
-				app={executeScrollApps}
-				contact={executeScrollContact}
-				skills={executeScrollSkills}
+				app={() => scrollToRef(appsRef)}
+				contact={() => scrollToRef(contactRef)}
+				skills={() => scrollToRef(skillsRef)}
 				top={() => window.scrollTo(0, 0)}
-				about={executeScrollAbout}
+				about={() => scrollToRef(aboutRef)}
 			/>
 			<Body background={theme.bodyBackground}>
 				{initialized ? (
@@ -96,23 +93,24 @@ function App(props) {
 								We're getting things ready for you.
 							</p>
 						</div>
+
+						<Banner
+							autoHideDuration={15000}
+							forFirstVisitsOnly
+							message="This site uses analytics. 
+							By using our site, you agree to the 
+							collection of anonymous data to 
+							analyze web traffic and optimize 
+							your experience. "
+							type="info"
+						/>
 					</>
 				)}
-				<Banner
-					autoHideDuration={15000}
-					forFirstVisitsOnly
-					message="This site uses analytics. 
-					By using our site, you agree to the 
-					collection of anonymous data to 
-					analyze web traffic and optimize 
-					your experience. "
-					type="info"
-				/>
 				{props.availableOffline && (
 					<Banner
 						autoHideDuration={10000}
 						message="You may now use this app offline! 
-        Try to disconnect from the internet then see the magic."
+						Open this app while offline then see the magic."
 						style={{ marginBottom: "60px" }}
 						type="success"
 					/>
