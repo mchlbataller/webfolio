@@ -2,7 +2,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
 import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
-import visitCounter from "services/visitCounter";
+import siteIsNowVisited from "services/siteIsNowVisited";
 
 function Alert(props) {
 	return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -23,14 +23,19 @@ export const Banner = ({
 
 	React.useEffect(() => {
 		if (forFirstVisitsOnly) {
+			// If the banner needs to be showed only on first site visits,
+			// then we will open the banner in 1 second.
+			// 
+			// Note that we are ignoring the 'first visits condition'
+			// on development environments.
 			if (
-				localStorage.getItem("visits") !== "1" ||
+				localStorage.getItem("visits") ||
 				process.env.NODE_ENV === "development"
 			)
 				setTimeout(setOpen, 1000, true);
 		}
 
-		visitCounter();
+		siteIsNowVisited();
 		// eslint-disable-next-line
 	}, []);
 
