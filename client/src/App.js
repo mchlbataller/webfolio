@@ -1,4 +1,3 @@
-import "assets/fonts.css";
 import "firebase/firestore";
 
 import { Banner, Footer, Navbar } from "components";
