@@ -1,12 +1,13 @@
-import { About, Apps, Contact, Skills } from "pages/LandingCards";
+import { Apps, Contact, Skills } from "pages/LandingCards";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { Particles } from "components";
 import React from "react";
 import Typist from "react-typist";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
+const About = React.lazy(() => import("./LandingCards/About"))
+const Particles = React.lazy(() => import("components/Particles"))
 const Heading = styled.section.attrs({
 	className:
 		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16 xl:px-64",
