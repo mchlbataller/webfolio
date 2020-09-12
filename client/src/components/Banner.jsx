@@ -16,13 +16,13 @@ export const Banner = ({
 	type,
 	message,
 	style,
-	forFirstVisitsOnly,
+	forFirstVisitsOnly: triggerOnlyOnFirstVisit,
 	autoHideDuration,
 }) => {
-	const [open, setOpen] = React.useState(forFirstVisitsOnly ? false : true);
+	const [open, setOpen] = React.useState(triggerOnlyOnFirstVisit ? false : true);
 
 	React.useEffect(() => {
-		if (forFirstVisitsOnly) {
+		if (triggerOnlyOnFirstVisit) {
 			// If the banner needs to be showed only on first site visits,
 			// then we will open the banner in 1 second.
 			// 
