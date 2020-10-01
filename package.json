@@ -1,16 +1,6 @@
 {
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/lab": "^4.0.0-alpha.56",
-    "animate.css": "^4.1.0",
-    "aos": "^2.3.4",
-    "firebase": "^7.19.0",
-    "react-animate-on-scroll": "^2.1.5",
-    "react-social-icons": "^4.1.0",
-    "react-tsparticles": "^1.17.0",
-    "react-typist": "^2.0.5",
-    "zustand": "^3.0.2"
-  },
+ },
   "name": "webfolio",
   "description": "My Web Portfolio",
   "version": "1.0.0",
