@@ -73,7 +73,7 @@ const Landing = (props) => {
 						className="mt-8 text-2xl lg:text-5xl text-white font-bold leading-tight animate__animated animate__fadeInUp"
 						data-aos="fade-left"
 					>
-						<span className="text-2xl text-gray-200">
+						<span className="text-3xl text-gray-200">
 							{data && data.header_greeting}
 						</span>
 						<br />I am{" "}
