@@ -15,7 +15,7 @@ const Landing = React.lazy(() => import("pages/Landing"));
 const Body = styled.div`
 	background: ${(props) => props.background};
 	min-height: 100vh;
-	padding-top: 66px;
+	/* padding-top: 66px; */
 	* {
 		font-family: "Raleway", sans-serif;
 	}

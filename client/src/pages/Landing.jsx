@@ -13,7 +13,7 @@ const Heading = styled.section.attrs({
 		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16 xl:px-64",
 })`
 	width: 100%;
-	min-height: 80vh;
+	min-height: 90vh;
 	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
@@ -24,7 +24,7 @@ const SubHeader = styled.section.attrs({
 		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInLeft",
 })`
 	* {
-		font-family: Open Sans !important;
+		font-family: "Roboto Mono", "SF Mono", "Courier New", Courier, monospace !important;
 		color: white;
 		font-weight: normal;
 	}
@@ -65,7 +65,9 @@ const Landing = (props) => {
 
 				<div className="flex-col flex-grow md:pt-24 pl-8">
 					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
-						{data && data.header_greeting}
+						<span className="text-2xl text-gray-200">
+							{data && data.header_greeting}
+						</span>
 						<br />I am{" "}
 						<span className="text-blue-300">
 							Michael C. Bataller

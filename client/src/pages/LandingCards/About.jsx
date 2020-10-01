@@ -13,7 +13,7 @@ export const About = () => {
 			className="flex items-center justify-center flex-col w-1/2 mx-auto"
 			style={{ height: "80vh" }}
 		>
-			<User style={{ width: "50px", fill: "#9ADBFF" }} />
+			<User style={{ width: "80px", fill: "#9ADBFF" }} />
 			<h1
 				className="text-center text-3xl font-bold text-blue-500"
 				style={{ fontFamily: "Open Sans" }}

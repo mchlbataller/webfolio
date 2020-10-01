@@ -9,11 +9,11 @@ const NavbarBox = styled.div.attrs({
 	height: 65px;
 	padding-left: 20px;
 	padding-right: 20px;
-	box-shadow: #00000017 0px 4px 10px;
+	/* box-shadow: #00000017 0px 4px 10px; */
 	z-index: 20;
 	background: ${(props) => props.background};
 	position: fixed;
-	transition: 0.5s;
+	transition: 0.25s;
 
 	* {
 		color: white;
@@ -37,14 +37,14 @@ const NavbarButton = styled.a`
 	cursor: pointer;
 `;
 
-const Navbar = (props) => {
+const Navbar = ({ about, skills, top, app, contact }) => {
 	const [navigationColor, setNavigationColor] = React.useState("#192835");
 	React.useEffect(() => window.addEventListener("scroll", isOnTop), []);
 	const theme = React.useContext(ThemeContext);
 
 	const isOnTop = () => {
 		if (window.scrollY === 0) {
-			setNavigationColor("#192835");
+			setNavigationColor("transparent");
 		} else {
 			setNavigationColor(null);
 		}
@@ -53,11 +53,11 @@ const Navbar = (props) => {
 	return (
 		<>
 			<NavbarBox background={navigationColor || theme.navBackground}>
-				<NavbarButton onClick={props.about}>About</NavbarButton>
-				<NavbarButton onClick={props.skills}>Skills</NavbarButton>
-				<Logo onClick={props.top} style={{ cursor: "pointer" }} />
-				<NavbarButton onClick={props.app}>Apps</NavbarButton>
-				<NavbarButton onClick={props.contact}>Contact</NavbarButton>
+				<NavbarButton onClick={about}>About</NavbarButton>
+				<NavbarButton onClick={skills}>Skills</NavbarButton>
+				<Logo onClick={top} style={{ cursor: "pointer" }} />
+				<NavbarButton onClick={app}>Apps</NavbarButton>
+				<NavbarButton onClick={contact}>Contact</NavbarButton>
 			</NavbarBox>
 		</>
 	);
