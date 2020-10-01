@@ -8,6 +8,7 @@ import { useDataStore } from "state/data";
 
 const About = React.lazy(() => import("./LandingCards/About"));
 const Particles = React.lazy(() => import("components/Particles"));
+
 const Heading = styled.section.attrs({
 	className:
 		"flex flex-col md:flex-row-reverse items-center relative md:px-16 xl:px-64",
@@ -25,7 +26,7 @@ const Heading = styled.section.attrs({
 
 const SubHeader = styled.section.attrs({
 	className:
-		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInLeft",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
 })`
 	* {
 		font-family: "Roboto Mono", "SF Mono", "Courier New", Courier, monospace !important;
@@ -68,7 +69,10 @@ const Landing = (props) => {
 				</div>
 
 				<div className="flex-col flex-grow md:pt-24 pl-8 w-full">
-					<p className="mt-8 text-2xl lg:text-5xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
+					<p
+						className="mt-8 text-2xl lg:text-5xl text-white font-bold leading-tight animate__animated animate__fadeInUp"
+						data-aos="fade-left"
+					>
 						<span className="text-2xl text-gray-200">
 							{data && data.header_greeting}
 						</span>
