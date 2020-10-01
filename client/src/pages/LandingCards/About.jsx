@@ -1,65 +1,38 @@
-import { Card } from "components";
-import React from "react";
+import React, { useContext } from "react";
+
 import { ThemeContext } from "ThemeProvider";
 import { User } from "assets/icons";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
-const AboutContent = styled.div`
-	p {
-		font-family: "Open Sans", sans-serif;
-		font-weight: 300;
-		margin-bottom: 8px;
-	}
-	@media (min-width: 1024px) {
-		width: 75%;
-		min-width: 350px;
-		p {
-			padding-left: 20px;
-		}
-	}
-`;
-
-const AboutHeading = styled.h1`
-	@media (min-width: 1024px) {
-		margin-left: 20px;
-		font-size: 24px;
-		line-height: 33px;
-	}
-	font-style: normal;
-	font-weight: bold;
-	color: #0094ff;
-`;
-
-export const About = (props) => {
-	const theme = React.useContext(ThemeContext);
-
+export const About = () => {
 	const data = useDataStore((state) => state.userData);
-
+	const theme = useContext(ThemeContext);
 	return (
-		<>
-			<Card
-				height="426px"
-				className="mt-16"
-				title="About Me"
-				headerIcon={<User />}
+		<section
+			className="flex items-center justify-center flex-col w-1/2 mx-auto"
+			style={{ height: "80vh" }}
+		>
+			<User style={{ width: "50px", fill: "#9ADBFF" }} />
+			<h1
+				className="text-center text-3xl font-bold text-blue-500"
+				style={{ fontFamily: "Open Sans" }}
 			>
-				<AboutContent>
-					<AboutHeading
-						color={theme.aboutHeader}
-						className="text-xl leading-snug md:leading-normal"
+				{data?.about_header}
+			</h1>
+			<br />
+			{data.about_text.map((text) => (
+				<>
+					<p
+						className="mb-3 text-center text-gray-300"
+						style={{ fontFamily: "Open Sans" }}
 					>
-						{data && data.about_header}
-					</AboutHeading>
-					<br />
-					{data &&
-						data.about_text.map((text) => (
-							<p className="text-sm">{text}</p>
-						))}
-				</AboutContent>
-			</Card>
-		</>
+						{text}
+					</p>
+				</>
+			))}
+		</section>
 	);
 };
 
-export default About
+export default About;

@@ -4,8 +4,9 @@ import facebook from "assets/icons/facebook.png";
 import styled from "styled-components";
 
 const ContactContainer = styled.div`
-	animation-delay: 0s;
+	animation-delay: 1s;
 	width: 100%;
+	padding: 2rem 0rem;
 
 	& > * {
 		display: block;

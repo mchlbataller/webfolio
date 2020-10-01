@@ -6,14 +6,14 @@ import Typist from "react-typist";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
-const About = React.lazy(() => import("./LandingCards/About"))
-const Particles = React.lazy(() => import("components/Particles"))
+const About = React.lazy(() => import("./LandingCards/About"));
+const Particles = React.lazy(() => import("components/Particles"));
 const Heading = styled.section.attrs({
 	className:
 		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16 xl:px-64",
 })`
 	width: 100%;
-	min-height: 621px;
+	min-height: 80vh;
 	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
