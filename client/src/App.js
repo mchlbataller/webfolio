@@ -3,6 +3,7 @@ import "firebase/firestore";
 import { Banner, Footer, Navbar } from "components";
 
 import LinearProgress from "@material-ui/core/LinearProgress";
+import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
 import firebase from "firebase/app";
@@ -120,5 +121,14 @@ function App(props) {
 		</main>
 	);
 }
+
+App.propTypes = {
+	// Can the app be run even without internet connection?
+	availableOffline: PropTypes.bool,
+};
+
+App.defaultProps = {
+	availableOffline: false,
+};
 
 export default App;

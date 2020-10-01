@@ -26,7 +26,7 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 const ServiceWorkerInstallListener = (props) => {
-	const [cached, setCachedState] = React.useState(false);
+	// const [cached, setCachedState] = React.useState(false);
 
 	// Enable this block of code to enable offline support.
 	// Learn more about service workers: https://bit.ly/CRA-PWA
@@ -36,7 +36,7 @@ const ServiceWorkerInstallListener = (props) => {
 
 	serviceWorker.unregister();
 
-	return <App availableOffline={cached} />;
+	return <App />;
 };
 
 ReactDOM.render(
