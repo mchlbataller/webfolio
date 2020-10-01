@@ -1,9 +1,14 @@
+import "aos/dist/aos.css"; // You can also use <link> for styles
+
 import React, { useContext } from "react";
 
+import AOS from "aos";
 import { ThemeContext } from "ThemeProvider";
 import { User } from "assets/icons";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
+
+AOS.init();
 
 export const About = () => {
 	const data = useDataStore((state) => state.userData);
@@ -13,24 +18,28 @@ export const About = () => {
 			className="flex items-center justify-center flex-col w-1/2 mx-auto"
 			style={{ height: "80vh" }}
 		>
-			<User style={{ width: "80px", fill: "#9ADBFF" }} />
+			<User
+				style={{ width: "80px", fill: "#9ADBFF" }}
+				data-aos="fade-up"
+			/>
 			<h1
 				className="text-center text-3xl font-bold text-blue-500"
 				style={{ fontFamily: "Open Sans" }}
+				data-aos="fade-up"
 			>
 				{data?.about_header}
 			</h1>
 			<br />
-			{data.about_text.map((text) => (
-				<>
+			<div data-aos="fade-up">
+				{data.about_text.map((text) => (
 					<p
 						className="mb-3 text-center text-gray-300"
 						style={{ fontFamily: "Open Sans" }}
 					>
 						{text}
 					</p>
-				</>
-			))}
+				))}
+			</div>
 		</section>
 	);
 };

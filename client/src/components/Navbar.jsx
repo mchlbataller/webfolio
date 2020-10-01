@@ -38,7 +38,7 @@ const NavbarButton = styled.a`
 `;
 
 const Navbar = ({ about, skills, top, app, contact }) => {
-	const [navigationColor, setNavigationColor] = React.useState("#192835");
+	const [navigationColor, setNavigationColor] = React.useState("transparent");
 	React.useEffect(() => window.addEventListener("scroll", isOnTop), []);
 	const theme = React.useContext(ThemeContext);
 

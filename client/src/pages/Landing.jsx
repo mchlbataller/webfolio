@@ -10,13 +10,17 @@ const About = React.lazy(() => import("./LandingCards/About"));
 const Particles = React.lazy(() => import("components/Particles"));
 const Heading = styled.section.attrs({
 	className:
-		"flex flex-col md:flex-row-reverse md:items-center relative md:px-16 xl:px-64",
+		"flex flex-col md:flex-row-reverse items-center relative md:px-16 xl:px-64",
 })`
 	width: 100%;
 	min-height: 90vh;
 	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
+
+	@media (max-width: 425px) {
+		padding-top: 3rem;
+	}
 `;
 
 const SubHeader = styled.section.attrs({
@@ -63,8 +67,8 @@ const Landing = (props) => {
 					/>
 				</div>
 
-				<div className="flex-col flex-grow md:pt-24 pl-8">
-					<p className="mt-8 text-2xl lg:text-4xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
+				<div className="flex-col flex-grow md:pt-24 pl-8 w-full">
+					<p className="mt-8 text-2xl lg:text-5xl text-white font-bold leading-tight animate__animated animate__fadeInLeft">
 						<span className="text-2xl text-gray-200">
 							{data && data.header_greeting}
 						</span>
