@@ -1,12 +1,6 @@
-import "aos/dist/aos.css";
-
-import AOS from "aos";
 import PropTypes from "prop-types";
 import React from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import styled from "styled-components";
-
-AOS.init();
 
 // Holds the centered rating text and
 // the grey progress bar container

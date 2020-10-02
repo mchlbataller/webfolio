@@ -11,8 +11,10 @@ const NavbarBox = styled.div.attrs({
 	padding-right: 20px;
 	/* box-shadow: #00000017 0px 4px 10px; */
 	z-index: 20;
-	background: ${(props) => props.background};
+	background: ${({ background, scrolled }) =>
+		scrolled ? "transparent" : background};
 	position: fixed;
+	backdrop-filter: ${({ scrolled }) => !scrolled && "blur(10px)"};
 	transition: 0.25s;
 
 	* {
@@ -38,21 +40,21 @@ const NavbarButton = styled.a`
 `;
 
 const Navbar = ({ about, skills, top, app, contact }) => {
-	const [navigationColor, setNavigationColor] = React.useState("transparent");
+	const [scrolled, isScrolled] = React.useState("transparent");
 	React.useEffect(() => window.addEventListener("scroll", isOnTop), []);
 	const theme = React.useContext(ThemeContext);
 
 	const isOnTop = () => {
 		if (window.scrollY === 0) {
-			setNavigationColor("transparent");
+			isScrolled(true);
 		} else {
-			setNavigationColor(null);
+			isScrolled(false);
 		}
 	};
 
 	return (
 		<>
-			<NavbarBox background={navigationColor || theme.navBackground}>
+			<NavbarBox background={theme.navBackground} scrolled={scrolled}>
 				<NavbarButton onClick={about}>About</NavbarButton>
 				<NavbarButton onClick={skills}>Skills</NavbarButton>
 				<Logo onClick={top} style={{ cursor: "pointer" }} />
