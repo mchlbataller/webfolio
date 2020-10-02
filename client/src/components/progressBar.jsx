@@ -1,7 +1,12 @@
+import "aos/dist/aos.css";
+
+import AOS from "aos";
 import PropTypes from "prop-types";
 import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import styled from "styled-components";
+
+AOS.init();
 
 // Holds the centered rating text and
 // the grey progress bar container
@@ -15,9 +20,6 @@ const ProgressBarContainer = styled.div.attrs({
 		width: 200%;
 	}
 	border-radius: 5px;
-	-webkit-perspective: 1000;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: translate3d(0, 0, 0);
 	outline: none;
 	border: none;
 	text-decoration: none;
@@ -61,14 +63,15 @@ export const ProgressBar = ({
 				{label}
 			</p>
 			<ProgressBarContainer background={backgroundColor}>
-				<ScrollAnimation
-					animateIn="animate__slideInLeft"
+				<div
+					data-aos="slide-right"
+					// TODO: turn off the repeating of animations once animated.
 					style={fillerStyles}
 				>
 					<span className="text-xs sm:text-sm text-white mr-5 font-medium font-regular">
 						{rating}0%
 					</span>
-				</ScrollAnimation>
+				</div>
 			</ProgressBarContainer>
 		</Box>
 	);
