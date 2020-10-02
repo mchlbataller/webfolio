@@ -51,7 +51,8 @@ export const Apps = () => {
 				<Caption className="mt-2 w-5/6 mx-auto">
 					An app that enables the enrollees to select School Supplies,
 					Books, and Tuition Fees then the app gives a printable PDF
-					for later assessment.
+					for later assessment. <br />
+					Made with Laravel Framework and PHP.
 				</Caption>
 			</div>
 		</Card>
