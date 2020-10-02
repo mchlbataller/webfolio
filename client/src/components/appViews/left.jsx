@@ -1,10 +1,8 @@
-import "assets/fonts.css"
-
 import { Caption, Title } from "./assets/styles";
-import {defaultProps, propTypes} from './assets/proptypes'
+import { defaultProps, propTypes } from "./assets/propTypes";
 
 import LazyLoad from "react-lazyload";
-import LinkToApp from "./assets/LinkToApp";
+import LinkToApp from "./assets/appUrl";
 import React from "react";
 
 /**
@@ -17,11 +15,11 @@ export const Left = ({
 	linkToApp,
 	appDescription,
 	inTheWorks,
-	firstApp
+	firstApp,
 }) => (
 	<div>
 		<div className="grid grid-cols-2 gap-2">
-			<div className={firstApp ? "leading-tight" : "leading-tight mt-16" }>
+			<div className={firstApp ? "leading-tight" : "leading-tight mt-16"}>
 				{inTheWorks && (
 					<p className="text-xs md:text-base text-gray-400">
 						In the works:{" "}
@@ -33,7 +31,9 @@ export const Left = ({
 				<br />
 				<Caption>
 					{appDescription.split("\\n").map((e, key) => (
-						<p className="font-regular text-gray-400" key={key}>{e === "" ? <br /> : e}</p>
+						<p className="font-regular text-gray-400" key={key}>
+							{e === "" ? <br /> : e}
+						</p>
 					))}
 				</Caption>
 			</div>
@@ -51,9 +51,9 @@ export const Left = ({
 );
 
 Left.propTypes = {
-	propTypes
+	propTypes,
 };
 
 Left.defaultProps = {
-	defaultProps
+	defaultProps,
 };

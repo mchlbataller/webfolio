@@ -1,10 +1,8 @@
-import "assets/fonts.css"
-
 import { Caption, Title } from "./assets/styles";
-import {defaultProps, propTypes} from './assets/proptypes'
+import { defaultProps, propTypes } from "./assets/propTypes";
 
 import LazyLoad from "react-lazyload";
-import LinkToApp from './assets/LinkToApp'
+import LinkToApp from "./assets/appUrl";
 import React from "react";
 
 export const Right = ({
@@ -14,9 +12,9 @@ export const Right = ({
 	linkToApp,
 	appDescription,
 	inTheWorks,
-	firstApp
+	firstApp,
 }) => (
-	<div className={firstApp ?  "leading-tight" : "leading-tight mt-16" }>
+	<div className={firstApp ? "leading-tight" : "leading-tight mt-16"}>
 		<div className="grid grid-cols-2 gap-2">
 			<div>
 				<LazyLoad>
@@ -32,7 +30,9 @@ export const Right = ({
 				<LinkToApp linkToApp={linkToApp} />
 				<Caption className="mt-2 mx-auto">
 					{appDescription.split("\\n").map((e, key) => (
-						<p className="font-regular text-gray-400" key={key}>{e === "" ? <br /> : e}</p>
+						<p className="font-regular text-gray-400" key={key}>
+							{e === "" ? <br /> : e}
+						</p>
 					))}
 				</Caption>
 			</div>
@@ -40,9 +40,9 @@ export const Right = ({
 	</div>
 );
 Right.propTypes = {
-	propTypes
+	propTypes,
 };
 
 Right.defaultProps = {
-	defaultProps
+	defaultProps,
 };

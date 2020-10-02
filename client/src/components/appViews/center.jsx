@@ -1,10 +1,8 @@
-import "assets/fonts.css"
-
 import { Caption, Title } from "./assets/styles";
-import {defaultProps, propTypes} from './assets/proptypes'
+import { defaultProps, propTypes } from "./assets/propTypes";
 
 import LazyLoad from "react-lazyload";
-import LinkToApp from "./assets/LinkToApp";
+import LinkToApp from "./assets/appUrl";
 import React from "react";
 
 /**
@@ -16,9 +14,15 @@ export const Center = ({
 	appTitle,
 	linkToApp,
 	appDescription,
-	firstApp
+	firstApp,
 }) => (
-	<div className={firstApp ? "leading-tight text-center" : "leading-tight text-center mt-16" }>
+	<div
+		className={
+			firstApp
+				? "leading-tight text-center"
+				: "leading-tight text-center mt-16"
+		}
+	>
 		<LazyLoad>
 			<img
 				src={imgSrc}
@@ -32,16 +36,18 @@ export const Center = ({
 		<LinkToApp linkToApp={linkToApp} />
 		<Caption className="mt-2 w-5/6 mx-auto">
 			{appDescription.split("\\n").map((e, key) => (
-						<p className="font-regular text-gray-400" key={key}>{e === "" ? <br /> : e}</p>
+				<p className="font-regular text-gray-400" key={key}>
+					{e === "" ? <br /> : e}
+				</p>
 			))}
 		</Caption>
 	</div>
 );
 
 Center.propTypes = {
-	propTypes
+	propTypes,
 };
 
 Center.defaultProps = {
-	defaultProps
+	defaultProps,
 };

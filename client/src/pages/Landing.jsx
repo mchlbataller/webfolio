@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { useDataStore } from "state/data";
 
 const About = React.lazy(() => import("./LandingCards/About"));
-const Particles = React.lazy(() => import("components/Particles"));
+const Particles = React.lazy(() => import("components/particles"));
 
 const Heading = styled.section.attrs({
 	className:

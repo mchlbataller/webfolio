@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export const propTypes = {
 	/**
@@ -20,18 +20,18 @@ export const propTypes = {
 	/**
 	 * Description of the app
 	 */
-    appDescription: PropTypes.string.isRequired,
-    /**
-     * Is the app the first in the array?
-     */
-    firstApp: PropTypes.bool
-}
+	appDescription: PropTypes.string.isRequired,
+	/**
+	 * Is the app the first in the array?
+	 */
+	firstApp: PropTypes.bool,
+};
 
 export const defaultProps = {
 	titleTextColor: "white",
 	imgSrc: "img is blank",
 	appTitle: "App Title Goes Here",
 	linkToApp: null,
-    appDescription: "Description goes here.",
-    top: false
-}
+	appDescription: "Description goes here.",
+	top: false,
+};

@@ -1,5 +1,5 @@
-import {Caption, Title} from 'components/AppViews/assets/styles'
-import { Center, Left, Right } from "components/AppViews";
+import { Caption, Title } from "components/appViews/assets/styles";
+import { Center, Left, Right } from "components/appViews";
 
 import { Apps as AppsIcon } from "assets/icons";
 import { Card } from "components";
@@ -13,31 +13,37 @@ export const Apps = (props) => {
 
 	return (
 		<Card height="1200px" title="My Apps" headerIcon={<AppsIcon />}>
-				{userData && userData.apps.map(app => (
-					app.view === "left" ?
-						<Left appTitle={app.appTitle} 
-							appDescription={app.appDescription}
-							imgSrc={app.imageUrl}
-							linkToApp={app.linkToApp}
-							inTheWorks={app.intheWorks}
-							firstApp={app.firstApp}
-						/> : 
-					app.view === "center" ?
-						<Center appTitle={app.appTitle} 
-							appDescription={app.appDescription}
-							imgSrc={app.imageUrl}
-							linkToApp={app.linkToApp}
-							inTheWorks={app.intheWorks}
-							firstApp={app.firstApp}
-						/> : 
-						<Right appTitle={app.appTitle} 
+			{userData &&
+				userData.apps.map((app) =>
+					app.view === "left" ? (
+						<Left
+							appTitle={app.appTitle}
 							appDescription={app.appDescription}
 							imgSrc={app.imageUrl}
 							linkToApp={app.linkToApp}
 							inTheWorks={app.intheWorks}
 							firstApp={app.firstApp}
 						/>
-				))}
+					) : app.view === "center" ? (
+						<Center
+							appTitle={app.appTitle}
+							appDescription={app.appDescription}
+							imgSrc={app.imageUrl}
+							linkToApp={app.linkToApp}
+							inTheWorks={app.intheWorks}
+							firstApp={app.firstApp}
+						/>
+					) : (
+						<Right
+							appTitle={app.appTitle}
+							appDescription={app.appDescription}
+							imgSrc={app.imageUrl}
+							linkToApp={app.linkToApp}
+							inTheWorks={app.intheWorks}
+							firstApp={app.firstApp}
+						/>
+					)
+				)}
 
 			{/* Assessment App */}
 			<div className="leading-tight text-center mt-16">

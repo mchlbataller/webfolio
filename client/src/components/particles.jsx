@@ -235,4 +235,4 @@ export const ParticlesComponent = (props) => {
 	);
 };
 
-export default ParticlesComponent
+export default ParticlesComponent;

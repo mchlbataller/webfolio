@@ -1,6 +1,6 @@
-export { default as Navbar } from "./Navbar";
-export { ProgressBar } from "./ProgressBar";
-export { Card, CardHeader } from "./Card";
-export { ParticlesComponent as Particles } from "./Particles";
-export { Footer } from "./Footer";
-export { Banner } from "./Banner";
+export { default as Navbar } from "./navbar";
+export { ProgressBar } from "./progressBar";
+export { Card, CardHeader } from "./card";
+export { ParticlesComponent as Particles } from "./particles";
+export { Footer } from "./footer";
+export { Banner } from "./banner";
