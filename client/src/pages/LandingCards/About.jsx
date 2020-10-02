@@ -10,20 +10,22 @@ AOS.init();
 
 const StyledSection = styled.section.attrs({
 	className:
-		"flex items-center justify-center flex-col w-full px-5 lg:px-0 lg:w-1/2 mx-auto",
+		"flex items-center justify-center flex-col w-full px-5 lg:px-0 lg:w-3/4 mx-auto",
 })`
 	min-height: 80vh;
 	font-family: "Open Sans", sans-serif;
+
+	& svg {
+		width: 70px;
+		fill: #9adbff;
+	}
 `;
 
 export const About = () => {
 	const data = useDataStore((state) => state.userData);
 	return (
 		<StyledSection>
-			<UserIcon
-				style={{ width: "70px", fill: "#9ADBFF" }}
-				data-aos="fade-up"
-			/>
+			<UserIcon data-aos="fade-up" />
 			<h1
 				className="text-center text-lg lg:text-3xl font-bold text-blue-500"
 				data-aos="fade-up"

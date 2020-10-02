@@ -8,40 +8,28 @@ import React from "react";
 import { assessment } from "assets/images";
 import { useDataStore } from "state/data";
 
-export const Apps = (props) => {
+export const Apps = () => {
 	const userData = useDataStore((state) => state.userData);
 
+	const props = (app) => ({
+		appTitle: app.appTitle,
+		appDescription: app.appDescription,
+		imgSrc: app.imageUrl,
+		linkToApp: app.linkToApp,
+		inTheWorks: app.intheWorks,
+		firstApp: app.firstApp,
+	});
+
 	return (
-		<Card height="1200px" title="My Apps" headerIcon={<AppsIcon />}>
+		<Card height="1200px" title="My Projects" headerIcon={<AppsIcon />}>
 			{userData &&
 				userData.apps.map((app) =>
 					app.view === "left" ? (
-						<Left
-							appTitle={app.appTitle}
-							appDescription={app.appDescription}
-							imgSrc={app.imageUrl}
-							linkToApp={app.linkToApp}
-							inTheWorks={app.intheWorks}
-							firstApp={app.firstApp}
-						/>
+						<Left {...props(app)} />
 					) : app.view === "center" ? (
-						<Center
-							appTitle={app.appTitle}
-							appDescription={app.appDescription}
-							imgSrc={app.imageUrl}
-							linkToApp={app.linkToApp}
-							inTheWorks={app.intheWorks}
-							firstApp={app.firstApp}
-						/>
+						<Center {...props(app)} />
 					) : (
-						<Right
-							appTitle={app.appTitle}
-							appDescription={app.appDescription}
-							imgSrc={app.imageUrl}
-							linkToApp={app.linkToApp}
-							inTheWorks={app.intheWorks}
-							firstApp={app.firstApp}
-						/>
+						<Right {...props(app)} />
 					)
 				)}
 
