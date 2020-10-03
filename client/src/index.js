@@ -11,7 +11,7 @@ import App from "./App";
 import { GlobalStyles } from "styles/global";
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "./ThemeProvider";
+import { ThemeProvider } from "./theme";
 import firebase from "firebase/app";
 
 AOS.init();

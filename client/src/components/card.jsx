@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeContext } from "ThemeProvider";
+import { ThemeContext } from "theme";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`

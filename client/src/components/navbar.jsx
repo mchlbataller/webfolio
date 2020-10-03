@@ -1,6 +1,6 @@
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import React from "react";
-import { ThemeContext } from "ThemeProvider";
+import { ThemeContext } from "theme";
 import styled from "styled-components";
 
 const NavbarBox = styled.div.attrs({

@@ -6,21 +6,11 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import { LoadingPage } from "pages/Loading";
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "ThemeProvider";
+import { ThemeContext } from "theme";
 import firebase from "firebase/app";
-import styled from "styled-components";
 import { useDataStore } from "state/data";
 
 const Landing = React.lazy(() => import("pages/Landing"));
-
-const Body = styled.div`
-	background: ${(props) => props.background};
-	min-height: 100vh;
-	/* padding-top: 66px; */
-	* {
-		font-family: "Raleway", sans-serif;
-	}
-`;
 
 // Scroll to element function
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
@@ -76,7 +66,7 @@ function App(props) {
 				top={() => window.scrollTo(0, 0)}
 				about={() => scrollToRef(aboutRef)}
 			/>
-			<Body background={theme.bodyBackground}>
+			<section background={theme.bodyBackground}>
 				{initialized ? (
 					<React.Suspense fallback={<LinearProgress />}>
 						<Landing
@@ -98,7 +88,7 @@ function App(props) {
 						type="success"
 					/>
 				)}
-			</Body>
+			</section>
 			<Footer />
 		</main>
 	);

@@ -2,7 +2,7 @@ import React from "react";
 
 export const ThemeContext = React.createContext();
 
-const theme = {
+export const colors = {
 	dark: {
 		progressBar: {
 			foreground: "#23629A",
@@ -35,15 +35,7 @@ const theme = {
 
 export const ThemeProvider = (props) => {
 	return (
-		<ThemeContext.Provider
-			value={{
-				card: theme.dark.card,
-				aboutHeader: theme.dark.aboutHeader,
-				progressBar: theme.dark.progressBar,
-				bodyBackground: theme.dark.bodyBackground,
-				navBackground: theme.dark.navBackground,
-			}}
-		>
+		<ThemeContext.Provider value={colors.dark}>
 			{props.children}
 		</ThemeContext.Provider>
 	);
