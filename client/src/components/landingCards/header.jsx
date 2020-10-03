@@ -44,7 +44,7 @@ const classNames = {
         bg-gray-200
     `,
 	headerText: `mt-8 text-2xl lg:text-5xl 
-        text-white leading-tight 
+        text-white leading-tight font-bold
         animate__animated animate__fadeInUp`,
 };
 export const Header = (props) => {
@@ -70,11 +70,7 @@ export const Header = (props) => {
 			</section>
 
 			<section className="flex-col flex-grow md:pt-24 pl-8 w-full">
-				<p
-					className={classNames.headerText}
-					data-aos="fade-left"
-					style={{ fontFamily: "Raleway" }}
-				>
+				<p className={classNames.headerText} data-aos="fade-left">
 					<span className="text-3xl text-gray-200">
 						{data && data.header_greeting}
 					</span>

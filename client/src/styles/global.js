@@ -1,11 +1,12 @@
+import "fontsource-open-sans";
+import "fontsource-raleway";
+
 import { colors } from "theme";
 import { createGlobalStyle } from "styled-components";
-import { fonts } from "./fonts";
 
 export const GlobalStyles = createGlobalStyle`
-    ${fonts}
     * {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Open Sans';
     }
 
     html {
