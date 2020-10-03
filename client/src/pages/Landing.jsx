@@ -1,4 +1,4 @@
-import { Apps, Contact, Skills } from "pages/LandingCards";
+import { Apps, Contact, Skills } from "components/landingCards";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import React from "react";
@@ -6,7 +6,7 @@ import Typist from "react-typist";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
-const About = React.lazy(() => import("./LandingCards/About"));
+const About = React.lazy(() => import("components/landingCards/about"));
 const Particles = React.lazy(() => import("components/particles"));
 
 const Heading = styled.section.attrs({

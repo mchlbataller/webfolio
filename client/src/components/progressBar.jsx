@@ -33,7 +33,7 @@ const Box = styled.div`
 
 /**
  * UI Component for displaying skill progress.
- * Animated via animate.css, animations will trigger on scroll.
+ * Animated via animate-on-scroll, animations will trigger on scroll.
  */
 export const ProgressBar = ({
 	rating,

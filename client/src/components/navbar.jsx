@@ -45,7 +45,7 @@ const Navbar = ({ about, skills, top, app, contact }) => {
 	const theme = React.useContext(ThemeContext);
 
 	const isOnTop = () => {
-		if (window.scrollY === 0) {
+		if (window.scrollY < 250) {
 			isScrolled(true);
 		} else {
 			isScrolled(false);
