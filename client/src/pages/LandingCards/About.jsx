@@ -1,12 +1,7 @@
-import "aos/dist/aos.css"; // You can also use <link> for styles
-
-import AOS from "aos";
 import React from "react";
 import { User as UserIcon } from "assets/icons";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
-
-AOS.init();
 
 const StyledSection = styled.section.attrs({
 	className:

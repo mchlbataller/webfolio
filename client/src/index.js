@@ -2,14 +2,18 @@ import "./index.css";
 import "animate.css/animate.min.css";
 import "firebase/analytics";
 import "firebase/firestore";
+import "aos/dist/aos.css";
 
 import * as serviceWorker from "./serviceWorker";
 
+import AOS from "aos";
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "./ThemeProvider";
 import firebase from "firebase/app";
+
+AOS.init();
 
 var firebaseConfig = {
 	apiKey: "AIzaSyCM6vO3EcDlQrrC67-eceOvmdNYAn2uji4",
