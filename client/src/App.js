@@ -3,6 +3,7 @@ import "firebase/firestore";
 import { Banner, Footer, Navbar } from "components";
 
 import LinearProgress from "@material-ui/core/LinearProgress";
+import { LoadingPage } from "pages/Loading";
 import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "ThemeProvider";
@@ -86,26 +87,7 @@ function App(props) {
 						/>
 					</React.Suspense>
 				) : (
-					<>
-						<LinearProgress />
-						<div className="flex h-32 text-center w-full items-center">
-							<p className="mx-auto text-white font-regular">
-								Welcome! <br />
-								We're getting things ready for you.
-							</p>
-						</div>
-
-						<Banner
-							autoHideDuration={15000}
-							forFirstVisitsOnly
-							message="This site uses analytics. 
-							By using our site, you agree to the 
-							collection of anonymous data to 
-							analyze web traffic and optimize 
-							your experience. "
-							type="info"
-						/>
-					</>
+					<LoadingPage />
 				)}
 				{props.availableOffline && (
 					<Banner

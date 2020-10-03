@@ -8,6 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import AOS from "aos";
 import App from "./App";
+import { GlobalStyles } from "styles/global";
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "./ThemeProvider";
@@ -46,6 +47,7 @@ const ServiceWorkerInstallListener = (props) => {
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider>
+			<GlobalStyles />
 			<ServiceWorkerInstallListener />
 		</ThemeProvider>
 	</React.StrictMode>,
