@@ -9,7 +9,25 @@ export const Skills = (props) => {
 	const userData = useDataStore((state) => state.userData);
 
 	return (
-		<section data-aos="fade-up">
+		<section data-aos="fade-up" data-aos-once="true">
+			<h1
+				className="text-center text-lg lg:text-5xl font-extrabold text-blue-400"
+				data-aos="fade-up"
+				style={{ fontFamily: "'Raleway', sans-serif" }}
+			>
+				Skills
+			</h1>
+			<p
+				className="lg:text-lg text-center text-gray-400"
+				data-aos="fade-in"
+				data-aos-delay="200"
+			>
+				These skills are helping me accomplish tasks, including my goals
+				in life.{" "}
+			</p>
+			<br />
+			<br />
+			<br />
 			<Card height="540px" title="Soft Skills" headerIcon={<Computer />}>
 				{/* TODO: Transform to map */}
 				{userData &&

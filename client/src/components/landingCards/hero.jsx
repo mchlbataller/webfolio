@@ -1,3 +1,5 @@
+import "fontsource-raleway/500.css";
+
 import { blue, grey } from "@material-ui/core/colors";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -24,6 +26,10 @@ const Heading = styled.main.attrs({
 	}
 
 	& section {
+		* {
+			font-family: "Raleway", sans-serif;
+		}
+
 		h1 {
 			font-size: 4rem;
 			color: white;
@@ -31,7 +37,7 @@ const Heading = styled.main.attrs({
 		}
 
 		.subheader {
-			color: ${grey[500]};
+			color: ${grey[300]};
 			font-size: 2rem;
 		}
 	}

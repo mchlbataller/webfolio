@@ -1,5 +1,5 @@
 import React from "react";
-import { User as UserIcon } from "assets/icons";
+import { ReactComponent as UserIcon } from "assets/icons/user.svg";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
@@ -24,7 +24,9 @@ export const About = () => {
 	const data = useDataStore((state) => state.userData);
 	return (
 		<StyledSection>
-			<UserIcon data-aos="fade-up" />
+			<div data-aos="fade-up">
+				<UserIcon />
+			</div>
 			<h1
 				className="text-center text-lg lg:text-5xl font-extrabold text-blue-400"
 				data-aos="fade-up"
