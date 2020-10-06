@@ -26,7 +26,7 @@ export const About = () => {
 		<StyledSection>
 			<UserIcon data-aos="fade-up" />
 			<h1
-				className="text-center text-lg lg:text-3xl font-bold text-blue-400"
+				className="text-center text-lg lg:text-5xl font-extrabold text-blue-400"
 				data-aos="fade-up"
 			>
 				{data?.about_header}
@@ -38,6 +38,11 @@ export const About = () => {
 						{text}
 					</p>
 				))}
+
+				<hr
+					className="text-center w-1/4 bg-white mt-32 mx-auto"
+					data-aos="flip-right"
+				/>
 			</div>
 		</StyledSection>
 	);
