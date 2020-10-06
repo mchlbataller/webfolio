@@ -23,7 +23,9 @@ export const CardContainer = styled.div`
 
 export const CardHeader = styled.p.attrs({
 	className: "text-center font-semibold text-2xl mt-20",
-})``;
+})`
+	font-family: "Raleway", sans-serif;
+`;
 
 const CardHeaderContainer = styled.div.attrs({})`
 	height: 80px;
@@ -40,6 +42,10 @@ const CardHeaderContainer = styled.div.attrs({})`
 		position: absolute;
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
+	}
+
+	& p {
+		font-family: "Raleway", sans-serif;
 	}
 `;
 
