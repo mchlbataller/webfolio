@@ -14,6 +14,10 @@ const StyledSection = styled.section.attrs({
 		width: 70px;
 		fill: #9adbff;
 	}
+
+	& h1 {
+		font-family: "Raleway", sans-serif;
+	}
 `;
 
 export const About = () => {
@@ -22,13 +26,13 @@ export const About = () => {
 		<StyledSection>
 			<UserIcon data-aos="fade-up" />
 			<h1
-				className="text-center text-lg lg:text-3xl font-bold text-blue-500"
+				className="text-center text-lg lg:text-3xl font-bold text-blue-400"
 				data-aos="fade-up"
 			>
 				{data?.about_header}
 			</h1>
 			<br />
-			<div data-aos="fade-up">
+			<div data-aos="fade-up" className="lg:w-2/3 leading-tight">
 				{data.about_text.map((text) => (
 					<p className="mb-3 text-center text-gray-300 text-sm lg:text-base">
 						{text}
