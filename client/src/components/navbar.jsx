@@ -52,14 +52,35 @@ const Navbar = ({ about, skills, top, app, contact }) => {
 		}
 	};
 
+	const clickHandlers = [about, skills, app, contact];
+	const labels = ["About", "Skills", "Apps", "Contact"];
+	const navbarMenus = [];
+	clickHandlers.forEach((e, index) =>
+		navbarMenus.push({ onClick: e, label: labels[index] })
+	);
+
 	return (
 		<>
 			<NavbarBox background={theme.navBackground} scrolled={scrolled}>
-				<NavbarButton onClick={about}>About</NavbarButton>
-				<NavbarButton onClick={skills}>Skills</NavbarButton>
-				<Logo onClick={top} style={{ cursor: "pointer" }} />
-				<NavbarButton onClick={app}>Apps</NavbarButton>
-				<NavbarButton onClick={contact}>Contact</NavbarButton>
+				{navbarMenus.map(({ onClick, label }, key) => (
+					<>
+						<NavbarButton
+							onClick={onClick}
+							key={key}
+							data-aos="zoom-in-down"
+							data-aos-delay={key * 100 + 500}
+						>
+							{label}
+						</NavbarButton>
+						{key === 1 && (
+							<Logo
+								onClick={top}
+								style={{ cursor: "pointer" }}
+								data-aos="fade-down"
+							/>
+						)}
+					</>
+				))}
 			</NavbarBox>
 		</>
 	);
