@@ -17,7 +17,7 @@ const Landing = (props) => {
 				<div ref={props.skillsRef} className="pt-10 w-full">
 					<Skills />
 				</div>
-				<div ref={props.appRef} className="py-10 w-full">
+				<div ref={props.appRef} className="py-20 w-full">
 					<Apps />
 				</div>
 				<div ref={props.contactRef} className="pb-10 w-full"></div>

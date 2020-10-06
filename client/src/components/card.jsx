@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeContext } from "theme";
+import breakpoints from "styles/breakpoints";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -7,13 +8,13 @@ export const CardContainer = styled.div`
 	margin-bottom: 2rem;
 	background: ${(props) => props.background || "#FF0000"};
 	box-sizing: border-box;
-	box-shadow: 5px 9px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 5px 9px 15px rgba(0, 0, 0, 0.25);
 	border-radius: 20px;
 
-	@media (min-width: 760px) {
+	@media (${breakpoints.tablet}) {
 		width: ${(props) => props.mdWidth || 48}%;
 	}
-	@media (min-width: 1024px) {
+	@media (${breakpoints.laptopS}) {
 		width: ${(props) => props.lgWidth || props.mdWidth || 65}%;
 		border-radius: 5px;
 		position: relative;
@@ -32,7 +33,7 @@ const CardHeaderContainer = styled.div.attrs({})`
 	border-radius: 20px 20px 0px 0px;
 	min-width: 250px;
 
-	@media (min-width: 1024px) {
+	@media (${breakpoints.laptopS}) {
 		border-radius: 5px 0px 0px 5px;
 		height: 100%;
 		width: 30%;
@@ -45,7 +46,7 @@ const CardHeaderContainer = styled.div.attrs({})`
 const CardContent = styled.section`
 	color: ${(props) => props.color};
 	width: 100%;
-	@media (min-width: 1024px) {
+	@media (${breakpoints.laptopS}) {
 		margin-left: 35%;
 	}
 `;

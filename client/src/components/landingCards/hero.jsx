@@ -1,9 +1,12 @@
+import { blue, grey } from "@material-ui/core/colors";
+
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Contact } from "./contact";
 import React from "react";
 import Typist from "react-typist";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
+
 const Particles = React.lazy(() => import("components/particles"));
 
 const Heading = styled.main.attrs({
@@ -19,11 +22,24 @@ const Heading = styled.main.attrs({
 	@media (max-width: 425px) {
 		padding-top: 3rem;
 	}
+
+	& section {
+		h1 {
+			font-size: 4rem;
+			color: white;
+			font-weight: 700;
+		}
+
+		.subheader {
+			color: ${grey[500]};
+			font-size: 2rem;
+		}
+	}
 `;
 
 const SubHeader = styled.section.attrs({
 	className:
-		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
 })`
 	* {
 		font-family: "Roboto Mono", "SF Mono", "Courier New", Courier, monospace !important;
@@ -41,12 +57,14 @@ const classNames = {
         overflow-hidden
         mx-auto mt-16 md:pt-0 z-0 
         relative flex-shrink-0 flex 
-        bg-gray-200
+		bg-gray-200
+		animate__animated animate__fadeIn
     `,
 	headerText: `mt-8 text-2xl lg:text-5xl 
         text-white leading-tight font-bold
         animate__animated animate__fadeInUp`,
 };
+
 export const Header = (props) => {
 	const data = useDataStore((state) => state.userData);
 	const [imageIsLoaded, setImageLoadState] = React.useState(false);
@@ -70,14 +88,8 @@ export const Header = (props) => {
 			</section>
 
 			<section className="flex-col flex-grow md:pt-24 pl-8 w-full">
-				<p className={classNames.headerText} data-aos="fade-left">
-					<span className="text-3xl text-gray-200">
-						{data && data.header_greeting}
-					</span>
-					<br />I am{" "}
-					<span className="text-blue-300">Michael C. Bataller</span>
-				</p>
-
+				<p className="subheader">Hi, I am</p>
+				<h1> Michael C. Bataller </h1>
 				<SubHeader>
 					{data && <p>{data.header_intro}</p>}
 
