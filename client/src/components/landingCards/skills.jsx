@@ -9,7 +9,7 @@ export const Skills = (props) => {
 	const userData = useDataStore((state) => state.userData);
 
 	return (
-		<>
+		<section data-aos="fade-up">
 			<Card height="540px" title="Soft Skills" headerIcon={<Computer />}>
 				{/* TODO: Transform to map */}
 				{userData &&
@@ -27,6 +27,6 @@ export const Skills = (props) => {
 						/>
 					))}
 			</Card>
-		</>
+		</section>
 	);
 };

@@ -34,7 +34,7 @@ export const About = () => {
 			<br />
 			<div data-aos="fade-up" className="lg:w-2/3 leading-tight">
 				{data.about_text.map((text) => (
-					<p className="mb-3 text-center text-gray-300 text-sm lg:text-base">
+					<p className="mb-3 text-center text-gray-300 text-sm lg:text-lg">
 						{text}
 					</p>
 				))}

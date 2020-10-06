@@ -59,6 +59,7 @@ export const ProgressBar = ({
 			<ProgressBarContainer background={backgroundColor}>
 				<div
 					data-aos="slide-right"
+					data-aos-delay="250"
 					// TODO: turn off the repeating of animations once animated.
 					style={fillerStyles}
 				>
