@@ -1,5 +1,5 @@
 function siteIsNowVisited() {
-	localStorage.setItem("visits", "1");
+	localStorage.setItem("visitsVer2", "1");
 }
 
 export default siteIsNowVisited;
