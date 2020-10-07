@@ -20,7 +20,7 @@ export const Skills = (props) => {
 			<p
 				className="lg:text-lg text-center text-gray-400"
 				data-aos="fade-in"
-				data-aos-delay="200"
+				data-aos-delay="500"
 			>
 				These skills are helping me accomplish tasks, including my goals
 				in life.{" "}

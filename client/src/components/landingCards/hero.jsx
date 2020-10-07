@@ -6,20 +6,25 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { Contact } from "./contact";
 import React from "react";
 import Typist from "react-typist";
+import breakpoints from "styles/breakpoints";
 import styled from "styled-components";
 import { useDataStore } from "state/data";
 
 const Particles = React.lazy(() => import("components/particles"));
 
-const Heading = styled.main.attrs({
+const StyledSection = styled.main.attrs({
 	className:
-		"flex flex-col md:flex-row-reverse items-center relative md:px-16 xl:px-64",
+		"flex flex-col md:flex-row-reverse items-center relative md:px-16",
 })`
 	width: 100%;
 	min-height: 90vh;
 	background: #192835;
 	border-radius: 0px 0px 18px 18px;
 	margin-bottom: 15px;
+
+	@media (${breakpoints.laptopL}) {
+		padding: 0 10rem;
+	}
 
 	@media (max-width: 425px) {
 		padding-top: 3rem;
@@ -31,7 +36,13 @@ const Heading = styled.main.attrs({
 		}
 
 		h1.animate__fadeInUp {
-			font-size: 4rem;
+			font-size: 2.125rem;
+			@media (${breakpoints.tablet}) {
+				font-size: 3rem;
+			}
+			@media (${breakpoints.laptopS}) {
+				font-size: 4rem;
+			}
 			color: white;
 			font-weight: 700;
 			color: ${blue[100]};
@@ -40,7 +51,13 @@ const Heading = styled.main.attrs({
 
 		.subheader {
 			color: ${grey[300]};
-			font-size: 2rem;
+			font-size: 1.25rem;
+			@media (${breakpoints.tablet}) {
+				font-size: 1rem;
+			}
+			@media (${breakpoints.laptopS}) {
+				font-size: 2rem;
+			}
 			animation-delay: 200ms;
 		}
 	}
@@ -80,7 +97,7 @@ export const Header = (props) => {
 	const [imageIsLoaded, setImageLoadState] = React.useState(false);
 
 	return (
-		<Heading>
+		<StyledSection>
 			<Particles />
 			<section className={classNames.profileImage}>
 				{!imageIsLoaded && (
@@ -97,10 +114,8 @@ export const Header = (props) => {
 				/>
 			</section>
 
-			<section className="flex-col flex-grow md:pt-24 pl-8 w-full">
-				<p className={"subheader" + " " + classNames.animation}>
-					Hi, I am
-				</p>
+			<section className="flex-col flex-grow mt-10 md:pt-24 pl-6 w-full">
+				<p className={"subheader " + classNames.animation}>Hi, I am</p>
 				<h1 className={classNames.animation}> Michael C. Bataller </h1>
 				<SubHeader>
 					{data && <p>{data.header_intro}</p>}
@@ -124,6 +139,6 @@ export const Header = (props) => {
 
 				<Contact />
 			</section>
-		</Heading>
+		</StyledSection>
 	);
 };
