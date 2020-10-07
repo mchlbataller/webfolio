@@ -34,7 +34,11 @@ export const About = () => {
 				{data?.about_header}
 			</h1>
 			<br />
-			<div data-aos="fade-up" className="lg:w-2/3 leading-tight">
+			<div
+				data-aos="fade-up"
+				className="lg:w-2/3 leading-tight"
+				data-aos-delay="200"
+			>
 				{data.about_text.map((text) => (
 					<p className="mb-3 text-center text-gray-300 text-sm lg:text-lg">
 						{text}
@@ -44,6 +48,7 @@ export const About = () => {
 				<hr
 					className="text-center w-1/4 bg-white mt-32 mx-auto"
 					data-aos="flip-right"
+					data-aos-delay="400"
 				/>
 			</div>
 		</StyledSection>

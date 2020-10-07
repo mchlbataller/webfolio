@@ -1,4 +1,4 @@
-import "fontsource-raleway/500.css";
+import "fontsource-raleway/700.css";
 
 import { blue, grey } from "@material-ui/core/colors";
 
@@ -30,15 +30,18 @@ const Heading = styled.main.attrs({
 			font-family: "Raleway", sans-serif;
 		}
 
-		h1 {
+		h1.animate__fadeInUp {
 			font-size: 4rem;
 			color: white;
 			font-weight: 700;
+			color: ${blue[100]};
+			animation-delay: 500ms;
 		}
 
 		.subheader {
 			color: ${grey[300]};
 			font-size: 2rem;
+			animation-delay: 200ms;
 		}
 	}
 `;
@@ -49,7 +52,7 @@ const SubHeader = styled.section.attrs({
 })`
 	* {
 		font-family: "Roboto Mono", "SF Mono", "Courier New", Courier, monospace !important;
-		color: white;
+		color: #94b8d8;
 		font-weight: normal;
 	}
 
@@ -68,7 +71,8 @@ const classNames = {
     `,
 	headerText: `mt-8 text-2xl lg:text-5xl 
         text-white leading-tight font-bold
-        animate__animated animate__fadeInUp`,
+		animate__animated animate__fadeInUp`,
+	animation: `animate__animated animate__fadeInUp`,
 };
 
 export const Header = (props) => {
@@ -94,8 +98,10 @@ export const Header = (props) => {
 			</section>
 
 			<section className="flex-col flex-grow md:pt-24 pl-8 w-full">
-				<p className="subheader">Hi, I am</p>
-				<h1> Michael C. Bataller </h1>
+				<p className={"subheader" + " " + classNames.animation}>
+					Hi, I am
+				</p>
+				<h1 className={classNames.animation}> Michael C. Bataller </h1>
 				<SubHeader>
 					{data && <p>{data.header_intro}</p>}
 
