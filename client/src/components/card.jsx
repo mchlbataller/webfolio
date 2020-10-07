@@ -9,7 +9,7 @@ export const CardContainer = styled.div`
 	background: ${(props) => props.background || "#FF0000"};
 	box-sizing: border-box;
 	box-shadow: 5px 9px 15px rgba(0, 0, 0, 0.25);
-	border-radius: 20px;
+	border-radius: 10px;
 
 	@media (${breakpoints.tablet}) {
 		width: ${(props) => props.mdWidth || 48}%;
@@ -32,7 +32,7 @@ const CardHeaderContainer = styled.div.attrs({})`
 	background: ${(props) => props.background || "#FF0000"};
 	border: 1px solid rgba(0, 0, 0, 0.08);
 	box-sizing: border-box;
-	border-radius: 20px 20px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
 	min-width: 250px;
 
 	@media (${breakpoints.laptopS}) {

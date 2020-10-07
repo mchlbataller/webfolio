@@ -11,19 +11,19 @@ export const Skills = (props) => {
 	return (
 		<section data-aos="fade-up" data-aos-once="true">
 			<h1
-				className="text-center text-lg lg:text-5xl font-extrabold text-blue-400"
+				className="text-center text-3xl lg:text-5xl font-extrabold text-blue-400"
 				data-aos="fade-up"
 				style={{ fontFamily: "'Raleway', sans-serif" }}
 			>
 				Skills
 			</h1>
 			<p
-				className="lg:text-lg text-center text-gray-400"
+				className="px-10 lg:text-lg text-center text-gray-400"
 				data-aos="fade-in"
 				data-aos-delay="500"
 			>
-				These skills are helping me accomplish tasks, including my goals
-				in life.{" "}
+				These skills are helping me in accomplishing tasks, including my
+				goals in life.{" "}
 			</p>
 			<br />
 			<br />

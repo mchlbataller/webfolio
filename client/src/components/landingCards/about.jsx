@@ -18,17 +18,21 @@ const StyledSection = styled.section.attrs({
 	& h1 {
 		font-family: "Raleway", sans-serif;
 	}
+
+	& #about-text {
+		width: 85%;
+	}
 `;
 
 export const About = () => {
 	const data = useDataStore((state) => state.userData);
 	return (
 		<StyledSection>
-			<div data-aos="fade-up">
+			<div data-aos="flip-left" data-aos-duration="1500">
 				<UserIcon />
 			</div>
 			<h1
-				className="text-center text-lg lg:text-5xl font-extrabold text-blue-400"
+				className="text-center text-3xl lg:text-5xl font-extrabold text-blue-400"
 				data-aos="fade-up"
 			>
 				{data?.about_header}
@@ -36,17 +40,22 @@ export const About = () => {
 			<br />
 			<div
 				data-aos="fade-up"
-				className="lg:w-2/3 leading-tight"
+				className="md:w-2/3 leading-tight"
+				id="about-text"
 				data-aos-delay="200"
 			>
 				{data.about_text.map((text) => (
-					<p className="mb-3 text-center text-gray-300 text-sm lg:text-lg">
+					<p
+						className="mb-3 text-left lg:text-center
+					 text-gray-300 lg:text-lg
+					 "
+					>
 						{text}
 					</p>
 				))}
 
 				<hr
-					className="text-center w-1/4 bg-white mt-32 mx-auto"
+					className="text-center w-1/3 lg:w-1/4 bg-white mt-24 lg:mt-32 mx-auto"
 					data-aos="flip-right"
 					data-aos-delay="400"
 				/>

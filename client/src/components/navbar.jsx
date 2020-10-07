@@ -68,7 +68,7 @@ const Navbar = ({ about, skills, top, app, contact }) => {
 							onClick={onClick}
 							key={key}
 							data-aos="zoom-in-down"
-							data-aos-delay={key * 100 + 500}
+							data-aos-delay={key * 100 + 2000}
 						>
 							{label}
 						</NavbarButton>
