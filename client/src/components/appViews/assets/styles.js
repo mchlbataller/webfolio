@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Caption = styled.p.attrs({
-	className: "text-xs sm:text-sm font-regular text-gray-400",
+	className: "text-sm font-regular text-gray-400",
 })``;
 
 export const Title = styled.p.attrs({
