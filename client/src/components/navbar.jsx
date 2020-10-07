@@ -1,6 +1,7 @@
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import React from "react";
 import { ThemeContext } from "theme";
+import { blue } from "@material-ui/core/colors";
 import styled from "styled-components";
 
 const NavbarBox = styled.div.attrs({
@@ -15,7 +16,7 @@ const NavbarBox = styled.div.attrs({
 		scrolled ? "transparent" : background};
 	position: fixed;
 	backdrop-filter: ${({ scrolled }) => !scrolled && "blur(10px)"};
-	transition: 0.25s;
+	transition: 0.2s;
 
 	* {
 		color: white;
@@ -34,7 +35,7 @@ const NavbarBox = styled.div.attrs({
 
 const NavbarButton = styled.a`
 	&:hover {
-		color: blue;
+		color: ${blue[300]};
 	}
 	cursor: pointer;
 `;
