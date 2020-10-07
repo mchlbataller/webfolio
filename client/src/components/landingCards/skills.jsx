@@ -11,7 +11,7 @@ export const Skills = (props) => {
 	return (
 		<section data-aos="fade-up" data-aos-once="true">
 			<h1
-				className="text-center text-3xl lg:text-5xl font-extrabold text-blue-400"
+				className="text-center text-4xl lg:text-5xl font-extrabold text-blue-400"
 				data-aos="fade-up"
 				style={{ fontFamily: "'Raleway', sans-serif" }}
 			>

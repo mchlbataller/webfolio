@@ -15,6 +15,7 @@
     "firebase": "^7.19.0",
     "fontsource-open-sans": "^3.0.9",
     "fontsource-raleway": "^3.0.3",
+    "fontsource-space-mono": "^3.0.9",
     "postcss-cli": "^7.1.1",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",

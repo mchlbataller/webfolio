@@ -1,4 +1,5 @@
 import "fontsource-raleway/700.css";
+import "fontsource-space-mono";
 
 import { blue, grey } from "@material-ui/core/colors";
 
@@ -68,7 +69,8 @@ const SubHeader = styled.section.attrs({
 		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
 })`
 	* {
-		font-family: "Roboto Mono", "SF Mono", "Courier New", Courier, monospace !important;
+		font-family: "Space Mono", "Roboto Mono", "SF Mono", "Courier New",
+			Courier, monospace !important;
 		color: #94b8d8;
 		font-weight: normal;
 	}
@@ -120,21 +122,15 @@ export const Header = (props) => {
 				<SubHeader>
 					{data && <p>{data.header_intro}</p>}
 
-					{data && (
-						<Typist cursor={{ show: false }}>
-							{data.header_description.map((text, key) => (
-								<div key={key}>
-									<span>{text}</span>
-									<Typist.Backspace
-										count={text.length}
-										delay={1500}
-									/>
-								</div>
-							))}
-
-							<span>{data.header_descriptionFinal}</span>
-						</Typist>
-					)}
+					<Typist cursor={{ show: true }}>
+						<span>software engineer</span>
+						<Typist.Backspace count={17} delay={1500} />
+						<span>problem solver</span>
+						<Typist.Backspace count={14} delay={1500} />
+						<span>web designer</span>
+						<Typist.Backspace count={12} delay={1500} />
+						<span>web developer</span>
+					</Typist>
 				</SubHeader>
 
 				<Contact />
