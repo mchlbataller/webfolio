@@ -51,7 +51,7 @@ const StyledSection = styled.main.attrs({
 		}
 
 		.subheader {
-			color: ${grey[300]};
+			color: ${blue[500]};
 			font-size: 1.25rem;
 			@media (${breakpoints.tablet}) {
 				font-size: 1rem;
@@ -64,14 +64,14 @@ const StyledSection = styled.main.attrs({
 	}
 `;
 
-const SubHeader = styled.section.attrs({
+const IntroText = styled.section.attrs({
 	className:
 		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
 })`
 	* {
 		font-family: "Source Code Pro", "Roboto Mono", "SF Mono", "Courier New",
 			Courier, monospace !important;
-		color: #94b8d8;
+		color: ${grey[200]};
 		font-weight: normal;
 	}
 
@@ -119,7 +119,7 @@ export const Header = (props) => {
 			<section className="flex-col flex-grow mt-10 md:pt-24 pl-6 w-full">
 				<p className={"subheader " + classNames.animation}>Hi, I am</p>
 				<h1 className={classNames.animation}> Michael C. Bataller </h1>
-				<SubHeader>
+				<IntroText>
 					{data && <p>{data.header_intro}</p>}
 
 					<Typist cursor={{ show: true }}>
@@ -131,7 +131,7 @@ export const Header = (props) => {
 						<Typist.Backspace count={12} delay={1500} />
 						<span>web developer</span>
 					</Typist>
-				</SubHeader>
+				</IntroText>
 
 				<Contact />
 			</section>

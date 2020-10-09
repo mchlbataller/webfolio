@@ -6,10 +6,10 @@ const particlesConfig = {
 		fpsLimit: 60,
 		particles: {
 			number: {
-				value: 80,
+				value: 10,
 				density: {
 					enable: true,
-					value_area: 1000,
+					value_area: 100,
 				},
 			},
 			color: {
