@@ -7433,6 +7433,11 @@ fontsource-raleway@^3.0.3:
   resolved "https://registry.yarnpkg.com/fontsource-raleway/-/fontsource-raleway-3.0.9.tgz#c05a9af367d8016b9b1ff8c39deb5ae897673aa5"
   integrity sha512-TtvH82FIK0SgNc/ynLUYozwiSk8IB6FgZ0ujZ0sgUhpdAvH+gKaCoopT9faBh9c59JGwicIej0x2fWz7NhsKSQ==
 
+fontsource-source-code-pro@^3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/fontsource-source-code-pro/-/fontsource-source-code-pro-3.0.10.tgz#6366788783b21ccdd29673537c4b35c278e874a0"
+  integrity sha512-O240cr7mUAiiqZZ4pb9tEZyRrmgYpS7qQvrnuS0zXFvHAuLRdl+hbE2RQN+QSQmzovOYIiZpHzX6cME4Phc8YA==
+
 fontsource-space-mono@^3.0.9:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/fontsource-space-mono/-/fontsource-space-mono-3.0.9.tgz#1d42fb89bdcb3f2b0a4616f87168a2efd8151a1d"

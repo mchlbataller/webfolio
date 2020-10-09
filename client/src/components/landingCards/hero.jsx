@@ -1,5 +1,5 @@
 import "fontsource-raleway/700.css";
-import "fontsource-space-mono";
+import "fontsource-source-code-pro";
 
 import { blue, grey } from "@material-ui/core/colors";
 
@@ -69,7 +69,7 @@ const SubHeader = styled.section.attrs({
 		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
 })`
 	* {
-		font-family: "Space Mono", "Roboto Mono", "SF Mono", "Courier New",
+		font-family: "Source Code Pro", "Roboto Mono", "SF Mono", "Courier New",
 			Courier, monospace !important;
 		color: #94b8d8;
 		font-weight: normal;
