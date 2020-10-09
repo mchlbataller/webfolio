@@ -1,5 +1,6 @@
 import "fontsource-raleway/700.css";
 import "fontsource-source-code-pro";
+import "react-typist/dist/Typist.css";
 
 import { blue, grey } from "@material-ui/core/colors";
 
@@ -122,12 +123,12 @@ export const Header = (props) => {
 				<IntroText>
 					{data && <p>{data.header_intro}</p>}
 
-					<Typist cursor={{ show: true }}>
+					<Typist cursor={{ blink: true }}>
 						<span>software engineer</span>
-						<Typist.Backspace count={17} delay={1500} />
-						<span>problem solver</span>
 						<Typist.Backspace count={14} delay={1500} />
 						<span>web designer</span>
+						<Typist.Backspace count={17} delay={1500} />
+						<span>problem solver</span>
 						<Typist.Backspace count={12} delay={1500} />
 						<span>web developer</span>
 					</Typist>
