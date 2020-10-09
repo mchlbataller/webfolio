@@ -52,7 +52,7 @@ const StyledSection = styled.main.attrs({
 		}
 
 		.subheader {
-			color: ${blue[500]};
+			color: ${grey[300]};
 			font-size: 1.25rem;
 			@media (${breakpoints.tablet}) {
 				font-size: 1rem;
