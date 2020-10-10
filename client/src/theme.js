@@ -15,7 +15,7 @@ export const colors = {
 			content: "#F3F3F3",
 		},
 		bodyBackground: "#12202D",
-		navBackground: "#0e0e0ee6",
+		navBackground: "#12202dd6",
 		aboutHeader: "#FFFFFF",
 	},
 	light: {

@@ -1,22 +1,28 @@
+import { Paper, Slide, useScrollTrigger } from "@material-ui/core";
+
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import React from "react";
 import { ThemeContext } from "theme";
 import { blue } from "@material-ui/core/colors";
 import styled from "styled-components";
 
-const NavbarBox = styled.div.attrs({
-	className: "w-full bg-white flex items-center justify-center",
-})`
-	height: 65px;
+const NavbarBox = styled(Paper)`
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: ${({ isOnTop }) => (isOnTop ? "75px" : "65px")};
 	padding-left: 20px;
 	padding-right: 20px;
-	/* box-shadow: #00000017 0px 4px 10px; */
 	z-index: 20;
-	background: ${({ background, scrolled }) =>
-		scrolled ? "transparent" : background};
+	background-color: ${({ background, isOnTop }) =>
+		isOnTop ? "transparent" : background};
+	${({ isOnTop }) =>
+		!isOnTop ? `backdrop-filter: blur(10px);` : `box-shadow: none;`};
+
 	position: fixed;
-	backdrop-filter: ${({ scrolled }) => !scrolled && "blur(10px)"};
-	transition: 0.2s;
+	transition: 0.2s !important;
 
 	* {
 		color: white;
@@ -41,17 +47,7 @@ const NavbarButton = styled.a`
 `;
 
 const Navbar = ({ about, skills, top, app, contact }) => {
-	const [scrolled, isScrolled] = React.useState("transparent");
-	React.useEffect(() => window.addEventListener("scroll", isOnTop), []);
 	const theme = React.useContext(ThemeContext);
-
-	const isOnTop = () => {
-		if (window.scrollY < 250) {
-			isScrolled(true);
-		} else {
-			isScrolled(false);
-		}
-	};
 
 	const clickHandlers = [about, skills, app, contact];
 	const labels = ["About", "Skills", "Apps", "Contact"];
@@ -60,9 +56,18 @@ const Navbar = ({ about, skills, top, app, contact }) => {
 		navbarMenus.push({ onClick: e, label: labels[index] })
 	);
 
+	const trigger = useScrollTrigger({ threshold: 300 });
+	const backgroundTrigger = useScrollTrigger({
+		disableHysteresis: true,
+		threshold: 100,
+	});
+
 	return (
-		<>
-			<NavbarBox background={theme.navBackground} scrolled={scrolled}>
+		<Slide appear={false} direction="down" in={!trigger}>
+			<NavbarBox
+				background={theme.navBackground}
+				isOnTop={!backgroundTrigger}
+			>
 				{navbarMenus.map(({ onClick, label }, key) => (
 					<>
 						<NavbarButton
@@ -83,7 +88,7 @@ const Navbar = ({ about, skills, top, app, contact }) => {
 					</>
 				))}
 			</NavbarBox>
-		</>
+		</Slide>
 	);
 };
 

@@ -1,8 +1,8 @@
 import "firebase/firestore";
 
 import { Banner, Footer, Navbar } from "components";
+import { LinearProgress, StylesProvider } from "@material-ui/core";
 
-import LinearProgress from "@material-ui/core/LinearProgress";
 import { LoadingPage } from "pages/Loading";
 import PropTypes from "prop-types";
 import React from "react";
@@ -58,7 +58,7 @@ function App(props) {
 	}, []);
 
 	return (
-		<main>
+		<StylesProvider injectFirst>
 			<Navbar
 				app={() => scrollToRef(appsRef)}
 				contact={() => scrollToRef(contactRef)}
@@ -90,7 +90,7 @@ function App(props) {
 				)}
 			</section>
 			<Footer />
-		</main>
+		</StylesProvider>
 	);
 }
 
