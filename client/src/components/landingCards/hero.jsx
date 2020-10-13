@@ -1,5 +1,6 @@
 import "fontsource-raleway/700.css";
-import "fontsource-space-mono";
+import "fontsource-source-code-pro";
+import "react-typist/dist/Typist.css";
 
 import { blue, grey } from "@material-ui/core/colors";
 
@@ -64,14 +65,14 @@ const StyledSection = styled.main.attrs({
 	}
 `;
 
-const SubHeader = styled.section.attrs({
+const IntroText = styled.section.attrs({
 	className:
 		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
 })`
 	* {
-		font-family: "Space Mono", "Roboto Mono", "SF Mono", "Courier New",
+		font-family: "Source Code Pro", "Roboto Mono", "SF Mono", "Courier New",
 			Courier, monospace !important;
-		color: #94b8d8;
+		color: ${grey[200]};
 		font-weight: normal;
 	}
 
@@ -119,19 +120,19 @@ export const Header = (props) => {
 			<section className="flex-col flex-grow mt-10 md:pt-24 pl-6 w-full">
 				<p className={"subheader " + classNames.animation}>Hi, I am</p>
 				<h1 className={classNames.animation}> Michael C. Bataller </h1>
-				<SubHeader>
+				<IntroText>
 					{data && <p>{data.header_intro}</p>}
 
-					<Typist cursor={{ show: true }}>
+					<Typist cursor={{ blink: true }}>
 						<span>software engineer</span>
-						<Typist.Backspace count={17} delay={1500} />
-						<span>problem solver</span>
 						<Typist.Backspace count={14} delay={1500} />
 						<span>web designer</span>
+						<Typist.Backspace count={17} delay={1500} />
+						<span>problem solver</span>
 						<Typist.Backspace count={12} delay={1500} />
 						<span>web developer</span>
 					</Typist>
-				</SubHeader>
+				</IntroText>
 
 				<Contact />
 			</section>

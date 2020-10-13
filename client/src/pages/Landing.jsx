@@ -24,13 +24,14 @@ const Landing = (props) => {
 				<div ref={props.contactRef} className="pb-10 w-full"></div>
 			</section>
 			<Banner
+				autoHideDuration={10000}
 				forFirstVisitsOnly
 				type="info"
 				message="Welcome back to the 
 				2nd iteration of my website!"
 			/>
 			<Banner
-				autoHideDuration={15000}
+				autoHideDuration={10000}
 				forFirstVisitsOnly
 				message="This site uses analytics. 
 							By using our site, you agree to the 
