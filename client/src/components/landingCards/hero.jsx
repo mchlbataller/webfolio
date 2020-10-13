@@ -125,11 +125,11 @@ export const Header = (props) => {
 
 					<Typist cursor={{ blink: true }}>
 						<span>software engineer</span>
-						<Typist.Backspace count={14} delay={1500} />
-						<span>web designer</span>
 						<Typist.Backspace count={17} delay={1500} />
-						<span>problem solver</span>
+						<span>web designer</span>
 						<Typist.Backspace count={12} delay={1500} />
+						<span>problem solver</span>
+						<Typist.Backspace count={14} delay={1500} />
 						<span>web developer</span>
 					</Typist>
 				</IntroText>

@@ -81,6 +81,10 @@ Banner.propTypes = {
 	 * Hides the banner after \_\_ milliseconds.
 	 */
 	autoHideDuration: PropTypes.number,
+	/**
+	 * Additional styling overrides
+	 */
+	style: PropTypes.object,
 };
 
 Banner.defaultProps = {
