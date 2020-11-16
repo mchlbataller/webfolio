@@ -1,8 +1,8 @@
 import "firebase/firestore";
 
-import { Banner, Footer, Navbar } from "components";
 import { LinearProgress, StylesProvider } from "@material-ui/core";
 
+import { Footer } from "components";
 import { LoadingPage } from "pages/Loading";
 import PropTypes from "prop-types";
 import React from "react";
@@ -13,29 +13,24 @@ import { useDataStore } from "state/data";
 const Landing = React.lazy(() => import("pages/Landing"));
 
 // Scroll to element function
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 50);
 
-function App(props) {
+function App() {
 	const theme = React.useContext(ThemeContext);
-	/* Refs for Scrolling START */
-	const [appsRef, skillsRef, contactRef, aboutRef] = [
-		React.useRef(null),
-		React.useRef(null),
-		React.useRef(null),
-		React.useRef(null),
-	];
-	/* Refs for Scrolling END */
 
 	const setUserData = useDataStore((state) => state.setUserData);
 	const initialized = useDataStore((state) => state.initialized);
-	const appNowInitialized = useDataStore((state) => state.appNowInitialized);
+	const setInitializedState = useDataStore(
+		(state) => state.setInitializedState
+	);
+	const imageIsLoaded = useDataStore((state) => state.imageIsLoaded);
 
 	React.useEffect(() => {
 		// Use data from cache first
 		const cachedDataFromFirestore = localStorage.getItem("cachedData");
 		if (cachedDataFromFirestore) {
 			setUserData(JSON.parse(cachedDataFromFirestore));
-			appNowInitialized();
+			// setInitializedState(true);
+			setTimeout(setInitializedState, 2000, true);
 		}
 
 		const fetchDataFromFirestore = async () => {
@@ -46,11 +41,13 @@ function App(props) {
 				.get()
 				.then((res) => {
 					setUserData(res.data());
-					appNowInitialized();
 					localStorage.setItem(
 						"cachedData",
 						JSON.stringify(res.data())
 					);
+					// setInitializedState(true);
+					// TODO: Check if the timeout is good
+					setTimeout(setInitializedState, 2000, true);
 				});
 		};
 		fetchDataFromFirestore();
@@ -59,27 +56,19 @@ function App(props) {
 
 	return (
 		<StylesProvider injectFirst>
-			<Navbar
-				app={() => scrollToRef(appsRef)}
-				contact={() => scrollToRef(contactRef)}
-				skills={() => scrollToRef(skillsRef)}
-				top={() => window.scrollTo(0, 0)}
-				about={() => scrollToRef(aboutRef)}
-			/>
 			<section background={theme.bodyBackground}>
+				{/* TODO: add checking for imageIsLoaded state. */}
 				{initialized ? (
 					<React.Suspense fallback={<LinearProgress />}>
-						<Landing
-							appRef={appsRef}
-							skillsRef={skillsRef}
-							contactRef={contactRef}
-							aboutRef={aboutRef}
-						/>
+						<Landing />
 					</React.Suspense>
 				) : (
 					<LoadingPage />
 				)}
-				{props.availableOffline && (
+				{/* 
+					// Uncomment this block if you have 
+					// enabled the service worker.
+					{props.availableOffline && (
 					<Banner
 						autoHideDuration={10000}
 						message="You may now use this app offline! 
@@ -87,7 +76,7 @@ function App(props) {
 						style={{ marginBottom: "60px" }}
 						type="success"
 					/>
-				)}
+				)} */}
 			</section>
 			<Footer />
 		</StylesProvider>

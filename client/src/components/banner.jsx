@@ -26,7 +26,7 @@ export const Banner = ({
 	React.useEffect(() => {
 		if (triggerOnlyOnFirstVisit) {
 			// If the banner needs to be showed only on first site visits,
-			// then we will open the banner in 1 second.
+			// then we will open the banner in 5 seconds.
 			//
 			// Note that we are ignoring the 'first visits condition'
 			// on development environments.
@@ -34,7 +34,7 @@ export const Banner = ({
 				localStorage.getItem("visits") ||
 				process.env.NODE_ENV === "development"
 			)
-				setTimeout(setOpen, 1000, true);
+				setTimeout(setOpen, 5000, true);
 		}
 
 		siteIsNowVisited();

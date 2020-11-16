@@ -1,9 +1,8 @@
 module.exports = {
-	purge: [
-		'./src/**/*.html',
-		'./src/**/*.jsx',
-		'./src/**/*.js'
-	],
+	future: {
+		removeDeprecatedGapUtilities: true,
+	},
+	purge: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js"],
 	theme: {
 		extend: {},
 	},

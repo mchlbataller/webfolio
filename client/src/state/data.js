@@ -8,7 +8,11 @@ export const useDataStore = create((set) => ({
 		}));
 	},
 	initialized: false,
-	appNowInitialized: () => {
-		set(() => ({initialized: true}))
-	}
+	setInitializedState: (arg) => {
+		set(() => ({ initialized: arg }));
+	},
+	imageIsLoaded: false,
+	setImageIsLoadedState: (bool) => {
+		set(() => ({ imageIsLoaded: bool }));
+	},
 }));

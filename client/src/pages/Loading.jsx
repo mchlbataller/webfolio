@@ -12,17 +12,6 @@ export const LoadingPage = () => {
 					We're getting things ready for you.
 				</p>
 			</div>
-
-			<Banner
-				autoHideDuration={15000}
-				forFirstVisitsOnly
-				message="This site uses analytics. 
-							By using our site, you agree to the 
-							collection of anonymous data to 
-							analyze web traffic and optimize 
-							your experience. "
-				type="info"
-			/>
 		</>
 	);
 };

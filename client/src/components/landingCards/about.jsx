@@ -57,7 +57,7 @@ export const About = () => {
 				<hr
 					className="text-center w-1/3 lg:w-1/4 bg-white mt-24 lg:mt-32 mx-auto"
 					data-aos="flip-right"
-					data-aos-delay="400"
+					data-aos-delay="100"
 				/>
 			</div>
 		</StyledSection>

@@ -48,7 +48,7 @@ const StyledSection = styled.main.attrs({
 			color: white;
 			font-weight: 700;
 			color: ${blue[100]};
-			animation-delay: 500ms;
+			animation-delay: 1000ms;
 		}
 
 		.subheader {
@@ -60,14 +60,14 @@ const StyledSection = styled.main.attrs({
 			@media (${breakpoints.laptopS}) {
 				font-size: 2rem;
 			}
-			animation-delay: 200ms;
+			animation-delay: 700ms;
 		}
 	}
 `;
 
 const IntroText = styled.section.attrs({
 	className:
-		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeIn",
+		"lg:text-xl mt-8 mb-12 lg:mb-24 animate__animated animate__fadeInUp",
 })`
 	* {
 		font-family: "Source Code Pro", "Roboto Mono", "SF Mono", "Courier New",
@@ -76,7 +76,7 @@ const IntroText = styled.section.attrs({
 		font-weight: normal;
 	}
 
-	animation-delay: 1s;
+	animation-delay: 1.5s;
 `;
 
 const classNames = {
@@ -97,23 +97,19 @@ const classNames = {
 
 export const Header = (props) => {
 	const data = useDataStore((state) => state.userData);
-	const [imageIsLoaded, setImageLoadState] = React.useState(false);
+	const setImageIsLoadedState = useDataStore(
+		(state) => state.setImageIsLoadedState
+	);
 
 	return (
 		<StyledSection>
 			<Particles />
 			<section className={classNames.profileImage}>
-				{!imageIsLoaded && (
-					<div className="my-20 mx-auto">
-						<CircularProgress />
-					</div>
-				)}
 				<img
 					src={data && data.header_profileURL}
 					alt="Michael"
 					className="object-contain"
-					style={{ display: imageIsLoaded ? "block" : "none" }}
-					onLoad={() => setImageLoadState(true)}
+					onLoad={() => setImageIsLoadedState(true)}
 				/>
 			</section>
 
@@ -125,7 +121,7 @@ export const Header = (props) => {
 
 					<Typist cursor={{ blink: true }}>
 						<span>software engineer</span>
-						<Typist.Backspace count={17} delay={1500} />
+						<Typist.Backspace count={17} delay={3000} />
 						<span>web designer</span>
 						<Typist.Backspace count={12} delay={1500} />
 						<span>problem solver</span>
