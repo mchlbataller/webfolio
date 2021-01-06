@@ -8,7 +8,7 @@ export const Footer = (props) => {
 				Site powered by React and JavaScript
 			</p>
 			<p className="text-gray-600 text-sm text-center md:text-right">
-				&copy; Copyright, 2020. All Rights Reserved.
+				&copy; Copyright, 2021. All Rights Reserved.
 			</p>
 		</div>
 	);
